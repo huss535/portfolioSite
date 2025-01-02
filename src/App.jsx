@@ -5,6 +5,7 @@ import MainPage from "./pages/MainPage";
 import './App.css';
 import BlogsPage from "./pages/BlogsPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import LandingPanel from "./pages/LandingPanel";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<MainPage isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />} />
         <Route path="/blogs" element={<BlogsPage blogsArray={blogsArray} />} />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/panel" element={<LandingPanel />} />
 
       </Routes>
     </BrowserRouter>
