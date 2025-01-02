@@ -61,28 +61,37 @@ h2 {
 #landing-panel .hero {
     height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: center;
     background-color: #FFC300;
-    padding: 2rem;
+
     text-align: center;
-    width: 30%;
+    width: 20%;
 }
 
 .hero h1 {
+    letter-spacing: 0.3rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg) scaleX(1);
     color: rgb(23, 22, 22);
 
 }
 
 #landing-panel .table-of-contents {
-    margin: auto;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    height: 90%;
+    width: 100%;
 
 
 }
 
 #landing-panel .table-of-contents h1 {
+
     font-size: 4rem;
     color: #FFC300;
     margin-bottom: 2rem;
@@ -95,9 +104,10 @@ h2 {
         "project blog"
         "connect connect";
     gap: 5rem;
-    width: 100%;
+    width: 60%;
     margin: auto;
 }
+
 
 .table-of-contents-grid a {
     font-size: 2.5rem;
@@ -116,6 +126,9 @@ h2 {
     cursor: pointer;
     /*  border: solid var(--outer-border-size) #fefefe; */
     border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
     padding: 2rem 1rem;
     transition: border-width 0.4s, box-shadow 0.8s, background-color 0.4s, transform 0.4s ease-in-out;
@@ -123,7 +136,11 @@ h2 {
     background: radial-gradient(circle at center, orange, #FFC300);
 }
 
+.table-of-contents-grid img {
 
+    width: 3rem;
+    height: auto;
+}
 
 .table-of-contents-grid::before {
     transition: 0.3s ease-in-out;
@@ -134,8 +151,8 @@ h2 {
     left: -1.25rem;
 
     bottom: 0;
-    width: 150%;
-    height: 150%;
+    width: 100%;
+    height: 100%;
     background: #FFC300;
     clip-path: polygon(0% 0%, 50% 0.7rem, 0.7rem 0.7rem, 0.7rem 50%);
     z-index: 1;
@@ -1556,6 +1573,16 @@ label {
 @media (max-width: 768px) {
     html {
         font-size: 10px;
+    }
+
+    #table-content-grid {
+        grid-template-areas:
+            "about-me about-me"
+            "project project"
+            "blog blog"
+            "connect connect";
+
+
     }
 
 
