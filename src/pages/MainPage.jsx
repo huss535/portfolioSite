@@ -1,40 +1,31 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useRef, useState } from 'react';
-
-
-import AboutMe from '../sections/AboutMe';
-import Connect from '../sections/Connect';
-import TopNav from '../components/TopNav';
-import Home from '../sections/Home';
-import { useScroll } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import moonIcon from '../assets/dark.svg';
 import sunIcon from '../assets/light.svg';
 
-function MainPage({ isDarkMode, setIsDarkMode }) {
+function MainPage({ isLightMode, setIsLightMode }) {
+
+    const texts = [
+        "Full-Stack Developer",
+        "Writer",
+        "Cloud Enthusiast",
+        "Designer",
+    ];
+
+    const skillsArray = ["Aws", "Firebase", "Terraform",
+        "Flutter", "Dart", "Framer", "React", "HTML", "CSS",
+        "Node", "Postgresql", "Typescript"
+    ]
+
 
     const navigate = useNavigate();
-    const sectionRefs = useRef({
-        home: null,
-        aboutMe: null,
-        projects: null,
-        medium: null,
-        connect: null,
-    });
 
-    // Reference for the entire page
-    const scrollRef = useRef(null);
-
-    // Reference for the top navigation bar
-    const topNavRef = useRef(null);
-
-    // State for scroll progress
-    const [scrollPercent, setScrollPercent] = useState(0);
 
     const [navBg, setNavBg] = useState(false);
-    const [navTextColor, setNavTextColor] = useState("whitesmoke");
-    /*     const [isDarkMode, setIsDarkMode] = useState(true);
-     */
+    /*     const [navTextColor, setNavTextColor] = useState("whitesmoke");
+     */    /*     const [isDarkMode, setIsDarkMode] = useState(true);
+        */
     const changeNavBg = () => {
         window.scrollY >= 20 ? setNavBg(true) : setNavBg(false);
     }
@@ -50,10 +41,10 @@ function MainPage({ isDarkMode, setIsDarkMode }) {
         if (element) {
             if (navBg) {
                 element.style.setProperty("opacity", "1");
-                setNavTextColor("black");
+                /*   setNavTextColor("black"); */
             } else {
                 element.style.setProperty("opacity", "0");
-                setNavTextColor("whitesmoke");
+                /*   setNavTextColor("whitesmoke"); */
             }
 
 
@@ -65,12 +56,12 @@ function MainPage({ isDarkMode, setIsDarkMode }) {
 
     useEffect(() => {
         const root = document.documentElement;
-        if (isDarkMode) {
-            root.classList.add("dark");
+        if (isLightMode) {
+            root.classList.add("light");
         } else {
-            root.classList.remove("dark");
+            root.classList.remove("light");
         }
-    }, [isDarkMode]);
+    }, [isLightMode]);
 
 
 
@@ -81,7 +72,7 @@ function MainPage({ isDarkMode, setIsDarkMode }) {
         <>
             {/* Sticky Navigation Bar */}
 
-            <nav
+            {/* <nav
                 ref={topNavRef}
                 id='top-nav'
 
@@ -103,22 +94,85 @@ function MainPage({ isDarkMode, setIsDarkMode }) {
                 </a>
 
 
-                <div id='switch' onClick={() => { setIsDarkMode((prev) => { return !prev; }) }} >
+                <div id='switch' onClick={() => { setIsLightMode((prev) => { return !prev; }) }} >
                     <img
-                        src={isDarkMode ? moonIcon : sunIcon}
-                        alt={isDarkMode ? 'Dark Mode' : 'Light Mode'}
-                        className={`theme-icon ${isDarkMode ? 'rotate-icon' : ''}`}
+                        src={!isLightMode ? moonIcon : sunIcon}
+                        alt={!isLightMode ? 'Dark Mode' : 'Light Mode'}
+                        className={`theme-icon ${!isLightMode ? 'rotate-icon' : ''}`}
                     />
                 </div>
 
             </nav>
+ */}
 
-            {/* Page Content */}
-            <div ref={scrollRef} id="page">
-                <Home sectionRefs={sectionRefs} />
-                <AboutMe sectionRefs={sectionRefs} />
-                <Connect sectionRefs={sectionRefs} />
+            <div id="page">
+                <div
+
+                    id="home"
+                    className="page-section"
+                >
+
+                    <div className="section-content">
+                        <div className="section-content-text">
+                            <p style={{ fontSize: "1.25rem" }}>
+                                Storytelling is at the heart of everything I do—it's my North Star.
+                                I believe good software gets the job done and delivers value, but great software connects with your audience through a compelling narrative.
+                                I'm captivated by every step of creating an immersive digital experience—from designing a seamless user journey to developing a polished UI and a robust, scalable backend.
+                                I'm also an aspiring content creator because, well... storytelling is in my DNA.
+                            </p>
+                        </div>
+
+
+                        <h2
+
+                            id="first-interest"
+                        >
+                            <span>{texts[0]}</span>
+
+                        </h2>
+                        <div id="second-interest">
+                            <h2
+
+
+                            >
+                                <span>{texts[1]}</span>
+
+                            </h2>
+                            <h2
+
+
+                            >
+                                <span>{texts[2]}</span>
+
+                            </h2>
+                            <div className="dot-background"></div>
+                        </div>
+                        <h2
+
+                            id="fourth-interest"
+                        >
+                            <span>{texts[3]}</span>
+                        </h2>
+                        <div id="skills-body">
+
+
+                            {skillsArray.map((skill, index) => {
+                                return (
+                                    <div className="skill-item" key={index}>
+                                        <img src={`src/assets/skills/${skill}.svg`} />
+
+                                    </div>
+                                )
+                            })}
+
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
+
+
         </>
     );
 }

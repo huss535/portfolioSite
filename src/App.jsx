@@ -8,7 +8,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import LandingPanel from "./pages/LandingPanel";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isLightMode, setIsLightMode] = useState(true);
   const [blogsArray, setBlogsArray] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainPage isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />} />
+        <Route path="/" element={<MainPage isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
         <Route path="/blogs" element={<BlogsPage blogsArray={blogsArray} />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/panel" element={<LandingPanel />} />
