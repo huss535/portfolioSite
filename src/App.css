@@ -114,7 +114,7 @@ h2 {
 
 
 .table-of-contents-grid a {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: var(--color-accent);
     font-family: "Raleway", serif;
     font-optical-sizing: auto;
@@ -134,7 +134,7 @@ h2 {
     align-items: center;
     justify-content: space-around;
     background-color: var(--color-background);
-    padding: 2rem 2rem;
+    padding: 0.5rem 0.5rem;
     transition: border-color 0.5s, box-shadow 0.4s, background-color 0.4s, transform 0.4s ease-in-out;
     border: solid var(--outer-border-size) var(--color-accent);
     /*   background: radial-gradient(circle at center, var(--color-accent-gradient), var(--color-accent)); */
@@ -454,7 +454,8 @@ a:hover {
     align-items: center;
     gap: 2rem;
     margin-block: 3rem;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
 
 
 }
@@ -464,24 +465,26 @@ a:hover {
 
     position: relative;
     display: grid;
-    margin: 2rem;
-    gap: 2rem;
-    grid-template-columns: 0.5fr 2fr 2fr;
+
+    margin-top: 10rem;
+
+    gap: 4rem;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
     grid-template-rows: 0.5fr 1fr 2fr;
     grid-template-areas:
         /*  'navigation navigation navigation' */
-        'interest-2 interest-1 interest-3'
-        'interest-4 main-content main-content'
-        'skills skills skills';
+        'interest-2 interest-1 interest-3 interest-4'
+        'main-content main-content main-content main-content'
+        'skills skills skills skills';
 
     width: 90%;
-    height: auto;
+    height: 100%;
 
 
 
 }
 
-.nav img {
+/* .nav img {
     width: 5rem;
     height: auto;
     filter: var(--svg-filter);
@@ -494,16 +497,33 @@ a:hover {
 }
 
 .nav {
-    /* grid-area: navigation; */
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
     height: auto;
     width: 90%;
+} */
+
+.nav-bar {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    height: auto;
+
+
 }
 
-
+.nav-bar img {
+    width: 2rem;
+    height: auto;
+    filter: var(--svg-filter);
+}
 
 
 #first-interest span,
@@ -854,12 +874,7 @@ a:hover {
 
 
 .card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    justify-content: space-evenly;
-    height: fit-content;
     width: 70%;
     height: 100%;
     background-color: inherit;
@@ -875,7 +890,7 @@ a:hover {
     resize: none;
     font-size: 1rem;
     width: 100%;
-    background-color: inherit;
+    background-color: var(--color-highlight-area);
     color: var(--color-text);
     border-width: var(--outer-border-size);
     border-color: var(--color-text);
@@ -923,8 +938,12 @@ label {
 }
  */
 .project-container {
-
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
     border: solid var(--outer-border-size) var(--color-text);
 
 }
@@ -939,6 +958,11 @@ label {
 
     text-align: left;
     width: 100%;
+
+    /*  background: radial-gradient(circle at center,
+            red,
+            hsl(0, 0%, 100%));
+    background-size: 2px 2px; */
     border-bottom: solid var(--outer-border-size) var(--color-text);
     /* Keep the vertical layout */
 
@@ -947,16 +971,19 @@ label {
 }
 
 .project-container p {
-    padding: 1rem;
+    width: 100%;
+    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+    padding: 2rem;
 }
 
 .projects-links {
-
+    width: 100%;
+    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding: 1rem;
+    padding: 2rem;
     gap: 2rem;
 }
 
@@ -968,80 +995,19 @@ label {
 
  */
 
-.overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 100%;
-    bottom: 0;
-
-
-
-    /* Ensure it takes at least the full height of the viewport */
-    background-color: var(--color-highlight-area-opaque);
-    display: block;
-
-    overflow-y: scroll;
-    /* Enable scrolling for overflow content */
-    z-index: 1000;
-    /* Ensure it's above other content */
-    padding-block: 20rem;
-    transition: 0.5s ease-in-out;
-    box-sizing: border-box;
-}
-
-.close-button {
-    position: absolute;
-    /* Use absolute positioning to keep it in place */
-    top: 1rem;
-    /* Ensure it's near the top */
-    right: 1rem;
-    /* Position it in the top-right corner */
-    color: var(--color-accent);
-    background-color: inherit;
-    border: solid var(--outer-border-size) var(--color-accent);
-    cursor: pointer;
-    font-size: 2.5rem;
-    padding: 0.5rem 1rem;
-    z-index: 1001;
-    /* Higher z-index to stay above other content */
-    transition: 0.3s;
-}
-
-.close-button:hover {
-    opacity: 0.8;
-}
-
-.image-container {
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.image {
-    max-width: 500px;
-    max-height: 600px;
-    height: auto;
-    object-fit: contain;
-    border: solid var(--outer-border-size) var(--color-text);
-    background-color: var(--color-accent);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 
 
 #blogs-page,
-#projects-page {
+#projects-page,
+#connect-page {
+    margin-top: 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    gap: 3rem;
-    margin-block: 2rem;
+    justify-content: space-evenly;
+
+    gap: 5rem;
     min-height: 100vh;
 
 }
@@ -1105,31 +1071,51 @@ label {
 }
 
 .blog-container-content {
+    height: 100%;
+    width: 100%;
     grid-area: body;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+    justify-content: flex-end;
+
+    /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
 
 
 
 }
-
 
 
 
 .blog-container-content h1 {
+    position: relative;
     font-size: 2.5rem;
     padding: 1rem;
     border-bottom: solid var(--outer-border-size) var(--color-text);
-    background-color: var(--color-background);
+    background-color: transparent;
+    /* Ensure transparency */
+    /*  background-color: var(--color-background); */
     color: var(--color-text);
     width: 100%;
     text-align: left;
+}
 
+.blog-container-content p {
+    padding: 2rem;
+    width: 100%;
+    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+}
+
+.link-container {
+
+    padding: 2rem;
+    width: 100%;
+    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
 
 }
+
+
+
 
 /* .blog-container-body {
     display: flex;
@@ -1150,7 +1136,7 @@ label {
 .categories {
 
     position: relative;
-    background-color: none;
+    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
 
     display: flex;
 
@@ -1230,7 +1216,7 @@ label {
 
 @media (max-width: 768px) {
     html {
-        font-size: 10px;
+        font-size: 8px;
     }
 
     #table-content-grid {

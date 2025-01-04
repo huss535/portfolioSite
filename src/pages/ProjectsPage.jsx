@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import moonIcon from '../assets/dark.svg';
 import sunIcon from '../assets/light.svg';
+import TopNav from "../components/TopNav";
 function ProjectsPage(isLightMode, setIsLightMode) {
     const [isOverlayVisible, setOverlayVisible] = useState(false);
     const [currentImages, setCurrentImages] = useState([]);
@@ -59,79 +60,46 @@ function ProjectsPage(isLightMode, setIsLightMode) {
     ];
 
     return (
-        <div id="projects-page">
-            <nav className='nav'>
-                <h1>
-                    Projects
-                </h1>
-                <div className="table-of-contents-grid">
-                    <a
-                        onClick={() => handleNavigation("/")}
-                    >Home</a>
+        <>
+
+            <div className='centered-page'>
+                <div id="projects-page">
+                    <TopNav />
+
+                    {projects.map((project, index) => (
+                        <div key={index} className="project-container">
+                            {/*  <div className="project-container-content"> */}
+                            <h1>{project.title}</h1>
+                            {/* <div className="project-container-body"> */}
+                            <p >{project.description}</p>
+                            <div className="categories">
+                                {project.techStack.map((category, catIndex) => (
+                                    <span key={catIndex} className="category-area">
+                                        {category}
+                                    </span>
+                                ))}
+                            </div>
 
 
-                </div>
-                {/* <div className="table-of-contents-grid">
-                            <a href="#connect">Home</a>
+                            <div className="projects-links">
+                                <div style={{ width: "fit-content" }} className="table-of-contents-grid">
+                                    <a
+                                        onClick={() => window.open(project.githubRepo)}
+
+                                    >Repo</a>
 
 
-                        </div> */}
+                                </div>
+                                <div style={{ width: "fit-content" }} className="table-of-contents-grid">
+                                    <a
+                                        onClick={() => showOverlay(project.images)}
 
-                <div className="table-of-contents-grid" onClick={() => { setIsLightMode((prev) => { return !prev; }) }} >
-
-                    <img
-                        src={!isLightMode ? moonIcon : sunIcon}
-                        alt={!isLightMode ? 'Dark Mode' : 'Light Mode'}
-                        className={`theme-icon ${!isLightMode ? 'rotate-icon' : ''}`}
-                    />
+                                    > Gallery </a>
 
 
-                </div>
-
-
-
-                <div className="table-of-contents-grid">
-                    <a
-
-                        onClick={() => handleNavigation("/blogs")}
-                    > Blogs</a>
-
-
-                </div>
-            </nav>
-            {projects.map((project, index) => (
-                <div key={index} className="project-container">
-                    {/*  <div className="project-container-content"> */}
-                    <h1>{project.title}</h1>
-                    {/* <div className="project-container-body"> */}
-                    <div className="categories">
-                        {project.techStack.map((category, catIndex) => (
-                            <span key={catIndex} className="category-area">
-                                {category}
-                            </span>
-                        ))}
-                    </div>
-
-                    <p >{project.description}</p>
-                    <div className="projects-links">
-                        <div style={{ width: "fit-content" }} className="table-of-contents-grid">
-                            <a
-                                onClick={() => window.open(project.githubRepo)}
-
-                            >Repo</a>
-
-
-                        </div>
-                        <div style={{ width: "fit-content" }} className="table-of-contents-grid">
-                            <a
-                                onClick={() => showOverlay(project.images)}
-
-                            > Gallery </a>
-
-
-                        </div>
-                    </div>
-                    {/* <div className="custom-shadow-button">
+                                </div>
+                            </div>
+                            {/* <div className="custom-shadow-button">
                             <button onClick={() => window.open(project.githubRepo)}><span>Repo</span></button>
                         </div>
                         <br /><br />
@@ -139,23 +107,17 @@ function ProjectsPage(isLightMode, setIsLightMode) {
                             <button onClick={() => showOverlay(project.images)}><span>Gallery</span></button>
                         </div> */}
 
-                    {/*  </div> */}
-                    <br />
-                    <br />
-                </div>
-            ))}
+                            {/*  </div> */}
 
-            {/*  {isOverlayVisible && ( */}
-            <div className="overlay">
-                <button onClick={hideOverlay} className="close-button">X</button>
-                <div className="image-container">
-                    {currentImages.map((image, index) => (
-                        <img key={index} src={image} alt={`Project gallery image ${index}`} className="image" />
+                        </div>
                     ))}
+
+
                 </div>
+
             </div>
-            {/*  )} */}
-        </div>
+            <div className='dot-background'></div>
+        </>
     );
 }
 

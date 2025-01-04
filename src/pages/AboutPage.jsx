@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import moonIcon from '../assets/dark.svg';
 import sunIcon from '../assets/light.svg';
+import TopNav from '../components/TopNav';
 
 function AboutPage({ isLightMode, setIsLightMode }) {
 
@@ -107,9 +108,13 @@ function AboutPage({ isLightMode, setIsLightMode }) {
                 </div>
 
             </nav>
+
+
  */}
+
+            <TopNav />
             <div className='centered-page'>
-                <nav className='nav'>
+                {/* <nav className='nav'>
                     <h1>
                         About Me
                     </h1>
@@ -120,14 +125,8 @@ function AboutPage({ isLightMode, setIsLightMode }) {
 
 
                     </div>
-                    {/* <div className="table-of-contents-grid">
-                            <a href="#connect">Home</a>
-
-
-                        </div> */}
-
-
-                    {/*   <div className="table-of-contents-grid" onClick={() => { setIsLightMode((prev) => { return !prev; }) }} > */}
+                  
+               
                     <div className='theme-icon'>
                         <img
                             onClick={() => { setIsLightMode((prev) => { return !prev; }) }}
@@ -139,7 +138,7 @@ function AboutPage({ isLightMode, setIsLightMode }) {
                     </div>
 
 
-                    {/*  </div> */}
+                  
 
 
 
@@ -151,7 +150,7 @@ function AboutPage({ isLightMode, setIsLightMode }) {
 
 
                     </div>
-                </nav>
+                </nav> */}
 
                 <div id="aboutme-page">
 

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import moonIcon from '../assets/dark.svg';
 import sunIcon from '../assets/light.svg';
+import TopNav from "../components/TopNav";
 
 /* eslint-disable react/prop-types */
 function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
@@ -33,89 +34,62 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
     ];
 
     return (
-        <div id="blogs-page">
-
-            <nav className='nav'>
-                <h1>
-                    Blog
-                </h1>
-                <div className="table-of-contents-grid">
-                    <a
-                        onClick={() => handleNavigation("/")}
-                    >Home</a>
+        <>
+            <TopNav />
+            <div className='centered-page'>
 
 
-                </div>
-                {/* <div className="table-of-contents-grid">
-                            <a href="#connect">Home</a>
+                <div id="blogs-page">
+                    {blogs.map((blog, index) => (
+                        <div key={index} className="blog-container">
+                            <div className="blog-container-content">
+
+                                <h1>{blog.title}</h1>
+                                <p>{blog.description}</p>
+                                <div className="categories">
+                                    {blog.categories.map((category, catIndex) => (
+                                        <span key={catIndex} className="category-area">
+                                            {category}
+                                        </span>
+                                    ))}
+                                    {/* </div> */}
 
 
-                        </div> */}
-
-                <div className="table-of-contents-grid" onClick={() => { setIsLightMode((prev) => { return !prev; }) }} >
-
-                    <img
-                        src={!isLightMode ? moonIcon : sunIcon}
-                        alt={!isLightMode ? 'Dark Mode' : 'Light Mode'}
-                        className={`theme-icon ${!isLightMode ? 'rotate-icon' : ''}`}
-                    />
-
-
-                </div>
-
-
-
-                <div className="table-of-contents-grid">
-                    <a
-
-                        onClick={() => handleNavigation("/connect")}
-                    > Connect</a>
-
-
-                </div>
-            </nav>
-            {blogs.map((blog, index) => (
-                <div key={index} className="blog-container">
-                    <div className="blog-container-content">
-
-                        <h1>{blog.title}</h1>
-                        <div className="categories">
-                            {blog.categories.map((category, catIndex) => (
-                                <span key={catIndex} className="category-area">
-                                    {category}
-                                </span>
-                            ))}
-                            {/* </div> */}
-
-
-                            {/* <div className="custom-shadow-button" >
+                                    {/* <div className="custom-shadow-button" >
                                 <button onClick={() => window.open(blog.link)}>
                                     <span>Read</span>
                                 </button>
                             </div> */}
 
 
+                                </div>
+
+                                {/*    <div className="blog-container-body"> */}
+                                <div className="link-container">
+                                    <div style={{ width: 'fit-content' }} className="table-of-contents-grid">
+                                        <a
+                                            href="#projects"
+                                            onClick={() => window.open(blog.link)}
+                                        > Read More</a>
+
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                            <img src={blog.image_url} alt={blog.title} />
                         </div>
-                        <p style={{ marginBottom: '5%' }}>{blog.description}</p>
-                        {/*    <div className="blog-container-body"> */}
-                        <div className="table-of-contents-grid">
-                            <a
-                                href="#projects"
-                                onClick={() => window.open(blog.link)}
-                            > Read More</a>
+                    ))}
 
 
-                        </div>
-
-                        <br />
-                        <br />
-
-
-                    </div>
-                    <img src={blog.image_url} alt={blog.title} />
                 </div>
-            ))}
-        </div>
+
+            </div>
+            <div className='dot-background'></div>
+        </>
     );
 }
 
