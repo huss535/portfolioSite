@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import TopNav from "../components/TopNav";
+const Connect = () => {
 
-const EmailMeForm = ({ setIsModalOpen, setErrorMessage }) => {
+
     const [formData, setFormData] = useState({ name: "", subject: "", message: "" });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -13,11 +15,6 @@ const EmailMeForm = ({ setIsModalOpen, setErrorMessage }) => {
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent page refresh on submit
 
-        if (!formData.name || !formData.subject || !formData.message) {
-            setErrorMessage("Please fill in all sections");
-            setIsModalOpen(true);
-            return;
-        }
 
         setIsSubmitting(true);
 
@@ -27,13 +24,11 @@ const EmailMeForm = ({ setIsModalOpen, setErrorMessage }) => {
             body_text: formData.message,
         })
             .then(() => {
-                setErrorMessage("Thank you for your message, I'll get back to you as soon as I can :)");
-                setIsModalOpen(true);
+
                 setFormData({ name: "", subject: "", message: "" });
             })
             .catch((error) => {
-                setErrorMessage("There was an error sending your message. Please try again.");
-                setIsModalOpen(true);
+
                 console.error(error);
             })
             .finally(() => {
@@ -41,8 +36,12 @@ const EmailMeForm = ({ setIsModalOpen, setErrorMessage }) => {
             });
     };
 
-    return (
-        <form className="card-container" onSubmit={handleSubmit}>
+
+    return (<div className="centered-page">
+
+        <TopNav />
+
+        <form id="connect-page" className="card-container" onSubmit={handleSubmit}>
             {/*   <label htmlFor="name">Name</label> */}
             <textarea
                 required
@@ -74,13 +73,18 @@ const EmailMeForm = ({ setIsModalOpen, setErrorMessage }) => {
                 placeholder="I want to talk to you about..."
                 aria-label="Enter your message"
             />
-            <div className="custom-shadow-button" type="submit" disabled={isSubmitting}>
-                <button>
-                    <span>{isSubmitting ? "Sending ..." : "Send Email"}</span>
-                </button>
-            </div>
-        </form>
-    );
-};
+            <button className="table-of-contents-grid" type="submit" disabled={isSubmitting}>
 
-export default EmailMeForm;
+                <span>{isSubmitting ? "Sending ..." : "Send Email"}</span>
+
+            </button>
+
+        </form>
+
+        <div className='dot-background'></div>
+
+
+    </div>);
+}
+
+export default Connect;

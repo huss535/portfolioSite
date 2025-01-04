@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
-
-function ProjectsPage() {
+import { useNavigate } from "react-router-dom";
+import moonIcon from '../assets/dark.svg';
+import sunIcon from '../assets/light.svg';
+import TopNav from "../components/TopNav";
+function ProjectsPage(isLightMode, setIsLightMode) {
     const [isOverlayVisible, setOverlayVisible] = useState(false);
     const [currentImages, setCurrentImages] = useState([]);
 
+    const navigate = useNavigate();
 
 
+    const handleNavigation = (route) => {
+        navigate(route);
+    }
 
     const showOverlay = (images) => {
         const element = document.querySelector(".overlay")
@@ -53,53 +60,64 @@ function ProjectsPage() {
     ];
 
     return (
-        <div id="projects-page">
-            {projects.map((project, index) => (
-                <div key={index} className="project-container">
-                    {/*  <div className="project-container-content"> */}
-                    <h1>{project.title}</h1>
-                    <div className="project-container-body">
-                        <div className="categories">
-                            {project.techStack.map((category, catIndex) => (
-                                <span key={catIndex} className="category-area">
-                                    {category}
-                                </span>
-                            ))}
-                        </div>
-                        <div
-                            style={{
-                                height: "100%",
-                                padding: "5%",
-                                display: "flex",
-                                flexDirection: "column",
-                                justifyContent: "space-evenly"
-                            }}
-                        >
-                            <p style={{ marginBottom: "5%" }}>{project.description}</p>
-                            <div className="custom-shadow-button">
-                                <button onClick={() => window.open(project.githubRepo)}><span>Repo</span></button>
-                            </div>
-                            <br /><br />
-                            <div className="custom-shadow-button">
-                                <button onClick={() => showOverlay(project.images)}><span>Gallery</span></button>
-                            </div>
-                        </div>
-                    </div>
+        <>
 
-                </div>
-            ))}
+            <div className='centered-page'>
+                <div id="projects-page">
+                    <TopNav />
 
-            {/*  {isOverlayVisible && ( */}
-            <div className="overlay">
-                <button onClick={hideOverlay} className="close-button">X</button>
-                <div className="image-container">
-                    {currentImages.map((image, index) => (
-                        <img key={index} src={image} alt={`Project gallery image ${index}`} className="image" />
+                    {projects.map((project, index) => (
+                        <div key={index} className="project-container">
+                            {/*  <div className="project-container-content"> */}
+                            <h1>{project.title}</h1>
+                            {/* <div className="project-container-body"> */}
+                            <p >{project.description}</p>
+                            <div className="categories">
+                                {project.techStack.map((category, catIndex) => (
+                                    <span key={catIndex} className="category-area">
+                                        {category}
+                                    </span>
+                                ))}
+                            </div>
+
+
+                            <div className="projects-links">
+                                <div style={{ width: "fit-content" }} className="table-of-contents-grid">
+                                    <a
+                                        onClick={() => window.open(project.githubRepo)}
+
+                                    >Repo</a>
+
+
+                                </div>
+                                <div style={{ width: "fit-content" }} className="table-of-contents-grid">
+                                    <a
+                                        onClick={() => showOverlay(project.images)}
+
+                                    > Gallery </a>
+
+
+                                </div>
+                            </div>
+                            {/* <div className="custom-shadow-button">
+                            <button onClick={() => window.open(project.githubRepo)}><span>Repo</span></button>
+                        </div>
+                        <br /><br />
+                        <div className="custom-shadow-button">
+                            <button onClick={() => showOverlay(project.images)}><span>Gallery</span></button>
+                        </div> */}
+
+                            {/*  </div> */}
+
+                        </div>
                     ))}
+
+
                 </div>
+
             </div>
-            {/*  )} */}
-        </div>
+            <div className='dot-background'></div>
+        </>
     );
 }
 

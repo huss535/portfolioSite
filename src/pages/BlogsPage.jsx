@@ -1,6 +1,17 @@
+import { useNavigate } from "react-router-dom";
+import moonIcon from '../assets/dark.svg';
+import sunIcon from '../assets/light.svg';
+import TopNav from "../components/TopNav";
+
 /* eslint-disable react/prop-types */
-function BlogsPage({ blogsArray }) {
-    console.dir(blogsArray);
+function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
+    const navigate = useNavigate();
+
+
+    const handleNavigation = (route) => {
+        navigate(route);
+    }
+
     const blogs = [
         {
             image_url: "https://img.freepik.com/free-photo/multi-colored-creativity-close-up-human-eye-generated-by-ai_188544-15574.jpg",
@@ -23,37 +34,62 @@ function BlogsPage({ blogsArray }) {
     ];
 
     return (
-        <div id="page">
-            {blogs.map((blog, index) => (
-                <div key={index} className="blog-container">
-                    <div className="blog-container-content">
+        <>
+            <TopNav />
+            <div className='centered-page'>
 
-                        <h1>{blog.title}</h1>
 
-                        <div className="blog-container-body">
-                            <div className="categories">
-                                {blog.categories.map((category, catIndex) => (
-                                    <span key={catIndex} className="category-area">
-                                        {category}
-                                    </span>
-                                ))}
-                            </div>
+                <div id="blogs-page">
+                    {blogs.map((blog, index) => (
+                        <div key={index} className="blog-container">
+                            <div className="blog-container-content">
 
-                            <p style={{ marginBottom: '5%' }}>{blog.description}</p>
-                            <div className="custom-shadow-button" >
+                                <h1>{blog.title}</h1>
+                                <p>{blog.description}</p>
+                                <div className="categories">
+                                    {blog.categories.map((category, catIndex) => (
+                                        <span key={catIndex} className="category-area">
+                                            {category}
+                                        </span>
+                                    ))}
+                                    {/* </div> */}
+
+
+                                    {/* <div className="custom-shadow-button" >
                                 <button onClick={() => window.open(blog.link)}>
                                     <span>Read</span>
                                 </button>
+                            </div> */}
+
+
+                                </div>
+
+                                {/*    <div className="blog-container-body"> */}
+                                <div className="link-container">
+                                    <div style={{ width: 'fit-content' }} className="table-of-contents-grid">
+                                        <a
+                                            href="#projects"
+                                            onClick={() => window.open(blog.link)}
+                                        > Read More</a>
+
+
+                                    </div>
+                                </div>
+
+
+
+
                             </div>
-
-
+                            <img src={blog.image_url} alt={blog.title} />
                         </div>
+                    ))}
 
-                    </div>
-                    <img src={blog.image_url} alt={blog.title} />
+
                 </div>
-            ))}
-        </div>
+
+            </div>
+            <div className='dot-background'></div>
+        </>
     );
 }
 

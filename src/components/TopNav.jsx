@@ -1,29 +1,68 @@
-/* eslint-disable react/prop-types */
-// src/components/TopNav.js
+import { useNavigate } from "react-router-dom";
+import moonIcon from '../assets/dark.svg';
+import sunIcon from '../assets/light.svg';
+const TopNav = ({ isLightMode, setIsLightMode }) => {
+    const navigate = useNavigate();
+    const handleNavigation = (route) => {
+        navigate(route);
+    }
+
+    return (<nav className='nav-bar'>
+        <div className='theme-icon'>
+            <img
+                onClick={() => { setIsLightMode((prev) => { return !prev; }) }}
+                src={!isLightMode ? moonIcon : sunIcon}
+                alt={!isLightMode ? 'Dark Mode' : 'Light Mode'}
+                className={`${!isLightMode ? 'rotate-icon' : ''}`}
+            />
+
+        </div>
 
 
-const TopNav = ({ scrollPosition, sectionRefs }) => {
-    // Convert scrollPosition from 0-1 to 0-100%
-    const scrollPercent = scrollPosition * 100;
+        <div className="table-of-contents-grid">
+            <a
+                onClick={() => handleNavigation("/")}
+            >About me</a>
 
-    const handleScroll = (sectionKey) => {
-        if (sectionRefs.current[sectionKey]) {
-            sectionRefs.current[sectionKey].scrollIntoView({ behavior: 'smooth' });
-        }
-    };
 
-    return (
-        <nav
-            id="top-nav"
+        </div>
+        <div className="table-of-contents-grid">
+            <a
+                onClick={() => handleNavigation("/projects")}
+            >Projects</a>
 
-        >
 
-            <a className="link" href="#projectsSection" onClick={() => handleScroll('projects')}>Projects</a>
-            <a className="link" href="#mediumSection" onClick={() => handleScroll('medium')}>Blog</a>
-            <a className="link" href="#connectSection" onClick={() => handleScroll('connect')}>Connect</a>
+        </div>
+        <div className="table-of-contents-grid">
+            <a
+                onClick={() => handleNavigation("/blogs")}
+            >Blogs</a>
 
-        </nav>
+
+        </div>
+        <div className="table-of-contents-grid">
+            <a
+                onClick={() => handleNavigation("/connect")}
+            >Connect</a>
+
+
+        </div>
+
+
+
+
+
+
+        {/*   <div className="table-of-contents-grid" onClick={() => { setIsLightMode((prev) => { return !prev; }) }} > */}
+
+
+        {/*  </div> */}
+
+
+
+
+    </nav>
     );
-};
+}
 
 export default TopNav;
