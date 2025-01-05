@@ -22,10 +22,10 @@ h2 {
     --color-text: #fefefe;
     --color-accent: #FFC300;
     --color-accent-gradient: rgb(255, 157, 0);
-    --color-highlight-area: #C8102E;
+    --color-highlight-area: #FD1F4A;
     /*     --color-highlight-area-gradient: #FF4500;
  */
-    --color-highlight-area-gradient: #961b2f;
+    --color-highlight-area-gradient: orange;
 
     --svg-filter: invert(1);
     --outer-border-size: 0.4rem;
@@ -122,10 +122,11 @@ h2 {
     font-style: italic;
     text-align: center;
     text-decoration: none;
+    padding: 0.5rem 0.5rem;
 }
 
 .table-of-contents-grid {
-
+    width: fit-content;
     position: relative;
     cursor: pointer;
     /*  border: solid var(--outer-border-size) #fefefe; */
@@ -134,7 +135,7 @@ h2 {
     align-items: center;
     justify-content: space-around;
     background-color: var(--color-background);
-    padding: 0.5rem 0.5rem;
+
     transition: border-color 0.5s, box-shadow 0.4s, background-color 0.4s, transform 0.4s ease-in-out;
     border: solid var(--outer-border-size) var(--color-accent);
     /*   background: radial-gradient(circle at center, var(--color-accent-gradient), var(--color-accent)); */
@@ -158,7 +159,7 @@ h2 {
 
 
 .table-of-contents-grid:hover {
-
+    border-color: transparent;
     background-color: var(--color-accent);
     /*     box-shadow: calc(var(--outer-border-size) * 2) calc(var(--outer-border-size) * 2) 0px var(--color-accent);
  */
@@ -452,8 +453,8 @@ a:hover {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    gap: 2rem;
-    margin-block: 3rem;
+
+    margin-top: 3rem;
     min-height: 100vh;
     width: 100%;
 
@@ -470,7 +471,7 @@ a:hover {
 
     gap: 4rem;
     grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
-    grid-template-rows: 0.5fr 1fr 2fr;
+    grid-template-rows: 1fr 2fr 5fr;
     grid-template-areas:
         /*  'navigation navigation navigation' */
         'interest-2 interest-1 interest-3 interest-4'
@@ -543,7 +544,17 @@ a:hover {
     align-items: center;
     justify-content: center;
     color: var(--color-text);
-    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+    /*     background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+ */
+    /*   background: linear-gradient(#DC143C, #FFA500); */
+
+
+    /*   background: linear-gradient(var(--color-highlight-area), #FFB300); */
+
+    background-color: var(--color-highlight-area);
+
+
+
     overflow: hidden;
     box-sizing: border-box;
     /*     filter: drop-shadow(calc(var(--outer-border-size)) calc(var(--outer-border-size)) 0px var(--color-accent));
@@ -668,7 +679,8 @@ a:hover {
     background-position: center;
     /* Center the background image */
     transform-origin: center;
-    transform: scale(1.5);
+    transform: scale(1.4);
+    opacity: 0.8;
     z-index: -1;
 
 
@@ -682,7 +694,8 @@ a:hover {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+    background-color: var(--color-highlight-area);
+    /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
 
 }
 
@@ -738,44 +751,7 @@ a:hover {
 
 
 
-#connect {
 
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 6fr;
-    grid-template-rows: 9fr 1fr 2fr;
-    grid-template-areas: 'side-bar contact-form'
-        'side-bar contact-form'
-        'side-bar socials'
-
-
-    ;
-    gap: 0;
-
-}
-
-#connect .header {
-
-    grid-area: side-bar;
-    writing-mode: vertical-rl;
-    margin: 0;
-    transform-origin: center;
-    transform: rotate(180deg);
-
-
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-    /*  border-left: solid var(--outer-border-size) var(--color-text); */
-}
-
-#connect .section-content {
-
-    grid-area: contact-form;
-}
 
 
 .svg-area {
@@ -873,20 +849,24 @@ a:hover {
 
 
 
-.card-container {
-
+#connect-page {
+    display: flex;
+    flex-direction: column;
     width: 70%;
-    height: 100%;
+
     background-color: inherit;
     align-self: center;
+    justify-content: space-evenly;
+
+
 }
 
-.card-container label {
+#connect-page label {
     width: 100%;
     text-align: left;
 }
 
-.card-container textarea {
+#connect-page textarea {
     resize: none;
     font-size: 1rem;
     width: 100%;
@@ -897,7 +877,7 @@ a:hover {
     padding: 10px;
 }
 
-.card-container>.custom-shadow-button {
+#connect-page>.custom-shadow-button {
     align-self: flex-start;
 }
 
@@ -920,7 +900,7 @@ a:hover {
 
 
 
-label {
+#connect-page label {
     color: var(--color-background);
 }
 
@@ -972,13 +952,17 @@ label {
 
 .project-container p {
     width: 100%;
-    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+    background-color: var(--color-highlight-area);
+    /*     background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+ */
     padding: 2rem;
 }
 
 .projects-links {
     width: 100%;
-    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+    background-color: var(--color-highlight-area);
+    /*     background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+ */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -999,8 +983,7 @@ label {
 
 
 #blogs-page,
-#projects-page,
-#connect-page {
+#projects-page {
     margin-top: 15rem;
     display: flex;
     flex-direction: column;
@@ -1103,14 +1086,16 @@ label {
 .blog-container-content p {
     padding: 2rem;
     width: 100%;
-    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+    background-color: var(--color-highlight-area);
+    /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
 }
 
 .link-container {
 
     padding: 2rem;
     width: 100%;
-    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+    background-color: var(--color-highlight-area);
+    /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
 
 }
 
@@ -1136,7 +1121,8 @@ label {
 .categories {
 
     position: relative;
-    background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
+    background-color: var(--color-highlight-area);
+    /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
 
     display: flex;
 

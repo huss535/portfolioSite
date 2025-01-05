@@ -41,12 +41,13 @@ const Connect = () => {
 
         <TopNav />
 
-        <form id="connect-page" className="card-container" onSubmit={handleSubmit}>
+        <form id="connect-page" /* className="card-container" */ onSubmit={handleSubmit}>
             {/*   <label htmlFor="name">Name</label> */}
             <textarea
                 required
                 id="name"
                 name="name"
+                rows={1}
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="My name is ...."
@@ -56,6 +57,7 @@ const Connect = () => {
             <textarea
                 required
                 id="subject"
+                rows={1}
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
@@ -67,7 +69,7 @@ const Connect = () => {
                 required
                 id="message"
                 name="message"
-                rows={8}
+                rows={4}
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="I want to talk to you about..."
