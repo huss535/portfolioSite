@@ -68,7 +68,7 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
                                 <div className="link-container">
                                     <div style={{ width: 'fit-content' }} className="table-of-contents-grid">
                                         <a
-                                            href="#projects"
+                                            className="link"
                                             onClick={() => window.open(blog.link)}
                                         > Read More</a>
 

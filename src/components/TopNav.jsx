@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import moonIcon from '../assets/dark.svg';
 import sunIcon from '../assets/light.svg';
 const TopNav = ({ isLightMode, setIsLightMode }) => {
@@ -19,34 +19,42 @@ const TopNav = ({ isLightMode, setIsLightMode }) => {
         </div>
 
 
-        <div className="table-of-contents-grid">
-            <a
-                onClick={() => handleNavigation("/")}
-            >About me</a>
+
+        {/*  <a className="link"
+            onClick={() => handleNavigation("/")}
+        >About me</a> */}
+        <NavLink
+            to="/"
+            className={({ isActive }) => isActive ? "link link-active" : "link"}
+        >
+            About me
+        </NavLink>
+        <NavLink
+            to="/projects"
+            className={({ isActive }) => isActive ? "link link-active" : "link"}
+        >
+            Projects
+        </NavLink>
+        <NavLink
+            to="/blogs"
+            className={({ isActive }) => isActive ? "link link-active" : "link"}
+        >
+            Blogs
+        </NavLink>
+        <NavLink
+            to="/connect"
+            className={({ isActive }) => isActive ? "link link-active" : "link"}
+        >
+            Connect
+        </NavLink>
 
 
-        </div>
-        <div className="table-of-contents-grid">
-            <a
-                onClick={() => handleNavigation("/projects")}
-            >Projects</a>
 
 
-        </div>
-        <div className="table-of-contents-grid">
-            <a
-                onClick={() => handleNavigation("/blogs")}
-            >Blogs</a>
 
 
-        </div>
-        <div className="table-of-contents-grid">
-            <a
-                onClick={() => handleNavigation("/connect")}
-            >Connect</a>
 
 
-        </div>
 
 
 
