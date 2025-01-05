@@ -33,6 +33,7 @@ function ProjectsPage(isLightMode, setIsLightMode) {
     const projects = [
         {
             title: "Weather Wizard",
+            placeholder: "weatherWizard",
             description: "A real-time weather app that provides weather updates, interactive maps, and accurate forecasts, powered by the OpenWeather API.",
             techStack: ["Flutter", "Dart", "OpenWeather API"],
             images: [
@@ -46,6 +47,7 @@ function ProjectsPage(isLightMode, setIsLightMode) {
         },
         {
             title: "Game Of Trivia",
+            placeholder: "gameOfTrivia",
             description: "A real-time multiplayer trivia quiz game where users compete to answer questions correctly within a time limit.",
             techStack: ["React", "Socket.IO", "Node.js", "PostgreSQL"],
             images: [
@@ -82,32 +84,27 @@ function ProjectsPage(isLightMode, setIsLightMode) {
 
 
                             <div className="projects-links">
-                                <div style={{ width: "fit-content" }} className="table-of-contents-grid">
-                                    <a
-                                        onClick={() => window.open(project.githubRepo)}
+                                {/* <div style={{ width: "fit-content" }} className="table-of-contents-grid"> */}
+                                <a
+                                    className="link"
+                                    onClick={() => window.open(project.githubRepo)}
 
-                                    >Repo</a>
-
-
-                                </div>
-                                <div style={{ width: "fit-content" }} className="table-of-contents-grid">
-                                    <a
-                                        onClick={() => showOverlay(project.images)}
-
-                                    > Gallery </a>
+                                >Repo</a>
 
 
-                                </div>
+                                {/*     </div> */}
+                                {/*   <div style={{ width: "fit-content" }} className="table-of-contents-grid"> */}
+                                {/*  <a className="link"
+                                    onClick={() => showOverlay(project.images)}
+
+                                > Gallery </a> */}
+
+
+                                {/*  </div> */}
                             </div>
-                            {/* <div className="custom-shadow-button">
-                            <button onClick={() => window.open(project.githubRepo)}><span>Repo</span></button>
-                        </div>
-                        <br /><br />
-                        <div className="custom-shadow-button">
-                            <button onClick={() => showOverlay(project.images)}><span>Gallery</span></button>
-                        </div> */}
 
-                            {/*  </div> */}
+                            {/*  <img src={`src/assets/project-images/${project.placeholder}.png`} /> */}
+
 
                         </div>
                     ))}

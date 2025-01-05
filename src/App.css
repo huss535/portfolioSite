@@ -53,55 +53,9 @@ h2 {
 
 }
 
-#landing-panel {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--color-background);
-
-}
-
-#landing-panel .hero {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    background-color: var(--color-accent);
-
-    text-align: center;
-    width: fit-content;
-}
-
-.hero h1 {
-    letter-spacing: 0.3rem;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg) scaleX(1);
-    color: var(--color-background);
-
-}
-
-#landing-panel .table-of-contents {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 90%;
-    width: 100%;
 
 
-}
-
-#landing-panel .table-of-contents h1 {
-
-    font-size: 4rem;
-    color: var(--color-accent);
-
-}
-
-#table-content-grid {
+/* #table-content-grid {
     display: grid;
     grid-template-areas:
         "about-me about-me"
@@ -110,36 +64,35 @@ h2 {
     gap: 5rem;
     width: 60%;
     margin: auto;
-}
+} */
 
 
-.table-of-contents-grid a {
-    font-size: 1.5rem;
+/* .table-of-contents-grid */
+.link {
+
     color: var(--color-accent);
-    font-family: "Raleway", serif;
+    /* font-family: "Raleway", serif;
     font-optical-sizing: auto;
     font-weight: 800;
-    font-style: italic;
+    font-style: italic; */
+    font-size: 1.5rem;
     text-align: center;
     text-decoration: none;
-    padding: 0.5rem 0.5rem;
-}
-
-.table-of-contents-grid {
-    width: fit-content;
-    position: relative;
-    cursor: pointer;
-    /*  border: solid var(--outer-border-size) #fefefe; */
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    padding: 0.5rem 1rem;
     background-color: var(--color-background);
-
-    transition: border-color 0.5s, box-shadow 0.4s, background-color 0.4s, transform 0.4s ease-in-out;
     border: solid var(--outer-border-size) var(--color-accent);
-    /*   background: radial-gradient(circle at center, var(--color-accent-gradient), var(--color-accent)); */
+    transition: 0.3s;
 }
+
+.link:hover,
+.link-active {
+    color: var(--color-background);
+    background-color: var(--color-accent);
+    transition: 0.3s;
+}
+
+
+
 
 .theme-icon {
     width: 2rem;
@@ -147,9 +100,7 @@ h2 {
 
 }
 
-.table-of-contents-grid img {
-    width: 3rem;
-}
+
 
 .theme-icon img {
 
@@ -158,33 +109,13 @@ h2 {
 }
 
 
-.table-of-contents-grid:hover {
+/* .table-of-contents-grid:hover {
     border-color: transparent;
     background-color: var(--color-accent);
-    /*     box-shadow: calc(var(--outer-border-size) * 2) calc(var(--outer-border-size) * 2) 0px var(--color-accent);
- */
-}
-
-.table-of-contents-grid:hover a {
-    color: var(--color-background);
-}
+  
+} */
 
 
-.table-of-contents-grid:nth-child(1) {
-    grid-area: about-me;
-}
-
-.table-of-contents-grid:nth-child(2) {
-    grid-area: project;
-}
-
-.table-of-contents-grid:nth-child(3) {
-    grid-area: blog;
-}
-
-.table-of-contents-grid:nth-child(4) {
-    grid-area: connect;
-}
 
 
 html {
@@ -234,24 +165,24 @@ a:hover {
 
 
 
-#home {
+/* #home {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 5fr;
-    /* Sidebar and main content */
+   
     grid-template-rows: auto 1fr 6fr;
-    /* Top-nav, header, and main content */
+   
     grid-template-areas:
         'top-nav top-nav'
         'sidebar main'
         'sidebar main';
 
     height: 100vh;
-    /* Ensure the grid spans the full viewport height */
-}
+    
+} */
 
 /* Sticky Top Navigation Bar */
-#top-nav {
+/* #top-nav {
 
     position: sticky;
     top: 0;
@@ -265,8 +196,8 @@ a:hover {
     height: 70px;
     transition: 0.3s;
 }
-
-#top-nav>a {
+ */
+/* #top-nav>a {
     display: flex;
     color: var(--color-text);
     justify-content: center;
@@ -276,10 +207,10 @@ a:hover {
     height: 100%;
     z-index: 300;
     transition: 0.3s;
-    /*  border: solid 2px var(--color-background); */
-}
 
-#switch {
+} */
+
+/* #switch {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -289,14 +220,13 @@ a:hover {
     height: 100%;
     width: fit-content;
     cursor: pointer;
-}
-
-/* Theme Icon */
+} */
 
 
 
 
-#top-nav>*:not(#top-nav-overlay):nth-child(odd) {
+
+/* #top-nav>*:not(#top-nav-overlay):nth-child(odd) {
     flex: 1;
     height: 100%;
     border-right: solid var(--outer-border-size) var(--color-text);
@@ -313,7 +243,7 @@ a:hover {
 
 
 }
-
+ */
 
 .rotate-icon {
     transform: rotate(360deg);
@@ -321,14 +251,6 @@ a:hover {
 
 
 
-.link {
-
-    align-self: center;
-    text-decoration: none;
-
-    font-size: 2rem;
-
-}
 
 
 .section-header {
@@ -359,54 +281,6 @@ a:hover {
 
 
 
-@keyframes scrolleranimation {
-    0% {
-        transform: scale(1.3) rotate(45deg) translateY(0) translateX(0);
-        opacity: 0;
-    }
-
-    50% {
-        transform: scale(1.3) rotate(45deg) translateY(20px) translateX(20px);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1.3) rotate(45deg) translateY(0) translateX(0);
-        opacity: 0;
-    }
-}
-
-#scroll-indicator {
-
-    padding-block: 2rem;
-    grid-area: indicator;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    color: var(--color-text);
-    height: 100%;
-}
-
-#scroll-indicator span {
-    color: var(--color-accent);
-    font-size: 3rem;
-}
-
-#scroll-indicator div {
-    height: 4rem;
-    width: 4rem;
-    background-color: var(--color-accent);
-    transform: scale(1.3) rotate(45deg);
-    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 85% 85%);
-    /*  animation: scrolleranimation 3s infinite; */
-}
-
-
-
-#svg-image {
-    filter: var(--svg-filter);
-}
 
 
 
@@ -921,7 +795,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 85%;
     height: 100%;
     justify-content: center;
     border: solid var(--outer-border-size) var(--color-text);
@@ -998,7 +872,8 @@ a:hover {
 .blog-container {
 
     display: grid;
-    width: 90%;
+    width: 85%;
+
 
 
     border: solid var(--outer-border-size) var(--color-text);
