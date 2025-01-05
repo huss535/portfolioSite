@@ -5,7 +5,6 @@ import AboutPage from "./pages/AboutPage";
 import './App.css';
 import BlogsPage from "./pages/BlogsPage";
 import ProjectsPage from "./pages/ProjectsPage";
-import LandingPanel from "./pages/LandingPanel";
 import Connect from "./pages/Connect";
 
 function App() {

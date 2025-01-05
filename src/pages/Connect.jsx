@@ -75,13 +75,20 @@ const Connect = () => {
                 placeholder="I want to talk to you about..."
                 aria-label="Enter your message"
             />
-            <button className="table-of-contents-grid" type="submit" disabled={isSubmitting}>
+            <button style={{ width: "fit-content" }} className="link" type="submit" disabled={isSubmitting}>
 
                 <span>{isSubmitting ? "Sending ..." : "Send Email"}</span>
 
             </button>
 
         </form>
+
+
+        <div className="svg-area">
+            <a onClick={() => { window.open("https://github.com/huss535") }}><img src="src/assets/github.svg" /></a>
+            <a onClick={() => { window.open("https://medium.com/@efar3200") }}><img src="src/assets/medium.svg" /></a>
+            <a onClick={() => { window.open("https://www.linkedin.com/in/elhussin-y-2643301a0/") }}><img src="src/assets/linkedin.svg" /></a>
+        </div>
 
         <div className='dot-background'></div>
 

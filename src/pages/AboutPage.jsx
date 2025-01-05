@@ -112,7 +112,7 @@ function AboutPage({ isLightMode, setIsLightMode }) {
 
  */}
 
-            <TopNav />
+            <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
             <div className='centered-page'>
                 {/* <nav className='nav'>
                     <h1>

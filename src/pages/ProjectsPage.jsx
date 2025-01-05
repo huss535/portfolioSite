@@ -70,40 +70,40 @@ function ProjectsPage(isLightMode, setIsLightMode) {
 
                     {projects.map((project, index) => (
                         <div key={index} className="project-container">
-                            {/*  <div className="project-container-content"> */}
-                            <h1>{project.title}</h1>
-                            {/* <div className="project-container-body"> */}
-                            <p >{project.description}</p>
-                            <div className="categories">
-                                {project.techStack.map((category, catIndex) => (
-                                    <span key={catIndex} className="category-area">
-                                        {category}
-                                    </span>
-                                ))}
-                            </div>
+                            <div className="project-container-content">
+                                <h1>{project.title}</h1>
+                                {/* <div className="project-container-body"> */}
+                                <p >{project.description}</p>
+                                <div className="categories">
+                                    {project.techStack.map((category, catIndex) => (
+                                        <span key={catIndex} className="category-area">
+                                            {category}
+                                        </span>
+                                    ))}
+                                </div>
 
 
-                            <div className="projects-links">
-                                {/* <div style={{ width: "fit-content" }} className="table-of-contents-grid"> */}
-                                <a
-                                    className="link"
-                                    onClick={() => window.open(project.githubRepo)}
+                                <div className="projects-links">
+                                    {/* <div style={{ width: "fit-content" }} className="table-of-contents-grid"> */}
+                                    <a
+                                        className="link"
+                                        onClick={() => window.open(project.githubRepo)}
 
-                                >Repo</a>
+                                    >Repo</a>
 
 
-                                {/*     </div> */}
-                                {/*   <div style={{ width: "fit-content" }} className="table-of-contents-grid"> */}
-                                {/*  <a className="link"
+                                    {/*     </div> */}
+                                    {/*   <div style={{ width: "fit-content" }} className="table-of-contents-grid"> */}
+                                    {/*  <a className="link"
                                     onClick={() => showOverlay(project.images)}
 
                                 > Gallery </a> */}
 
 
-                                {/*  </div> */}
+                                </div>
                             </div>
 
-                            {/*  <img src={`src/assets/project-images/${project.placeholder}.png`} /> */}
+                            <img src={`src/assets/project-images/${project.placeholder}.png`} />
 
 
                         </div>
