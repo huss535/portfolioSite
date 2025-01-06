@@ -94,8 +94,11 @@ h2 {
 
 
 
+
+
+
 .theme-icon {
-    width: 2rem;
+    width: fit-content;
 
 
 }
@@ -103,7 +106,7 @@ h2 {
 
 
 .theme-icon img {
-
+    width: 3rem;
     filter: var(--svg-filters);
 
 }
@@ -1176,14 +1179,14 @@ h1 {
     }
 
 
-    .project-container {
 
+
+    .project-container:nth-child(even),
+    .project-container:nth-child(odd) {
         grid-template-columns: 1fr;
-
         grid-template-areas: "project-header"
             "project-body"
             "image";
-
 
 
     }
