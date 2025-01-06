@@ -762,10 +762,9 @@ a:hover {
  */
 .project-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
 
-    grid-template-areas: "project-header image"
-        "project-body image";
+
+
     gap: 1rem;
     width: 90%;
     height: 100%;
@@ -773,6 +772,21 @@ a:hover {
 
 
 }
+
+.project-container:nth-child(even) {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "project-header image"
+        "project-body image";
+
+}
+
+.project-container:nth-child(odd) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "image project-header"
+        "image project-body";
+
+}
+
 
 .project-container img {
     grid-area: image;
