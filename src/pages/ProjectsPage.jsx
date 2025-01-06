@@ -93,13 +93,6 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
                                     >Repo</a>
 
 
-                                    {/*     </div> */}
-                                    {/*   <div style={{ width: "fit-content" }} className="table-of-contents-grid"> */}
-                                    {/*  <a className="link"
-                                    onClick={() => showOverlay(project.images)}
-
-                                > Gallery </a> */}
-
 
                                 </div>
                             </div>
@@ -115,6 +108,7 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
 
             </div>
             <div className='dot-background'></div>
+
         </>
     );
 }
