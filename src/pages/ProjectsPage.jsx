@@ -71,9 +71,9 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
 
                     {projects.map((project, index) => (
                         <div key={index} className="project-container">
+
+                            <h1>{project.title}</h1>
                             <div className="project-container-content">
-                                <h1>{project.title}</h1>
-                                {/* <div className="project-container-body"> */}
                                 <p >{project.description}</p>
                                 <div className="categories">
                                     {project.techStack.map((category, catIndex) => (

@@ -761,11 +761,13 @@ a:hover {
 }
  */
 .project-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    grid-template-areas: "project-header image"
+        "project-body image";
     gap: 1rem;
-    width: 85%;
+    width: 90%;
     height: 100%;
     justify-content: center;
 
@@ -773,12 +775,16 @@ a:hover {
 }
 
 .project-container img {
+    grid-area: image;
     border: solid var(--outer-border-size) var(--color-text);
+
     width: 100%;
     height: auto;
 }
 
 .project-container-content {
+    grid-area: project-body;
+    background-color: var(--color-highlight-area);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -786,9 +792,12 @@ a:hover {
     width: 100%;
     height: 100%;
     border: solid var(--outer-border-size) var(--color-text);
+
+
 }
 
-.project-container-content h1 {
+.project-container h1 {
+    grid-area: project-header;
     display: flex;
     padding: 1rem;
     font-size: 4rem;
@@ -800,13 +809,9 @@ a:hover {
 
     text-align: left;
     width: 100%;
+    border: solid var(--outer-border-size) var(--color-text);
 
-    /*  background: radial-gradient(circle at center,
-            red,
-            hsl(0, 0%, 100%));
-    background-size: 2px 2px; */
-    border-bottom: solid var(--outer-border-size) var(--color-text);
-    /* Keep the vertical layout */
+
 
 
 
@@ -814,17 +819,15 @@ a:hover {
 
 .project-container-content p {
     width: 100%;
-    background-color: var(--color-highlight-area);
-    /*     background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
- */
+
+
     padding: 2rem;
 }
 
 .projects-links {
     width: 100%;
-    background-color: var(--color-highlight-area);
-    /*     background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area));
- */
+
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -852,7 +855,7 @@ a:hover {
     align-items: center;
     justify-content: space-evenly;
 
-    gap: 5rem;
+    gap: 8rem;
     min-height: 100vh;
 
 }
@@ -860,11 +863,11 @@ a:hover {
 .blog-container {
 
     display: grid;
-    width: 85%;
+    width: 90%;
 
 
-
-    border: solid var(--outer-border-size) var(--color-text);
+    gap: 1rem;
+    /*   border: solid var(--outer-border-size) var(--color-text); */
 
 }
 
@@ -874,20 +877,22 @@ a:hover {
 .blog-container:nth-child(even) {
 
     grid-template-columns: 1fr 2fr;
-    grid-template-areas: "image body";
+    grid-template-areas: "image blog-header"
+        "image blog-body"
+
+    ;
 
 
 }
 
-.blog-container:nth-child(even) img {
-    border-right: solid var(--outer-border-size) var(--color-text);
-}
+.blog-container:nth-child(even) img {}
 
 
 
 .blog-container:nth-child(odd) {
     grid-template-columns: 2fr 1fr;
-    grid-template-areas: "body image";
+    grid-template-areas: "blog-header image"
+        "blog-body image";
 }
 
 .blog-container:nth-child(odd) img {
@@ -909,6 +914,7 @@ a:hover {
     height: 100%;
     /* Ensure it takes the full height */
     object-fit: cover;
+    border: solid var(--outer-border-size) var(--color-text);
 
     /* Maintain aspect ratio and fill the container */
 
@@ -919,11 +925,12 @@ a:hover {
 .blog-container-content {
     height: 100%;
     width: 100%;
-    grid-area: body;
+    grid-area: blog-body;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    border: solid var(--outer-border-size) var(--color-text);
 
     /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
 
@@ -933,11 +940,16 @@ a:hover {
 
 
 
-.blog-container-content h1 {
+.blog-container
+
+/* -content */
+h1 {
+    grid-area: blog-header;
     position: relative;
     font-size: 3rem;
     padding: 1rem;
-    border-bottom: solid var(--outer-border-size) var(--color-text);
+    /*  border-bottom: solid var(--outer-border-size) var(--color-text); */
+    border: solid var(--outer-border-size) var(--color-text);
     background-color: transparent;
     /* Ensure transparency */
     background-color: var(--color-background);
@@ -1124,7 +1136,8 @@ a:hover {
 
         grid-template-columns: 1fr;
         grid-template-areas: "image"
-            "body";
+            "blog-header"
+            "blog-body";
     }
 
 
@@ -1134,9 +1147,7 @@ a:hover {
 
     .blog-container:nth-child(odd) img,
     .blog-container:nth-child(even) img {
-        border: none;
-        /* Remove left border */
-        border-bottom: solid var(--outer-border-size) var(--color-text);
+
         width: 100%;
         /* Ensure the image spans the full width */
         box-sizing: border-box;
