@@ -1162,7 +1162,17 @@ h1 {
     }
 
 
+    .project-container {
 
+        grid-template-columns: 1fr;
+
+        grid-template-areas: "project-header"
+            "project-body"
+            "image";
+
+
+
+    }
 
 
 
