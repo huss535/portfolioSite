@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import moonIcon from '../assets/dark.svg';
 import sunIcon from '../assets/light.svg';
 import TopNav from "../components/TopNav";
-function ProjectsPage(isLightMode, setIsLightMode) {
+// eslint-disable-next-line react/prop-types
+function ProjectsPage({ isLightMode, setIsLightMode }) {
     const [isOverlayVisible, setOverlayVisible] = useState(false);
     const [currentImages, setCurrentImages] = useState([]);
 
@@ -66,13 +67,13 @@ function ProjectsPage(isLightMode, setIsLightMode) {
 
             <div className='centered-page'>
                 <div id="projects-page">
-                    <TopNav />
+                    <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
 
                     {projects.map((project, index) => (
                         <div key={index} className="project-container">
+
+                            <h1>{project.title}</h1>
                             <div className="project-container-content">
-                                <h1>{project.title}</h1>
-                                {/* <div className="project-container-body"> */}
                                 <p >{project.description}</p>
                                 <div className="categories">
                                     {project.techStack.map((category, catIndex) => (

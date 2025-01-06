@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -59,14 +61,7 @@ function AboutPage({ isLightMode, setIsLightMode }) {
     }, [navBg]);
 
 
-    useEffect(() => {
-        const root = document.documentElement;
-        if (isLightMode) {
-            root.classList.add("light");
-        } else {
-            root.classList.remove("light");
-        }
-    }, [isLightMode]);
+
 
 
 

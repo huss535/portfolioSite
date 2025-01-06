@@ -35,16 +35,17 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
 
     return (
         <>
-            <TopNav />
+            <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
             <div className='centered-page'>
 
 
                 <div id="blogs-page">
                     {blogs.map((blog, index) => (
                         <div key={index} className="blog-container">
-                            <div className="blog-container-content">
 
-                                <h1>{blog.title}</h1>
+
+                            <h1>{blog.title}</h1>
+                            <div className="blog-container-content">
                                 <p>{blog.description}</p>
                                 <div className="categories">
                                     {blog.categories.map((category, catIndex) => (
