@@ -527,10 +527,10 @@ a:hover {
 
 .dot-background {
     position: absolute;
-    top: -10px;
-    bottom: -10px;
-    right: -10px;
-    left: -10px;
+    top: -3rem;
+    bottom: -3rem;
+    right: -3rem;
+    left: -3rem;
     /*  background-color: var(--color-accent); */
     background: radial-gradient(circle at center, var(--color-accent)30%, var(--color-accent-gradient)70%, var(--color-accent));
 
@@ -553,9 +553,11 @@ a:hover {
     background-position: center;
     /* Center the background image */
     transform-origin: center;
-    transform: scale(1.4);
+    /*   transform: scale(1.4); */
     opacity: 0.8;
     z-index: -1;
+
+
 
 
 
@@ -788,7 +790,9 @@ a:hover {
 .project-container-content h1 {
     display: flex;
     padding: 1rem;
-
+    font-size: 4rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
     justify-content: flex-start;
 
     align-items: center;
@@ -930,12 +934,12 @@ a:hover {
 
 .blog-container-content h1 {
     position: relative;
-    font-size: 2.5rem;
+    font-size: 3rem;
     padding: 1rem;
     border-bottom: solid var(--outer-border-size) var(--color-text);
     background-color: transparent;
     /* Ensure transparency */
-    /*  background-color: var(--color-background); */
+    background-color: var(--color-background);
     color: var(--color-text);
     width: 100%;
     text-align: left;

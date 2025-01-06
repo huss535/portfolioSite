@@ -10,6 +10,14 @@ import Connect from "./pages/Connect";
 function App() {
   const [isLightMode, setIsLightMode] = useState(false);
   const [blogsArray, setBlogsArray] = useState([]);
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isLightMode) {
+      root.classList.add("light");
+    } else {
+      root.classList.remove("light");
+    }
+  }, [isLightMode]);
 
   /*  useEffect(() => {
      axios
@@ -30,7 +38,7 @@ function App() {
         <Route path="/" element={<AboutPage isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
         <Route path="/blogs" element={<BlogsPage blogsArray={blogsArray} isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
         <Route path="/projects" element={<ProjectsPage isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
-        <Route path="/connect" element={<Connect />} />
+        <Route path="/connect" element={<Connect isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
 
       </Routes>
     </BrowserRouter>

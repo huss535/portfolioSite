@@ -35,7 +35,7 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
 
     return (
         <>
-            <TopNav />
+            <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
             <div className='centered-page'>
 
 

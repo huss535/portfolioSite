@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import axios from "axios";
 import TopNav from "../components/TopNav";
-const Connect = () => {
+const Connect = ({ isLightMode, setIsLightMode }) => {
 
 
     const [formData, setFormData] = useState({ name: "", subject: "", message: "" });
@@ -39,7 +40,7 @@ const Connect = () => {
 
     return (<div className="centered-page">
 
-        <TopNav />
+        <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
 
         <form id="connect-page" /* className="card-container" */ onSubmit={handleSubmit}>
             {/*   <label htmlFor="name">Name</label> */}
