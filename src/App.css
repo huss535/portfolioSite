@@ -22,7 +22,7 @@ h2 {
     --color-text: #fefefe;
     --color-accent: #FFC300;
     --color-accent-gradient: rgb(255, 157, 0);
-    --color-highlight-area: #FD1F4A;
+    --color-highlight-area: #B7410E;
     /*     --color-highlight-area-gradient: #FF4500;
  */
     --color-highlight-area-gradient: orange;
@@ -134,6 +134,7 @@ h2 {
 }
 
 p {
+    font-size: 1.75rem;
     margin: 0;
     color: var(--color-text);
 }
@@ -142,7 +143,7 @@ p,
 a,
 span {
     line-height: 2rem;
-    font-size: 1rem;
+
     font-family: "League Spartan", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -553,7 +554,7 @@ a:hover {
     background-position: center;
     /* Center the background image */
     transform-origin: center;
-    /*   transform: scale(1.4); */
+    transform: scale(1);
     opacity: 0.8;
     z-index: -1;
 
@@ -992,8 +993,9 @@ a:hover {
 
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 2rem;
     width: 100%;
 
     z-index: 1;
@@ -1007,24 +1009,22 @@ a:hover {
 
 
 .category-area {
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
     user-select: none;
 
-
-    text-align: center;
-
-    background-color: transparent;
-    padding-block: 2rem;
+    padding: 0.25rem 0.5rem;
     height: 100%;
 
     font-size: 1.25rem;
-    color: var(--color-accent);
-    font-weight: 900;
-
-
-
-
-
+    color: var(--color-background);
+    background-color: var(--color-accent);
+    border: solid calc(var(--outer-border-size)/2) var(--color-background);
+    font-weight: 700;
+    z-index: 3;
 }
 
 

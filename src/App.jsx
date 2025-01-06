@@ -19,18 +19,18 @@ function App() {
     }
   }, [isLightMode]);
 
-  /*  useEffect(() => {
-     axios
-       .get("https://n66mnx3j52.execute-api.us-east-1.amazonaws.com/getBlogs")
-       .then((response) => {
-         setBlogsArray(response.data || []);
- 
-       })
-       .catch((error) => {
-         console.error("Error fetching blogs:", error);
- 
-       });
-   }, []); */
+  /*   useEffect(() => {
+      axios
+        .get("https://n66mnx3j52.execute-api.us-east-1.amazonaws.com/getBlogs")
+        .then((response) => {
+          setBlogsArray(response.data || []);
+  
+        })
+        .catch((error) => {
+          console.error("Error fetching blogs:", error);
+  
+        });
+    }, []); */
   return (
     <BrowserRouter>
       <Routes>
