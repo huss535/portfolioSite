@@ -45,7 +45,7 @@ const TopNav = ({ isLightMode, setIsLightMode }) => {
             to="/connect"
             className={({ isActive }) => isActive ? "link link-active" : "link"}
         >
-            Connect
+            Contact
         </NavLink>
 
 
