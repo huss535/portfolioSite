@@ -314,18 +314,7 @@ a:hover {
 
 
 
-/* .section-content {
 
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    position: relative;
-    text-align: left;
-    margin-inline: 0;
-
-
-} */
 
 
 .centered-page {
@@ -334,7 +323,7 @@ a:hover {
     justify-content: space-evenly;
     align-items: center;
 
-    margin-top: 3rem;
+
     min-height: 100vh;
     width: 100%;
 
@@ -347,8 +336,8 @@ a:hover {
     position: relative;
     display: grid;
 
-    margin-top: 10rem;
-
+    margin-top: 15rem;
+    width: 90%;
     gap: 4rem;
     grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
     grid-template-rows: 1fr 2fr 5fr;
@@ -358,7 +347,7 @@ a:hover {
         'main-content main-content main-content main-content'
         'skills skills skills skills';
 
-    width: 90%;
+
     height: 100%;
 
 
@@ -560,7 +549,7 @@ a:hover {
     /* Center the background image */
     transform-origin: center;
     transform: scale(1);
-    opacity: 0.6;
+    opacity: 0.8;
 
     z-index: -1;
 
@@ -639,17 +628,18 @@ a:hover {
 
 .svg-area {
 
-
+    grid-area: socials;
     position: relative;
     overflow: hidden;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 50%;
-
-
+    width: 100%;
+    padding: 1rem;
+    border: solid var(--outer-border-size) var(--color-text);
+    background-color: var(--color-highlight-area);
 }
 
 
@@ -666,9 +656,7 @@ a:hover {
 
 
 .svg-area a {
-    background-color: var(--color-background);
-    padding: 1rem;
-    border: solid var(--outer-border-size) var(--color-text);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -678,13 +666,10 @@ a:hover {
 
 .svg-area img {
 
-    /*   padding: 1rem; */
-    width: 3rem;
-    height: auto;
-    /*  transition: 0.3s; */
 
-    /*  background-color: var(--color-text);
-    border: solid var(--outer-border-size) var(--color-background); */
+    width: 4rem;
+    height: auto;
+
     filter: var(--svg-filter);
 
 }
@@ -692,41 +677,54 @@ a:hover {
 
 
 
+#contact-page {
+    display: grid;
+    gap: 1rem !important;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas: "call-for-action socials"
+        "contact-form socials"
+        "contact-form socials";
+}
+
+#contact-page h1 {
+    border: solid var(--outer-border-size) var(--color-text);
+    background-color: var(--color-highlight-area);
+    grid-area: call-for-action;
+}
 
 
-
-
-
-#connect-page {
-    margin-top: 15rem;
+#contact-form {
+    grid-area: contact-form;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 50%;
-    gap: 4rem;
-
-
+    width: 100%;
+    gap: 1rem;
+    padding: 2rem;
+    border: solid var(--outer-border-size) var(--color-text);
+    background-color: var(--color-highlight-area);
 }
 
-#connect-page label {
+#contact-form label {
     width: 100%;
     text-align: left;
 }
 
-#connect-page textarea {
+#contact-form textarea {
     resize: none;
     font-size: 1rem;
     width: 100%;
-    background-color: var(--color-background);
-    color: var(--color-text);
+    background-color: var(--color-accent);
+    color: var(--color-background);
 
-    border: solid calc(var(--outer-border-size)/2) var(--color-accent);
+    border: solid calc(var(--outer-border-size)/2) var(--color-background);
 
     padding: 1rem;
 }
 
-#connect-page>button {
+#contact-form>button {
     cursor: pointer;
     align-self: flex-start;
 }
@@ -735,7 +733,7 @@ a:hover {
     font-family: "Carme", sans-serif;
     font-weight: lighter;
     font-style: normal;
-    color: var(--color-text);
+    color: var(--color-background);
     opacity: 1;
     /* Firefox */
 }
@@ -745,12 +743,12 @@ a:hover {
     font-family: "Carme", sans-serif;
     font-weight: lighter;
     font-style: normal;
-    color: var(--color-text);
+    color: var(--color-background);
 }
 
 
 
-#connect-page label {
+#contact-form label {
     color: var(--color-background);
 }
 
@@ -871,13 +869,14 @@ a:hover {
 
 
 #blogs-page,
-#projects-page {
+#projects-page,
+#contact-page {
     margin-top: 15rem;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-
+    justify-content: flex-start; */
+    width: 90%;
     gap: 8rem;
     min-height: 100vh;
 
