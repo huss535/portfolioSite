@@ -46,34 +46,34 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
 
             <h1>Reach out</h1>
             <form id="contact-form" /* className="card-container" */ onSubmit={handleSubmit}>
-                {/*   <label htmlFor="name">Name</label> */}
+                <label htmlFor="name">Name</label>
                 <textarea
                     required
                     id="name"
                     name="name"
-                    rows={1}
+                    rows={2}
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="My name is ...."
                     aria-label="Enter your name"
                 />
-                {/*  <label htmlFor="subject">Email</label> */}
+                <label htmlFor="subject">Email</label>
                 <textarea
                     required
                     id="subject"
-                    rows={1}
+                    rows={2}
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="My email is..."
                     aria-label="Enter the subject"
                 />
-                {/*  <label htmlFor="message">Message</label> */}
+                <label htmlFor="message">Message</label>
                 <textarea
                     required
                     id="message"
                     name="message"
-                    rows={4}
+                    rows={5}
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="I want to talk to you about..."
