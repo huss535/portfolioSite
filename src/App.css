@@ -533,7 +533,7 @@ a:hover {
     right: -3rem;
     left: -3rem;
     /*  background-color: var(--color-accent); */
-    background: radial-gradient(circle at center, var(--color-accent)30%, var(--color-accent-gradient)70%, var(--color-accent));
+    background: radial-gradient(circle at center, var(--color-accent) 20%, red 50%, red 100%);
 
 
     mask-image: url("src/assets/background.svg");
@@ -644,8 +644,8 @@ a:hover {
     align-items: center;
     width: 100%;
     padding: 1rem;
-    border: solid var(--outer-border-size) var(--color-text);
-    background-color: var(--color-highlight-area);
+    /*    border: solid var(--outer-border-size) var(--color-text);
+    background-color: var(--color-highlight-area); */
 }
 
 
@@ -659,10 +659,21 @@ a:hover {
 .svg-area a {
 
     display: flex;
+    border: solid var(--outer-border-size) var(--color-accent);
+    background-color: var(--color-background);
+    padding: 1rem;
     justify-content: center;
     align-items: center;
     transition: 0.4s;
 
+}
+
+.svg-area a:hover .svg-icon {
+    background-color: var(--color-background);
+}
+
+.svg-area a:hover {
+    background-color: var(--color-accent);
 }
 
 /* .svg-area a:hover {
@@ -685,6 +696,7 @@ a:hover {
     height: 4rem;
     background-color: var(--color-accent);
     mask-image: url("./assets/medium.svg");
+    transition: 0.4s;
 
 }
 
@@ -721,11 +733,11 @@ a:hover {
     margin-top: 15rem;
     width: 80%;
 
-    height: 70vh;
+    height: 80vh;
     gap: 1rem !important;
     grid-template-rows: 1fr 5fr 1fr;
     grid-template-columns: 6fr 1fr;
-    grid-template-areas: "call-for-action socials"
+    grid-template-areas: "call-for-action call-for-action"
         "contact-form socials"
         "contact-form socials";
 }
@@ -764,6 +776,7 @@ a:hover {
     color: var(--color-text);
     width: 100%;
     text-align: left;
+
 
     font-weight: 700;
 }
