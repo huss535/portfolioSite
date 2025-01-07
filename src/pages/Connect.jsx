@@ -78,7 +78,7 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
             />
             <button style={{ width: "fit-content" }} className="link" type="submit" disabled={isSubmitting}>
 
-                <span>{isSubmitting ? "Sending ..." : "Send Email"}</span>
+                <span>{isSubmitting ? "Sending ..." : "Send"}</span>
 
             </button>
 
