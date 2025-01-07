@@ -211,7 +211,7 @@ function AboutPage({ isLightMode, setIsLightMode }) {
 
                 </div>
                 <div className='dot-background'></div>
-                <img className='background-icon' src='src/assets/logo.svg' />
+
             </div>
 
 

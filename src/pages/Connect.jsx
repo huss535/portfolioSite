@@ -42,53 +42,57 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
 
         <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
 
-        <form id="connect-page" /* className="card-container" */ onSubmit={handleSubmit}>
-            {/*   <label htmlFor="name">Name</label> */}
-            <textarea
-                required
-                id="name"
-                name="name"
-                rows={1}
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="My name is ...."
-                aria-label="Enter your name"
-            />
-            {/*  <label htmlFor="subject">Email</label> */}
-            <textarea
-                required
-                id="subject"
-                rows={1}
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="My email is..."
-                aria-label="Enter the subject"
-            />
-            {/*  <label htmlFor="message">Message</label> */}
-            <textarea
-                required
-                id="message"
-                name="message"
-                rows={4}
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="I want to talk to you about..."
-                aria-label="Enter your message"
-            />
-            <button style={{ width: "fit-content" }} className="link" type="submit" disabled={isSubmitting}>
+        <div id="contact-page">
 
-                <span>{isSubmitting ? "Sending ..." : "Send"}</span>
+            <h1>Reach out</h1>
+            <form id="contact-form" /* className="card-container" */ onSubmit={handleSubmit}>
+                {/*   <label htmlFor="name">Name</label> */}
+                <textarea
+                    required
+                    id="name"
+                    name="name"
+                    rows={1}
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="My name is ...."
+                    aria-label="Enter your name"
+                />
+                {/*  <label htmlFor="subject">Email</label> */}
+                <textarea
+                    required
+                    id="subject"
+                    rows={1}
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="My email is..."
+                    aria-label="Enter the subject"
+                />
+                {/*  <label htmlFor="message">Message</label> */}
+                <textarea
+                    required
+                    id="message"
+                    name="message"
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="I want to talk to you about..."
+                    aria-label="Enter your message"
+                />
+                <button style={{ width: "fit-content" }} className="link" type="submit" disabled={isSubmitting}>
 
-            </button>
+                    <span>{isSubmitting ? "Sending ..." : "Send"}</span>
 
-        </form>
+                </button>
+
+            </form>
 
 
-        <div className="svg-area">
-            <a onClick={() => { window.open("https://github.com/huss535") }}><img src="src/assets/github.svg" /></a>
-            <a onClick={() => { window.open("https://medium.com/@efar3200") }}><img src="src/assets/medium.svg" /></a>
-            <a onClick={() => { window.open("https://www.linkedin.com/in/elhussin-y-2643301a0/") }}><img src="src/assets/linkedin.svg" /></a>
+            <div className="svg-area">
+                <a onClick={() => { window.open("https://github.com/huss535") }}><img src="src/assets/github.svg" /></a>
+                <a onClick={() => { window.open("https://medium.com/@efar3200") }}><img src="src/assets/medium.svg" /></a>
+                <a onClick={() => { window.open("https://www.linkedin.com/in/elhussin-y-2643301a0/") }}><img src="src/assets/linkedin.svg" /></a>
+            </div>
         </div>
 
         <div className='dot-background'></div>
