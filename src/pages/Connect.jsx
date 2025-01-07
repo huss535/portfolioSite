@@ -81,7 +81,7 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
                 />
                 <button style={{ width: "fit-content" }} className="link" type="submit" disabled={isSubmitting}>
 
-                    <span>{isSubmitting ? "Sending ..." : "Send"}</span>
+                    {isSubmitting ? "Sending ..." : "Send"}
 
                 </button>
 
@@ -89,9 +89,21 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
 
 
             <div className="svg-area">
-                <a onClick={() => { window.open("https://github.com/huss535") }}><img src="src/assets/github.svg" /></a>
-                <a onClick={() => { window.open("https://medium.com/@efar3200") }}><img src="src/assets/medium.svg" /></a>
-                <a onClick={() => { window.open("https://www.linkedin.com/in/elhussin-y-2643301a0/") }}><img src="src/assets/linkedin.svg" /></a>
+
+
+
+                <a href="https://github.com/huss535" target="_blank" rel="noopener noreferrer">
+                    <div className="svg-icon github"></div>
+                    {/* <img src="src/assets/github.svg" /> */}
+                </a>
+                <a href="https://medium.com/@efar3200" target="_blank" rel="noopener noreferrer" >
+                    {/* <img src="src/assets/medium.svg" /> */}
+                    <div className="svg-icon medium"></div>
+                </a>
+                <a href="https://www.linkedin.com/in/elhussin-y-2643301a0/" target="_blank" rel="noopener noreferrer" >
+                    {/* <img src="src/assets/linkedin.svg" /> */}
+                    <div className="svg-icon linkedin"></div>
+                </a>
             </div>
         </div>
 

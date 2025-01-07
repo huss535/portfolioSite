@@ -48,7 +48,7 @@ h2 {
     /* Bright white for light mode */
     --color-text: #1a1a1a;
     /* Dark gray for good contrast */
-    --color-accent: #FF1493;
+    --color-accent: #FF13F0;
     --color-accent-gradient: #C01074;
     --color-highlight-area: #1E90FF;
 
@@ -136,7 +136,7 @@ html {
 }
 
 h1 {
-    color: var(--color-accent);
+
     margin: 0;
 }
 
@@ -600,7 +600,7 @@ a:hover {
  */
 
 
-/* #bottom-home div, */
+
 #skills-body {
     position: relative;
     grid-area: skills;
@@ -656,11 +656,6 @@ a:hover {
 
 
 
-
-
-
-
-
 .svg-area a {
 
     display: flex;
@@ -681,10 +676,43 @@ a:hover {
     width: 5rem;
     height: auto;
 
-    filter: var(--svg-filter);
+
 
 }
 
+.svg-icon.medium {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-accent);
+    mask-image: url("./assets/medium.svg");
+
+}
+
+.svg-icon.github {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-accent);
+    mask-image: url("./assets/github.svg");
+
+}
+
+.svg-icon.linkedin {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-accent);
+    mask-image: url("./assets/linkedin.svg");
+
+}
+
+
+.svg-icon {
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
 
 
 
@@ -706,6 +734,7 @@ a:hover {
     display: flex;
     align-items: center;
     text-align: left;
+
     width: 100%;
     height: 100%;
     border: solid var(--outer-border-size) var(--color-text);
@@ -732,7 +761,7 @@ a:hover {
 #contact-form label {
     font-family: "Raleway", serif;
     font-size: 1.5rem;
-    color: var(--color-accent);
+    color: var(--color-text);
     width: 100%;
     text-align: left;
 
