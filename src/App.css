@@ -6,17 +6,22 @@
 
 }
 
-html {
-    font-family: "Raleway", serif;
-}
+html {}
 
 h1,
-h2 {
-    font-family: "Raleway", serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: italic;
+h2,
+a,
+span,
+label,
+button {
+    font-family: "Bangers", serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.1rem;
+}
 
+h1 {
+    font-size: 5rem;
 
 }
 
@@ -76,10 +81,7 @@ h2 {
 .link {
 
     color: var(--color-accent);
-    /* font-family: "Raleway", serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: italic; */
+
     font-size: 1.5rem;
     text-align: center;
     text-decoration: none;
@@ -144,31 +146,23 @@ p {
 
 
 p {
-    font-size: 1.5rem;
-    line-height: 4rem;
-
+    font-size: 1.75rem;
+    line-height: 5rem;
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
     color: var(--color-text);
 }
 
-/* p,
-a,
-span {
-    line-height: 2rem;
-
-    font-family: "League Spartan", serif;
+textarea {
+    font-family: "Raleway", serif;
     font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+    font-weight: 600;
+    font-style: italic;
 
-} */
-
-/* h1 {
-    font-size: 5rem;
 }
 
-h2 {
-    font-size: 2.5rem;
-} */
 
 a:hover {
     cursor: pointer;
@@ -177,85 +171,7 @@ a:hover {
 
 
 
-/* #home {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-   
-    grid-template-rows: auto 1fr 6fr;
-   
-    grid-template-areas:
-        'top-nav top-nav'
-        'sidebar main'
-        'sidebar main';
 
-    height: 100vh;
-    
-} */
-
-/* Sticky Top Navigation Bar */
-/* #top-nav {
-
-    position: sticky;
-    top: 0;
-    z-index: 300;
-    display: flex;
-    justify-content: space-around;
-    background-color: var(--color-background);
-
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-    height: 70px;
-    transition: 0.3s;
-}
- */
-/* #top-nav>a {
-    display: flex;
-    color: var(--color-text);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex: 1;
-    height: 100%;
-    z-index: 300;
-    transition: 0.3s;
-
-} */
-
-/* #switch {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex: 0.5;
-    z-index: 300;
-    height: 100%;
-    width: fit-content;
-    cursor: pointer;
-} */
-
-
-
-
-
-/* #top-nav>*:not(#top-nav-overlay):nth-child(odd) {
-    flex: 1;
-    height: 100%;
-    border-right: solid var(--outer-border-size) var(--color-text);
-    border-left: solid var(--outer-border-size) var(--color-text);
-
-
-    transition: 0.3s;
-
-
-}
-
-#top-nav>* {
-    border-bottom: solid var(--outer-border-size) var(--color-text);
-
-
-}
- */
 
 .rotate-icon {
     transform: rotate(360deg);
@@ -361,7 +277,7 @@ a:hover {
 }
 
 #my-name {
-    font-size: 3rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -651,7 +567,7 @@ a:hover {
 }
 
 #contact-form label {
-    font-family: "Raleway", serif;
+
     font-size: 1.5rem;
     color: var(--color-text);
     width: 100%;
@@ -680,8 +596,9 @@ a:hover {
 
 ::placeholder {
     font-family: "Raleway", serif;
-
-    font-weight: 200;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
 
     color: var(--color-background);
 
@@ -691,8 +608,9 @@ a:hover {
 ::-ms-input-placeholder {
     /* Edge 12 -18 */
     font-family: "Raleway", serif;
-
-    font-weight: 200;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
     color: var(--color-background);
 }
 
