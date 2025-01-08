@@ -59,7 +59,7 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
             <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
 
             <div id="contact-page">
-                <h1>Reach out for questions</h1>
+                <h1>Any questions, feedback, or just want to say hi? Let's talk!</h1>
                 <form id="contact-form" onSubmit={handleSubmit}>
                     <label htmlFor="name">Name</label>
                     <textarea
