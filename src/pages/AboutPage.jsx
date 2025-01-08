@@ -9,12 +9,7 @@ import TopNav from '../components/TopNav';
 
 function AboutPage({ isLightMode, setIsLightMode }) {
 
-    const texts = [
-        "Full-Stack Developer",
-        "Writer",
-        "Cloud Enthusiast",
-        "Designer",
-    ];
+
 
     const skillsArray = ["Aws", "Firebase", "Terraform",
         "Flutter", "Dart", "Framer", "React", "HTML", "CSS",
@@ -70,42 +65,6 @@ function AboutPage({ isLightMode, setIsLightMode }) {
 
     return (
         <>
-            {/* Sticky Navigation Bar */}
-
-            {/* <nav
-                ref={topNavRef}
-                id='top-nav'
-
-
-            >
-                <div id='top-nav-overlay'
-
-                >
-
-                </div>
-                <a onClick={() => { navigate("/projects") }} className="link">
-                    Home
-                </a>
-                <a onClick={() => { navigate("/projects") }} className="link">
-                    Projects
-                </a>
-                <a onClick={() => { navigate("/blogs") }} className="link">
-                    Blog
-                </a>
-
-
-                <div id='switch' onClick={() => { setIsLightMode((prev) => { return !prev; }) }} >
-                    <img
-                        src={!isLightMode ? moonIcon : sunIcon}
-                        alt={!isLightMode ? 'Dark Mode' : 'Light Mode'}
-                        className={`theme-icon ${!isLightMode ? 'rotate-icon' : ''}`}
-                    />
-                </div>
-
-            </nav>
-
-
- */}
 
             <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
             <div className='centered-page'>
@@ -159,9 +118,11 @@ function AboutPage({ isLightMode, setIsLightMode }) {
                         I'm also an aspiring content creator because, well... storytelling is in my DNA.
                     </p>
 
+                    <h2 id='my-name'>Elhussin Farah</h2>
 
 
-                    <h2
+
+                    {/*  <h2
 
                         id="first-interest"
                     >
@@ -190,7 +151,7 @@ function AboutPage({ isLightMode, setIsLightMode }) {
                         id="fourth-interest"
                     >
                         <span>{texts[3]}</span>
-                    </h2>
+                    </h2> */}
                     <div id="skills-body">
 
 
