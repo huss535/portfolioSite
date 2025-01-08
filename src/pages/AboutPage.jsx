@@ -118,7 +118,7 @@ function AboutPage({ isLightMode, setIsLightMode }) {
                         I'm also an aspiring content creator because, well... storytelling is in my DNA.
                     </p>
 
-                    <h2 id='my-name'>Elhussin Farah</h2>
+                    <h1 id='my-name'>Elhussin Farah</h1>
 
 
 
