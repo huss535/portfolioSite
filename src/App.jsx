@@ -1,11 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import './App.css';
 import axios from "axios";
 import { useState, useEffect } from "react";
-import AboutPage from "./pages/AboutPage";
-import './App.css';
-import BlogsPage from "./pages/BlogsPage";
-import ProjectsPage from "./pages/ProjectsPage";
-import Connect from "./pages/Connect";
+import AnimatedRoutes from "./components/AnimatedRoutes";
+import TopNav from "./components/TopNav";
 
 function App() {
   const [isLightMode, setIsLightMode] = useState(false);
@@ -33,14 +31,16 @@ function App() {
     }, []); */
   return (
     <BrowserRouter>
-      <Routes>
-        {/* <Route path="/" element={<LandingPanel />} /> */}
+      <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
+      {/*  <Routes>
+     
         <Route path="/" element={<AboutPage isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
         <Route path="/blogs" element={<BlogsPage blogsArray={blogsArray} isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
         <Route path="/projects" element={<ProjectsPage isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
         <Route path="/connect" element={<Connect isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
 
-      </Routes>
+      </Routes> */}
+      <AnimatedRoutes blogsArray={blogsArray} isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
     </BrowserRouter>
   );
 }

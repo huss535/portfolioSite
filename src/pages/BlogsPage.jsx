@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import moonIcon from '../assets/dark.svg';
 import sunIcon from '../assets/light.svg';
 import TopNav from "../components/TopNav";
+import { motion } from "framer-motion";
 
 /* eslint-disable react/prop-types */
 function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
@@ -35,8 +36,12 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
 
     return (
         <>
-            <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
-            <div className='centered-page'>
+            {/*    <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} /> */}
+            <motion.div className='centered-page'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+            >
 
 
                 <div id="blogs-page">
@@ -88,7 +93,7 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
 
                 </div>
 
-            </div>
+            </motion.div>
             <div className='dot-background'></div>
         </>
     );

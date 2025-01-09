@@ -3,9 +3,9 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import moonIcon from '../assets/dark.svg';
-import sunIcon from '../assets/light.svg';
+
 import TopNav from '../components/TopNav';
+import { motion } from 'framer-motion';
 
 function AboutPage({ isLightMode, setIsLightMode }) {
 
@@ -66,45 +66,14 @@ function AboutPage({ isLightMode, setIsLightMode }) {
     return (
         <>
 
-            <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
-            <div className='centered-page'>
-                {/* <nav className='nav'>
-                    <h1>
-                        About Me
-                    </h1>
-                    <div className="table-of-contents-grid">
-                        <a
-                            onClick={() => handleNavigation("/")}
-                        >Home</a>
+            {/*  <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} /> */}
+            <motion.div className='centered-page'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
 
+            >
 
-                    </div>
-                  
-               
-                    <div className='theme-icon'>
-                        <img
-                            onClick={() => { setIsLightMode((prev) => { return !prev; }) }}
-                            src={!isLightMode ? moonIcon : sunIcon}
-                            alt={!isLightMode ? 'Dark Mode' : 'Light Mode'}
-                            className={`${!isLightMode ? 'rotate-icon' : ''}`}
-                        />
-
-                    </div>
-
-
-                  
-
-
-
-                    <div className="table-of-contents-grid">
-                        <a
-
-                            onClick={() => handleNavigation("/projects")}
-                        > Projects</a>
-
-
-                    </div>
-                </nav> */}
 
                 <div id="aboutme-page">
 
@@ -173,7 +142,7 @@ function AboutPage({ isLightMode, setIsLightMode }) {
                 </div>
                 <div className='dot-background'></div>
 
-            </div>
+            </motion.div>
 
 
 

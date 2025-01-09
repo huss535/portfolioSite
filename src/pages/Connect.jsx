@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import TopNav from "../components/TopNav";
+import { motion } from "framer-motion";
 
 const Connect = ({ isLightMode, setIsLightMode }) => {
     const [formData, setFormData] = useState({ name: "", subject: "", message: "" });
@@ -55,8 +56,11 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
     };
 
     return (
-        <div className="centered-page">
-            <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
+        <motion.div className="centered-page"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            {/* <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} /> */}
 
             <div id="contact-page">
                 <h1>Any questions, feedback, or just want to say hi? Let's talk!</h1>
@@ -114,7 +118,7 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
             </div>
 
             <div className="dot-background"></div>
-        </div>
+        </motion.div>
     );
 };
 

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import moonIcon from '../assets/dark.svg';
-import sunIcon from '../assets/light.svg';
-import TopNav from "../components/TopNav";
+
+import { motion } from "framer-motion";
 // eslint-disable-next-line react/prop-types
 function ProjectsPage({ isLightMode, setIsLightMode }) {
     const [isOverlayVisible, setOverlayVisible] = useState(false);
@@ -65,9 +64,13 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
     return (
         <>
 
-            <div className='centered-page'>
+            <motion.div className='centered-page'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+            >
                 <div id="projects-page">
-                    <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
+                    {/*   <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} /> */}
 
                     {projects.map((project, index) => (
                         <div key={index} className="project-container">
@@ -106,7 +109,7 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
 
                 </div>
 
-            </div>
+            </motion.div>
             <div className='dot-background'></div>
 
         </>

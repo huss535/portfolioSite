@@ -14,25 +14,25 @@ a,
 span,
 label,
 button {
-    font-family: "Bangers", serif;
+    font-family: "Anton", serif;
     font-weight: 400;
     font-style: normal;
     letter-spacing: 0.1rem;
 }
 
 h1 {
-    font-size: 5rem;
-
+    font-size: 3rem;
 }
 
 :root {
 
 
-    --color-background: #0a0a0a;
-    --color-text: #fefefe;
+    --color-background: #1E1E1E;
+    --color-text: #FAF8F5;
+    --color-border: #fefefe;
     --color-accent: #FFC300;
     --color-accent-gradient: rgb(255, 157, 0);
-    --color-highlight-area: #A41917;
+    --color-highlight-area: #1E1E1E;
     /*     --color-highlight-area-gradient: #FF4500;
  */
     --color-highlight-area-gradient: orange;
@@ -287,7 +287,7 @@ a:hover {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     background-color: var(--color-highlight-area);
-    border: solid var(--outer-border-size) var(--color-text)
+    border: solid var(--outer-border-size) var(--color-border)
 }
 
 
@@ -301,6 +301,7 @@ a:hover {
     justify-content: space-between;
     gap: 2rem;
     height: auto;
+    z-index: 200;
 
 
 }
@@ -353,7 +354,7 @@ a:hover {
     transform: scale(1);
     opacity: 0.8;
 
-    z-index: -1;
+    z-index: -200;
 
 
 
@@ -362,7 +363,7 @@ a:hover {
 }
 
 #intro-section {
-    border: solid var(--outer-border-size) var(--color-text);
+    border: solid var(--outer-border-size) var(--color-border);
     grid-area: main-content;
     display: flex;
     justify-content: center;
@@ -401,7 +402,7 @@ a:hover {
     position: relative;
     grid-area: skills;
     height: 100%;
-    border: solid var(--outer-border-size) var(--color-text);
+    border: solid var(--outer-border-size) var(--color-border);
 
     display: flex;
     flex-wrap: wrap;
@@ -545,7 +546,7 @@ a:hover {
 
     width: 100%;
     height: 100%;
-    border: solid var(--outer-border-size) var(--color-text);
+    border: solid var(--outer-border-size) var(--color-border);
     background-color: var(--color-highlight-area);
     grid-area: call-for-action;
     padding: 1rem;
@@ -562,7 +563,7 @@ a:hover {
     height: 100%;
     gap: 1rem;
     padding: 2rem;
-    border: solid var(--outer-border-size) var(--color-text);
+    border: solid var(--outer-border-size) var(--color-border);
     background-color: var(--color-highlight-area);
 }
 
@@ -584,7 +585,7 @@ a:hover {
     background-color: var(--color-accent);
     color: var(--color-background);
 
-    border: solid calc(var(--outer-border-size)/2) var(--color-background);
+    border: solid calc(var(--outer-border-size)/2) var(--color-border);
 
     padding: 1rem;
 }
@@ -663,7 +664,7 @@ a:hover {
 
 .project-container img {
     grid-area: image;
-    border: solid var(--outer-border-size) var(--color-text);
+    border: solid var(--outer-border-size) var(--color-border);
 
     width: 100%;
     height: auto;
@@ -678,7 +679,7 @@ a:hover {
     justify-content: center;
     width: 100%;
     height: 100%;
-    border: solid var(--outer-border-size) var(--color-text);
+    border: solid var(--outer-border-size) var(--color-border);
 
 
 }
@@ -696,7 +697,7 @@ a:hover {
 
     text-align: left;
     width: 100%;
-    border: solid var(--outer-border-size) var(--color-text);
+    border: solid var(--outer-border-size) var(--color-border);
 
 
 
@@ -783,7 +784,7 @@ a:hover {
 }
 
 .blog-container:nth-child(odd) img {
-    border-left: solid var(--outer-border-size) var(--color-text);
+    border-left: solid var(--outer-border-size) var(--color-border);
 
 }
 
@@ -801,7 +802,7 @@ a:hover {
     height: 100%;
     /* Ensure it takes the full height */
     object-fit: cover;
-    border: solid var(--outer-border-size) var(--color-text);
+    border: solid var(--outer-border-size) var(--color-border);
 
     /* Maintain aspect ratio and fill the container */
 
@@ -818,7 +819,7 @@ a:hover {
     background-color: var(--color-highlight-area);
     align-items: center;
     justify-content: center;
-    border: solid var(--outer-border-size) var(--color-text);
+    border: solid var(--outer-border-size) var(--color-border);
 
     /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
 
@@ -837,7 +838,7 @@ h1 {
     font-size: 3rem;
     padding: 1rem;
     /*  border-bottom: solid var(--outer-border-size) var(--color-text); */
-    border: solid var(--outer-border-size) var(--color-text);
+    border: solid var(--outer-border-size) var(--color-border);
 
     /* Ensure transparency */
     background-color: var(--color-highlight-area);
@@ -1011,7 +1012,7 @@ h1 {
         writing-mode: horizontal-tb;
 
         border-left: 0;
-        border-bottom: solid var(--outer-border-size) var(--color-text);
+        border-bottom: solid var(--outer-border-size) var(--color-border);
 
 
 
