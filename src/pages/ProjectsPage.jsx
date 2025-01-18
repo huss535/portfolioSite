@@ -67,16 +67,27 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
             <motion.div className='centered-page'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                exit={{ opacity: 0, transition: { duration: 0.3 } }}
             >
-                <div id="projects-page">
+                {/* <motion.div
+                    className="dot-background"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.8 }}
+                    exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                    transition={{
+                        delay: 0.5, // Applies a global delay
+                        duration: 0.8, // Applies a global duration
+                    }}
+                ></motion.div> */}
+
+                <div id="projects-page" className="page-margins">
                     {/*   <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} /> */}
 
                     {projects.map((project, index) => (
                         <div key={index} className="project-container">
 
-                            <h1>{project.title}</h1>
-                            <div className="project-container-content">
+                            <h1 className={`${index % 2 === 0 ? "header-shadow-right" : "header-shadow-left"}`} >{project.title}</h1>
+                            <div className={`project-container-content ${index % 2 === 0 ? "container-shadow-right" : "container-shadow-left"}`}>
                                 <p >{project.description}</p>
                                 <div className="categories">
                                     {project.techStack.map((category, catIndex) => (
@@ -110,7 +121,7 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
                 </div>
 
             </motion.div>
-            <div className='dot-background'></div>
+
 
         </>
     );

@@ -11,9 +11,8 @@ function AboutPage({ isLightMode, setIsLightMode }) {
 
 
 
-    const skillsArray = ["Aws", "Firebase", "Terraform",
-        "Flutter", "Dart", "Framer", "React", "HTML", "CSS",
-        "Node", "Postgresql", "Typescript"
+    const skillsArray = ["Aws", "Firebase",
+        "Flutter", "React", "HTML", "CSS", "Postgresql", "Typescript"
     ]
 
 
@@ -24,38 +23,6 @@ function AboutPage({ isLightMode, setIsLightMode }) {
 
 
 
-    const [navBg, setNavBg] = useState(false);
-    /*     const [navTextColor, setNavTextColor] = useState("whitesmoke");
-     */    /*     const [isDarkMode, setIsDarkMode] = useState(true);
-*/
-    const changeNavBg = () => {
-        window.scrollY >= 20 ? setNavBg(true) : setNavBg(false);
-    }
-    useEffect(() => {
-        window.addEventListener('scroll', changeNavBg);
-        return () => {
-            window.removeEventListener('scroll', changeNavBg);
-        }
-    }, [])
-
-    useEffect(() => {
-        const element = document.getElementById("top-nav-overlay");
-        if (element) {
-            if (navBg) {
-                element.style.setProperty("opacity", "1");
-                /*   setNavTextColor("black"); */
-            } else {
-                element.style.setProperty("opacity", "0");
-                /*   setNavTextColor("whitesmoke"); */
-            }
-
-
-        }
-
-        /* console.log(element) */
-    }, [navBg]);
-
-
 
 
 
@@ -64,90 +31,45 @@ function AboutPage({ isLightMode, setIsLightMode }) {
 
 
     return (
-        <>
-
-            {/*  <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} /> */}
-            <motion.div className='centered-page'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-
-            >
-
-
-                <div id="aboutme-page">
 
 
 
-
-                    <p id='intro-section'>
-                        Storytelling is at the heart of everything I do—it's my North Star.
-                        I believe good software gets the job done and delivers value, but great software connects with your audience through a compelling narrative.
-                        I'm captivated by every step of creating an immersive digital experience—from designing a seamless user journey to developing a polished UI and a robust, scalable backend.
-                        I'm also an aspiring content creator because, well... storytelling is in my DNA.
-                    </p>
-
-                    <h1 id='my-name'>Elhussin Farah</h1>
+        <motion.div
+            className="centered-page"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 1 } }}
+            exit={{ opacity: 0, transition: { duration: 0.4 } }}
+        >
 
 
+            <div id="aboutme-page" className='page-margins'>
+                <h1 id="my-name" className='container-shadow-left'>Elhussin Farah</h1>
 
-                    {/*  <h2
+                <p id="intro-section" className='container-shadow-right pattern-background'>
+                    I am a passionate tech enthusiast, captivated by every aspect of software creation—from crafting compelling narratives and immersive experiences to building robust full-stack solutions and designing scalable cloud architectures. Oh, and I love writing about these topics! Feel free to check out some of my work.
+                </p>
 
-                        id="first-interest"
-                    >
-                        <span>{texts[0]}</span>
-
-                    </h2>
-
-                    <h2
-
-                        id="second-interest"
-                    >
-                        <span>{texts[1]}</span>
-
-                    </h2>
-                    <h2
-                        id="third-interest"
-
-                    >
-                        <span>{texts[2]}</span>
-
-                    </h2>
-
-
-                    <h2
-
-                        id="fourth-interest"
-                    >
-                        <span>{texts[3]}</span>
-                    </h2> */}
-                    <div id="skills-body">
-
-
-                        {skillsArray.map((skill, index) => {
-                            return (
-                                <div className="skill-item" key={index}>
-                                    <img src={`src/assets/skills/${skill}.svg`} />
-
-                                </div>
-                            )
-                        })}
-
-
-
-                    </div>
-
-
-
+                <div id='favourites-section'>
+                    <p className='container-style container-shadow-right pattern-background'>Software of Choice: Canva</p>
+                    <p className='container-style container-shadow-right pattern-background'>Favourite Band: Pixies</p>
+                    <p className='container-style container-shadow-right pattern-background'> Desert Island Book: Frankenstein</p>
                 </div>
-                <div className='dot-background'></div>
 
-            </motion.div>
+                <div id="skills-body" className='container-style container-shadow-right pattern-background'>
+                    {skillsArray.map((skill, index) => (
+                        <div className="skill-item" key={index}>
+                            <img src={`src/assets/skills/${skill}.svg`} alt={`${skill} icon`} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </motion.div>
 
 
 
 
-        </>
+
+
     );
 }
 

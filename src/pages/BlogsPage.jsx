@@ -31,6 +31,42 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
             title: "Must-Have Travel Apps for Your Next Adventure",
             description: "Discover the best apps to help you plan, navigate, and document your dream vacation.",
             categories: ["Travel", "Technology", "RawDogger"]
+        },
+        {
+            image_url: "https://img.freepik.com/free-photo/multi-colored-creativity-close-up-human-eye-generated-by-ai_188544-15574.jpg",
+            title: "The Power of Positive Thinking",
+            description: "Learn how to reframe your thoughts and cultivate a more optimistic outlook on life.",
+            categories: ["Self-Improvement", "Psychology", "Raker"]
+        },
+        {
+            image_url: "https://th.bing.com/th/id/OIG2._JJ7jEND0UMuzHjwBeTh",
+            title: "5 Easy Steps to a Sustainable Kitchen",
+            description: "Reduce your environmental impact and save money with these simple eco-friendly practices.",
+            categories: ["Green Living", "Cooking", "Spice", "Love"]
+        },
+        {
+            image_url: "https://pixlr.com/images/generator/photo-generator.webp",
+            title: "Must-Have Travel Apps for Your Next Adventure",
+            description: "Discover the best apps to help you plan, navigate, and document your dream vacation.",
+            categories: ["Travel", "Technology", "RawDogger"]
+        },
+        {
+            image_url: "https://img.freepik.com/free-photo/multi-colored-creativity-close-up-human-eye-generated-by-ai_188544-15574.jpg",
+            title: "The Power of Positive Thinking",
+            description: "Learn how to reframe your thoughts and cultivate a more optimistic outlook on life.",
+            categories: ["Self-Improvement", "Psychology", "Raker"]
+        },
+        {
+            image_url: "https://th.bing.com/th/id/OIG2._JJ7jEND0UMuzHjwBeTh",
+            title: "5 Easy Steps to a Sustainable Kitchen",
+            description: "Reduce your environmental impact and save money with these simple eco-friendly practices.",
+            categories: ["Green Living", "Cooking", "Spice", "Love"]
+        },
+        {
+            image_url: "https://pixlr.com/images/generator/photo-generator.webp",
+            title: "Must-Have Travel Apps for Your Next Adventure",
+            description: "Discover the best apps to help you plan, navigate, and document your dream vacation.",
+            categories: ["Travel", "Technology", "RawDogger"]
         }
     ];
 
@@ -39,18 +75,21 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
             {/*    <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} /> */}
             <motion.div className='centered-page'
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 1 } }}
+                exit={{ opacity: 0, transition: { duration: 0.4 } }}
+
             >
 
 
-                <div id="blogs-page">
+
+                <div id="blogs-page" className="page-margins">
                     {blogs.map((blog, index) => (
                         <div key={index} className="blog-container">
 
 
-                            <h1>{blog.title}</h1>
-                            <div className="blog-container-content">
+                            <h1 className={`${index % 2 !== 0 ? "header-shadow-right" : "header-shadow-left"}`}>{blog.title.toUpperCase()}</h1>
+                            <div className={`blog-container-content ${index % 2 !== 0 ? "container-shadow-right" : "container-shadow-left"}`}
+                            >
                                 <p>{blog.description}</p>
                                 <div className="categories">
                                     {blog.categories.map((category, catIndex) => (
@@ -94,7 +133,7 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
                 </div>
 
             </motion.div>
-            <div className='dot-background'></div>
+
         </>
     );
 }

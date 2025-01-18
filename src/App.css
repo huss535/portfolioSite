@@ -6,7 +6,11 @@
 
 }
 
-html {}
+
+@font-face {
+    font-family: Nax;
+    src: url("src/assets/fonts/Hacktyve.ttf")
+}
 
 h1,
 h2,
@@ -14,7 +18,8 @@ a,
 span,
 label,
 button {
-    font-family: "Anton", serif;
+
+    font-family: "Nax";
     font-weight: 400;
     font-style: normal;
     letter-spacing: 0.1rem;
@@ -27,18 +32,17 @@ h1 {
 :root {
 
 
-    --color-background: #1E1E1E;
+    /* --color-background: #1E1E1E; */
+    --color-background: #292929;
+    /* --color-background: #585858; */
     --color-text: #FAF8F5;
-    --color-border: #fefefe;
+    --color-border: #FFC300;
     --color-accent: #FFC300;
     --color-accent-gradient: rgb(255, 157, 0);
-    --color-highlight-area: #1E1E1E;
-    /*     --color-highlight-area-gradient: #FF4500;
- */
-    --color-highlight-area-gradient: orange;
+    --color-highlight-area: rgb(10, 10, 10);
 
     --svg-filter: invert(1);
-    --outer-border-size: 0.4rem;
+    --outer-border-size: 0rem;
 
 
 
@@ -49,52 +53,41 @@ h1 {
 
 
 :root.light {
-    --color-background: #fefefe;
-    /* Bright white for light mode */
+    --color-background: #f5f5f5;
     --color-text: #1a1a1a;
-    /* Dark gray for good contrast */
-    --color-accent: #FF13F0;
+    --color-border: #db0a5b;
+    --color-accent: #db0a5b;
     --color-accent-gradient: #C01074;
-    --color-highlight-area: #1E90FF;
-
+    --color-highlight-area: #F9EBC7;
     --color-highlight-text: #808080;
     --svg-filter: invert(0);
-    --outer-border-size: 0.4rem;
+    --outer-border-size: 0rem;
 
 }
 
 
 
-/* #table-content-grid {
-    display: grid;
-    grid-template-areas:
-        "about-me about-me"
-        "project blog"
-        "connect connect";
-    gap: 5rem;
-    width: 60%;
-    margin: auto;
-} */
+.page-margins {
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
 
-
-/* .table-of-contents-grid */
 .link {
-
     color: var(--color-accent);
-
     font-size: 1.5rem;
     text-align: center;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    background-color: var(--color-background);
-    border: solid var(--outer-border-size) var(--color-accent);
+    /*  background-color: var(--color-background); */
+    /*    border: solid var(--outer-border-size) var(--color-accent); */
+    background-color: transparent;
     transition: color 0.4s background-color 0.4s border-color 0.1;
 }
 
 .link:hover,
 .link-active {
-    border-color: transparent;
-    color: var(--color-background);
+    /*   border-color: transparent; */
+    color: var(--color-highlight-area);
     background-color: var(--color-accent);
     transition: 0.3s;
 }
@@ -133,6 +126,7 @@ h1 {
 
 html {
     background-color: var(--color-background);
+    /* background: linear-gradient(90deg, #000000, #2B2B2B); */
 
 
 }
@@ -144,22 +138,26 @@ p {
     margin: 0;
 }
 
+@font-face {
+    font-family: regular;
+    src: url('src/assets/fonts/Nikoovers-GORam.ttf');
+}
+
 
 p {
-    font-size: 1.75rem;
-    line-height: 5rem;
-    font-family: "Raleway", serif;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-family: "regular";
+    font-weight: 300;
     font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: italic;
+
     color: var(--color-text);
 }
 
 textarea {
-    font-family: "Raleway", serif;
+    font-family: "regular";
     font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: italic;
+
 
 }
 
@@ -258,16 +256,15 @@ a:hover {
     position: relative;
     display: grid;
 
-    margin-top: 15rem;
+
     width: 90%;
     gap: 2rem;
-    grid-template-columns: 0.5fr 2fr 2fr;
-    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
     grid-template-areas:
         /*  'navigation navigation navigation' */
         'name main-content main-content'
-        'name main-content main-content'
-        'skills skills skills';
+        'name favourites-section skills';
 
 
     height: 100vh;
@@ -280,14 +277,63 @@ a:hover {
 
     display: flex;
     justify-content: center;
+    font-size: 6rem;
     align-items: center;
     grid-area: name;
     height: 100%;
     width: 100%;
     writing-mode: vertical-lr;
     transform: rotate(180deg);
-    background-color: var(--color-highlight-area);
-    border: solid var(--outer-border-size) var(--color-border)
+    color: var(--color-highlight-area);
+    background-color: var(--color-accent);
+    border: solid var(--outer-border-size) var(--color-border);
+    box-shadow: 1px 1px 0px 0px var(--color-highlight-area),
+        1.2px 1.2px 0px 0px var(--color-highlight-area),
+        1.4px 1.4px 0px 0px var(--color-highlight-area),
+        1.6px 1.6px 0px 0px var(--color-highlight-area),
+        1.8px 1.8px 0px 0px var(--color-highlight-area),
+        2px 2px 0px 0px var(--color-highlight-area),
+        2.2px 2.2px 0px 0px var(--color-highlight-area),
+        2.4px 2.4px 0px 0px var(--color-highlight-area),
+        2.6px 2.6px 0px 0px var(--color-highlight-area),
+        2.8px 2.8px 0px 0px var(--color-highlight-area),
+        3px 3px 0px 0px var(--color-highlight-area),
+        3.2px 3.2px 0px 0px var(--color-highlight-area),
+        3.4px 3.4px 0px 0px var(--color-highlight-area),
+        3.6px 3.6px 0px 0px var(--color-highlight-area),
+        3.8px 3.8px 0px 0px var(--color-highlight-area),
+        4px 4px 0px 0px var(--color-highlight-area),
+        4.2px 4.2px 0px 0px var(--color-highlight-area),
+        4.4px 4.4px 0px 0px var(--color-highlight-area),
+        4.6px 4.6px 0px 0px var(--color-highlight-area),
+        4.8px 4.8px 0px 0px var(--color-highlight-area),
+        5px 5px 0px 0px var(--color-highlight-area),
+        5.2px 5.2px 0px 0px var(--color-highlight-area),
+        5.4px 5.4px 0px 0px var(--color-highlight-area),
+        5.6px 5.6px 0px 0px var(--color-highlight-area),
+        5.8px 5.8px 0px 0px var(--color-highlight-area),
+        6px 6px 0px 0px var(--color-highlight-area),
+        6.2px 6.2px 0px 0px var(--color-highlight-area),
+        6.4px 6.4px 0px 0px var(--color-highlight-area),
+        6.6px 6.6px 0px 0px var(--color-highlight-area),
+        6.8px 6.8px 0px 0px var(--color-highlight-area),
+        7px 7px 0px 0px var(--color-highlight-area),
+        7.2px 7.2px 0px 0px var(--color-highlight-area),
+        7.4px 7.4px 0px 0px var(--color-highlight-area),
+        7.6px 7.6px 0px 0px var(--color-highlight-area),
+        7.8px 7.8px 0px 0px var(--color-highlight-area),
+        8px 8px 0px 0px var(--color-highlight-area),
+        8.2px 8.2px 0px 0px var(--color-highlight-area),
+        8.4px 8.4px 0px 0px var(--color-highlight-area),
+        8.6px 8.6px 0px 0px var(--color-highlight-area),
+        8.8px 8.8px 0px 0px var(--color-highlight-area),
+        9px 9px 0px 0px var(--color-highlight-area),
+        9.2px 9.2px 0px 0px var(--color-highlight-area),
+        9.4px 9.4px 0px 0px var(--color-highlight-area),
+        9.6px 9.6px 0px 0px var(--color-highlight-area),
+        9.8px 9.8px 0px 0px var(--color-highlight-area),
+        10px 10px 0px 0px var(--color-highlight-area);
+
 }
 
 
@@ -317,50 +363,211 @@ a:hover {
 
 
 
+.header-shadow-left {
+    box-shadow: -1px -1px 0px 0px var(--color-highlight-area),
+        -1.2px -1.2px 0px 0px var(--color-highlight-area),
+        -1.4px -1.4px 0px 0px var(--color-highlight-area),
+        -1.6px -1.6px 0px 0px var(--color-highlight-area),
+        -1.8px -1.8px 0px 0px var(--color-highlight-area),
+        -2px -2px 0px 0px var(--color-highlight-area),
+        -2.2px -2.2px 0px 0px var(--color-highlight-area),
+        -2.4px -2.4px 0px 0px var(--color-highlight-area),
+        -2.6px -2.6px 0px 0px var(--color-highlight-area),
+        -2.8px -2.8px 0px 0px var(--color-highlight-area),
+        -3px -3px 0px 0px var(--color-highlight-area),
+        -3.2px -3.2px 0px 0px var(--color-highlight-area),
+        -3.4px -3.4px 0px 0px var(--color-highlight-area),
+        -3.6px -3.6px 0px 0px var(--color-highlight-area),
+        -3.8px -3.8px 0px 0px var(--color-highlight-area),
+        -4px -4px 0px 0px var(--color-highlight-area),
+        -4.2px -4.2px 0px 0px var(--color-highlight-area),
+        -4.4px -4.4px 0px 0px var(--color-highlight-area),
+        -4.6px -4.6px 0px 0px var(--color-highlight-area),
+        -4.8px -4.8px 0px 0px var(--color-highlight-area),
+        -5px -5px 0px 0px var(--color-highlight-area),
+        -5.2px -5.2px 0px 0px var(--color-highlight-area),
+        -5.4px -5.4px 0px 0px var(--color-highlight-area),
+        -5.6px -5.6px 0px 0px var(--color-highlight-area),
+        -5.8px -5.8px 0px 0px var(--color-highlight-area),
+        -6px -6px 0px 0px var(--color-highlight-area),
+        -6.2px -6.2px 0px 0px var(--color-highlight-area),
+        -6.4px -6.4px 0px 0px var(--color-highlight-area),
+        -6.6px -6.6px 0px 0px var(--color-highlight-area),
+        -6.8px -6.8px 0px 0px var(--color-highlight-area),
+        -7px -7px 0px 0px var(--color-highlight-area),
+        -7.2px -7.2px 0px 0px var(--color-highlight-area),
+        -7.4px -7.4px 0px 0px var(--color-highlight-area),
+        -7.6px -7.6px 0px 0px var(--color-highlight-area),
+        -7.8px -7.8px 0px 0px var(--color-highlight-area),
+        -8px -8px 0px 0px var(--color-highlight-area),
+        -8.2px -8.2px 0px 0px var(--color-highlight-area),
+        -8.4px -8.4px 0px 0px var(--color-highlight-area),
+        -8.6px -8.6px 0px 0px var(--color-highlight-area),
+        -8.8px -8.8px 0px 0px var(--color-highlight-area),
+        -9px -9px 0px 0px var(--color-highlight-area),
+        -9.2px -9.2px 0px 0px var(--color-highlight-area),
+        -9.4px -9.4px 0px 0px var(--color-highlight-area),
+        -9.6px -9.6px 0px 0px var(--color-highlight-area),
+        -9.8px -9.8px 0px 0px var(--color-highlight-area),
+        -10px -10px 0px 0px var(--color-highlight-area);
+
+}
 
 
 
+.header-shadow-right {
+    box-shadow: 1px -1px 0px 0px var(--color-highlight-area),
+        1.2px -1.2px 0px 0px var(--color-highlight-area),
+        1.4px -1.4px 0px 0px var(--color-highlight-area),
+        1.6px -1.6px 0px 0px var(--color-highlight-area),
+        1.8px -1.8px 0px 0px var(--color-highlight-area),
+        2px -2px 0px 0px var(--color-highlight-area),
+        2.2px -2.2px 0px 0px var(--color-highlight-area),
+        2.4px -2.4px 0px 0px var(--color-highlight-area),
+        2.6px -2.6px 0px 0px var(--color-highlight-area),
+        2.8px -2.8px 0px 0px var(--color-highlight-area),
+        3px -3px 0px 0px var(--color-highlight-area),
+        3.2px -3.2px 0px 0px var(--color-highlight-area),
+        3.4px -3.4px 0px 0px var(--color-highlight-area),
+        3.6px -3.6px 0px 0px var(--color-highlight-area),
+        3.8px -3.8px 0px 0px var(--color-highlight-area),
+        4px -4px 0px 0px var(--color-highlight-area),
+        4.2px -4.2px 0px 0px var(--color-highlight-area),
+        4.4px -4.4px 0px 0px var(--color-highlight-area),
+        4.6px -4.6px 0px 0px var(--color-highlight-area),
+        4.8px -4.8px 0px 0px var(--color-highlight-area),
+        5px -5px 0px 0px var(--color-highlight-area),
+        5.2px -5.2px 0px 0px var(--color-highlight-area),
+        5.4px -5.4px 0px 0px var(--color-highlight-area),
+        5.6px -5.6px 0px 0px var(--color-highlight-area),
+        5.8px -5.8px 0px 0px var(--color-highlight-area),
+        6px -6px 0px 0px var(--color-highlight-area),
+        6.2px -6.2px 0px 0px var(--color-highlight-area),
+        6.4px -6.4px 0px 0px var(--color-highlight-area),
+        6.6px -6.6px 0px 0px var(--color-highlight-area),
+        6.8px -6.8px 0px 0px var(--color-highlight-area),
+        7px -7px 0px 0px var(--color-highlight-area),
+        7.2px -7.2px 0px 0px var(--color-highlight-area),
+        7.4px -7.4px 0px 0px var(--color-highlight-area),
+        7.6px -7.6px 0px 0px var(--color-highlight-area),
+        7.8px -7.8px 0px 0px var(--color-highlight-area),
+        8px -8px 0px 0px var(--color-highlight-area),
+        8.2px -8.2px 0px 0px var(--color-highlight-area),
+        8.4px -8.4px 0px 0px var(--color-highlight-area),
+        8.6px -8.6px 0px 0px var(--color-highlight-area),
+        8.8px -8.8px 0px 0px var(--color-highlight-area),
+        9px -9px 0px 0px var(--color-highlight-area),
+        9.2px -9.2px 0px 0px var(--color-highlight-area),
+        9.4px -9.4px 0px 0px var(--color-highlight-area),
+        9.6px -9.6px 0px 0px var(--color-highlight-area),
+        9.8px -9.8px 0px 0px var(--color-highlight-area),
+        10px -10px 0px 0px var(--color-highlight-area);
 
+}
 
-
-.dot-background {
-    position: absolute;
-    top: -3rem;
-    bottom: -3rem;
-    right: -3rem;
-    left: -3rem;
-    /*  background-color: var(--color-accent); */
-    background: radial-gradient(circle at center, var(--color-accent) 20%, red 50%, red 100%);
-
-
-    mask-image: url("src/assets/background.svg");
-    -webkit-mask-image: url("src/assets/background.svg");
-    /* Ensure compatibility with WebKit browsers */
-    mask-repeat: no-repeat;
-    /* Prevent the mask from repeating */
-    -webkit-mask-repeat: no-repeat;
-    /* WebKit compatibility */
-    background-repeat: no-repeat;
-    /* Prevent the background from repeating */
-    mask-size: cover;
-    /* Scale the mask to cover the element */
-    -webkit-mask-size: cover;
-    /* WebKit compatibility */
-    background-size: cover;
-    /* Scale the background to cover the element */
-    background-position: center;
-    /* Center the background image */
-    transform-origin: center;
-    transform: scale(1);
-    opacity: 0.8;
-
-    z-index: -200;
-
-
-
+.container-shadow-left {
+    box-shadow: -1px -1px 0px 0px var(--color-accent),
+        -1.2px -1.2px 0px 0px var(--color-accent),
+        -1.4px -1.4px 0px 0px var(--color-accent),
+        -1.6px -1.6px 0px 0px var(--color-accent),
+        -1.8px -1.8px 0px 0px var(--color-accent),
+        -2px -2px 0px 0px var(--color-accent),
+        -2.2px -2.2px 0px 0px var(--color-accent),
+        -2.4px -2.4px 0px 0px var(--color-accent),
+        -2.6px -2.6px 0px 0px var(--color-accent),
+        -2.8px -2.8px 0px 0px var(--color-accent),
+        -3px -3px 0px 0px var(--color-accent),
+        -3.2px -3.2px 0px 0px var(--color-accent),
+        -3.4px -3.4px 0px 0px var(--color-accent),
+        -3.6px -3.6px 0px 0px var(--color-accent),
+        -3.8px -3.8px 0px 0px var(--color-accent),
+        -4px -4px 0px 0px var(--color-accent),
+        -4.2px -4.2px 0px 0px var(--color-accent),
+        -4.4px -4.4px 0px 0px var(--color-accent),
+        -4.6px -4.6px 0px 0px var(--color-accent),
+        -4.8px -4.8px 0px 0px var(--color-accent),
+        -5px -5px 0px 0px var(--color-accent),
+        -5.2px -5.2px 0px 0px var(--color-accent),
+        -5.4px -5.4px 0px 0px var(--color-accent),
+        -5.6px -5.6px 0px 0px var(--color-accent),
+        -5.8px -5.8px 0px 0px var(--color-accent),
+        -6px -6px 0px 0px var(--color-accent),
+        -6.2px -6.2px 0px 0px var(--color-accent),
+        -6.4px -6.4px 0px 0px var(--color-accent),
+        -6.6px -6.6px 0px 0px var(--color-accent),
+        -6.8px -6.8px 0px 0px var(--color-accent),
+        -7px -7px 0px 0px var(--color-accent),
+        -7.2px -7.2px 0px 0px var(--color-accent),
+        -7.4px -7.4px 0px 0px var(--color-accent),
+        -7.6px -7.6px 0px 0px var(--color-accent),
+        -7.8px -7.8px 0px 0px var(--color-accent),
+        -8px -8px 0px 0px var(--color-accent),
+        -8.2px -8.2px 0px 0px var(--color-accent),
+        -8.4px -8.4px 0px 0px var(--color-accent),
+        -8.6px -8.6px 0px 0px var(--color-accent),
+        -8.8px -8.8px 0px 0px var(--color-accent),
+        -9px -9px 0px 0px var(--color-accent),
+        -9.2px -9.2px 0px 0px var(--color-accent),
+        -9.4px -9.4px 0px 0px var(--color-accent),
+        -9.6px -9.6px 0px 0px var(--color-accent),
+        -9.8px -9.8px 0px 0px var(--color-accent),
+        -10px -10px 0px 0px var(--color-accent);
 
 
 }
+
+.container-shadow-right {
+    box-shadow:
+        1px -1px 0px 0px var(--color-accent),
+        1.2px -1.2px 0px 0px var(--color-accent),
+        1.4px -1.4px 0px 0px var(--color-accent),
+        1.6px -1.6px 0px 0px var(--color-accent),
+        1.8px -1.8px 0px 0px var(--color-accent),
+        2px -2px 0px 0px var(--color-accent),
+        2.2px -2.2px 0px 0px var(--color-accent),
+        2.4px -2.4px 0px 0px var(--color-accent),
+        2.6px -2.6px 0px 0px var(--color-accent),
+        2.8px -2.8px 0px 0px var(--color-accent),
+        3px -3px 0px 0px var(--color-accent),
+        3.2px -3.2px 0px 0px var(--color-accent),
+        3.4px -3.4px 0px 0px var(--color-accent),
+        3.6px -3.6px 0px 0px var(--color-accent),
+        3.8px -3.8px 0px 0px var(--color-accent),
+        4px -4px 0px 0px var(--color-accent),
+        4.2px -4.2px 0px 0px var(--color-accent),
+        4.4px -4.4px 0px 0px var(--color-accent),
+        4.6px -4.6px 0px 0px var(--color-accent),
+        4.8px -4.8px 0px 0px var(--color-accent),
+        5px -5px 0px 0px var(--color-accent),
+        5.2px -5.2px 0px 0px var(--color-accent),
+        5.4px -5.4px 0px 0px var(--color-accent),
+        5.6px -5.6px 0px 0px var(--color-accent),
+        5.8px -5.8px 0px 0px var(--color-accent),
+        6px -6px 0px 0px var(--color-accent),
+        6.2px -6.2px 0px 0px var(--color-accent),
+        6.4px -6.4px 0px 0px var(--color-accent),
+        6.6px -6.6px 0px 0px var(--color-accent),
+        6.8px -6.8px 0px 0px var(--color-accent),
+        7px -7px 0px 0px var(--color-accent),
+        7.2px -7.2px 0px 0px var(--color-accent),
+        7.4px -7.4px 0px 0px var(--color-accent),
+        7.6px -7.6px 0px 0px var(--color-accent),
+        7.8px -7.8px 0px 0px var(--color-accent),
+        8px -8px 0px 0px var(--color-accent),
+        8.2px -8.2px 0px 0px var(--color-accent),
+        8.4px -8.4px 0px 0px var(--color-accent),
+        8.6px -8.6px 0px 0px var(--color-accent),
+        8.8px -8.8px 0px 0px var(--color-accent),
+        9px -9px 0px 0px var(--color-accent),
+        9.2px -9.2px 0px 0px var(--color-accent),
+        9.4px -9.4px 0px 0px var(--color-accent),
+        9.6px -9.6px 0px 0px var(--color-accent),
+        9.8px -9.8px 0px 0px var(--color-accent),
+        10px -10px 0px 0px var(--color-accent);
+
+}
+
+
 
 #intro-section {
     border: solid var(--outer-border-size) var(--color-border);
@@ -370,31 +577,47 @@ a:hover {
     align-items: center;
     padding: 1rem;
     background-color: var(--color-highlight-area);
+    transition: 0.4s;
+
+
     /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
 
 }
 
 
 
-
-/* #bottom-home {
-    overflow: hidden;
+#favourites-section {
     display: flex;
-    grid-area: skills;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    justify-content: space-evenly;
     flex-direction: column;
-    position: relative;
-  
+
+
+    width: 100%;
     height: 100%;
-
-
-
-    z-index: 1;
-  
+    grid-area: favourites-section;
 
 }
+
+/* .pattern-background {
+    background-color: var(--color-background);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%239C92AC' fill-opacity='1'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
  */
+.container-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*   background-color: var(--color-highlight-area); */
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: #010101;
+
+
+}
+
 
 
 
@@ -402,15 +625,14 @@ a:hover {
     position: relative;
     grid-area: skills;
     height: 100%;
-    border: solid var(--outer-border-size) var(--color-border);
 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 2rem;
-    background-color: var(--color-highlight-area);
+    gap: 1rem;
     overflow: hidden;
     z-index: 0;
+
 
 }
 
@@ -465,13 +687,15 @@ a:hover {
 
 }
 
-.svg-area a:hover .svg-icon {
-    background-color: var(--color-background);
+.svg-area a:hover img {
+    filter: var(--svg-filter) invert(1) drop-shadow(1px 1px 0px var(--color-accent)) drop-shadow(1.2px 1.2px 0px var(--color-accent)) drop-shadow(1.4px 1.4px 0px var(--color-accent)) drop-shadow(1.6px 1.6px 0px var(--color-accent)) drop-shadow(1.8px 1.8px 0px var(--color-accent)) drop-shadow(2px 2px 0px var(--color-accent)) drop-shadow(2.2px 2.2px 0px var(--color-accent));
+
 }
 
-.svg-area a:hover {
+
+/* .svg-area a:hover {
     background-color: var(--color-accent);
-}
+} */
 
 /* .svg-area a:hover {
     border: solid;
@@ -479,18 +703,20 @@ a:hover {
  */
 
 .svg-area img {
+    filter: var(--svg-filter);
+    transition: 0.3s;
 
-
-    width: 5rem;
+    width: 7rem;
     height: auto;
+
 
 
 
 }
 
-.svg-icon.medium {
-    width: 4rem;
-    height: 4rem;
+/* .svg-icon.medium {
+    width: 6rem;
+    height: 6rem;
     background-color: var(--color-accent);
     mask-image: url("./assets/medium.svg");
     transition: 0.4s;
@@ -498,20 +724,20 @@ a:hover {
 }
 
 .svg-icon.github {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     background-color: var(--color-accent);
     mask-image: url("./assets/github.svg");
 
 }
 
 .svg-icon.linkedin {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     background-color: var(--color-accent);
     mask-image: url("./assets/linkedin.svg");
 
-}
+} */
 
 
 .svg-icon {
@@ -527,29 +753,45 @@ a:hover {
 
 #contact-page {
     display: grid;
-    margin-top: 15rem;
+
     width: 80%;
 
-    height: 80vh;
-    gap: 1rem !important;
-    grid-template-rows: 1fr 5fr 1fr;
-    grid-template-columns: 6fr 1fr;
+    height: 100vh;
+    gap: 2rem !important;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-areas: "call-for-action socials"
         "contact-form socials"
         "contact-form socials";
 }
 
 #contact-page h1 {
+    position: relative;
     display: flex;
     align-items: center;
     text-align: left;
 
     width: 100%;
     height: 100%;
-    border: solid var(--outer-border-size) var(--color-border);
-    background-color: var(--color-highlight-area);
+
+    border: solid var(--outer-border-size) var(--color-accent);
+
+    background-color: var(--color-accent);
     grid-area: call-for-action;
+
+
+
     padding: 1rem;
+
+
+
+
+}
+
+#contact-page h1 span {
+    display: block;
+    color: var(--color-background);
+    z-index: 99;
 }
 
 
@@ -596,10 +838,7 @@ a:hover {
 }
 
 ::placeholder {
-    font-family: "Raleway", serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: italic;
+    font-family: "regular";
 
     color: var(--color-background);
 
@@ -608,10 +847,7 @@ a:hover {
 
 ::-ms-input-placeholder {
     /* Edge 12 -18 */
-    font-family: "Raleway", serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: italic;
+    font-family: "regular";
     color: var(--color-background);
 }
 
@@ -637,7 +873,7 @@ a:hover {
 
 
 
-    gap: 1rem;
+    gap: 2rem;
     width: 90%;
     height: 100%;
     justify-content: center;
@@ -664,7 +900,7 @@ a:hover {
 
 .project-container img {
     grid-area: image;
-    border: solid var(--outer-border-size) var(--color-border);
+    border: solid var(--outer-border-size) var(--color-accent);
 
     width: 100%;
     height: auto;
@@ -689,15 +925,18 @@ a:hover {
     display: flex;
     padding: 1rem;
     font-size: 4rem;
-    background-color: var(--color-highlight-area);
-    color: var(--color-text);
+
+    color: var(--color-background);
+    border: solid var(--outer-border-size) var(--color-accent);
+    background-color: var(--color-accent);
+
     justify-content: flex-start;
 
     align-items: center;
 
     text-align: left;
     width: 100%;
-    border: solid var(--outer-border-size) var(--color-border);
+
 
 
 
@@ -724,20 +963,11 @@ a:hover {
     gap: 2rem;
 }
 
-/* .project-container-body {
-    display: flex;
-    flex-direction: row;
-}
-
-
- */
-
-
 
 
 #blogs-page,
 #projects-page {
-    margin-top: 15rem;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -754,7 +984,7 @@ a:hover {
     width: 90%;
 
 
-    gap: 1rem;
+    gap: 2rem;
     /*   border: solid var(--outer-border-size) var(--color-text); */
 
 }
@@ -784,7 +1014,7 @@ a:hover {
 }
 
 .blog-container:nth-child(odd) img {
-    border-left: solid var(--outer-border-size) var(--color-border);
+    border-left: solid var(--outer-border-size) var(--color-accent);
 
 }
 
@@ -802,7 +1032,7 @@ a:hover {
     height: 100%;
     /* Ensure it takes the full height */
     object-fit: cover;
-    border: solid var(--outer-border-size) var(--color-border);
+    border: solid var(--outer-border-size) var(--color-accent);
 
     /* Maintain aspect ratio and fill the container */
 
@@ -837,12 +1067,10 @@ h1 {
     position: relative;
     font-size: 3rem;
     padding: 1rem;
-    /*  border-bottom: solid var(--outer-border-size) var(--color-text); */
-    border: solid var(--outer-border-size) var(--color-border);
+    color: var(--color-background);
+    border: solid var(--outer-border-size) var(--color-accent);
+    background-color: var(--color-accent);
 
-    /* Ensure transparency */
-    background-color: var(--color-highlight-area);
-    color: var(--color-text);
     width: 100%;
     text-align: left;
 }
@@ -866,19 +1094,6 @@ h1 {
 
 
 
-/* .blog-container-body {
-    display: flex;
-
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 100%;
-    height: 100%;
-
-
-}
- */
 
 
 
@@ -997,25 +1212,14 @@ h1 {
 
 
 
-    #connect {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 5fr 1fr;
-        grid-template-areas: 'side-bar'
-            'contact-form'
-            'socials';
-        gap: 3rem;
-
+    #contact-page {
+        grid-template-areas: "call-for-action"
+            "contact-form"
+            "socials";
     }
 
-    #connect .header {
-        transform: none;
-        writing-mode: horizontal-tb;
-
-        border-left: 0;
-        border-bottom: solid var(--outer-border-size) var(--color-border);
-
-
-
+    .svg-area {
+        flex-direction: row;
     }
 
 
@@ -1043,12 +1247,7 @@ h1 {
         /* Include padding/border in width */
     }
 
-    .blog-container {
-        /*  grid-template-rows: 2fr 1fr; */
 
-
-        /* Remove any default margins */
-    }
 
 
 
