@@ -88,7 +88,7 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
 
                             <h1 className={`${index % 2 === 0 ? "header-shadow-right" : "header-shadow-left"}`} >{project.title}</h1>
                             <div className={`project-container-content ${index % 2 === 0 ? "container-shadow-right" : "container-shadow-left"}`}>
-                                <p >{project.description}</p>
+
                                 <div className="categories">
                                     {project.techStack.map((category, catIndex) => (
                                         <span key={catIndex} className="category-area">
@@ -96,6 +96,7 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
                                         </span>
                                     ))}
                                 </div>
+                                <p >{project.description}</p>
 
 
                                 <div className="projects-links">
@@ -111,7 +112,7 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
                                 </div>
                             </div>
 
-                            <img src={`src/assets/project-images/${project.placeholder}.png`} />
+                            <img className={`${index % 2 === 0 ? "header-shadow-right" : "header-shadow-left"}`} src={`src/assets/project-images/${project.placeholder}.png`} />
 
 
                         </div>

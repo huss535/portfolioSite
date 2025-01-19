@@ -90,7 +90,7 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
                             <h1 className={`${index % 2 !== 0 ? "header-shadow-right" : "header-shadow-left"}`}>{blog.title.toUpperCase()}</h1>
                             <div className={`blog-container-content ${index % 2 !== 0 ? "container-shadow-right" : "container-shadow-left"}`}
                             >
-                                <p>{blog.description}</p>
+
                                 <div className="categories">
                                     {blog.categories.map((category, catIndex) => (
                                         <span key={catIndex} className="category-area">
@@ -108,6 +108,7 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
 
 
                                 </div>
+                                <p>{blog.description}</p>
 
                                 {/*    <div className="blog-container-body"> */}
                                 <div className="link-container">
@@ -125,7 +126,7 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
 
 
                             </div>
-                            <img src={blog.image_url} alt={blog.title} />
+                            <img className={`${index % 2 !== 0 ? "header-shadow-right" : "header-shadow-left"}`} src={blog.image_url} alt={blog.title} />
                         </div>
                     ))}
 

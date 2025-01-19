@@ -80,7 +80,7 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
 
 
                 </h1>
-                <form id="contact-form" onSubmit={handleSubmit}>
+                <form id="contact-form" className="container-shadow-right" onSubmit={handleSubmit}>
                     <label htmlFor="name">Name</label>
                     <textarea
                         required

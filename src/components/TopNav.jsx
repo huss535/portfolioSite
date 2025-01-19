@@ -39,7 +39,7 @@ const TopNav = ({ isLightMode, setIsLightMode }) => {
             to="/blogs"
             className={({ isActive }) => isActive ? "link link-active" : "link"}
         >
-            BLOGS
+            BLOG
         </NavLink>
         <NavLink
             to="/connect"
