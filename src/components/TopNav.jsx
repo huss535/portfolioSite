@@ -27,25 +27,25 @@ const TopNav = ({ isLightMode, setIsLightMode }) => {
             to="/"
             className={({ isActive }) => isActive ? "link link-active" : "link"}
         >
-            About me
+            ABOUT ME
         </NavLink>
         <NavLink
             to="/projects"
             className={({ isActive }) => isActive ? "link link-active" : "link"}
         >
-            Projects
+            PROJECTS
         </NavLink>
         <NavLink
             to="/blogs"
             className={({ isActive }) => isActive ? "link link-active" : "link"}
         >
-            Blogs
+            BLOG
         </NavLink>
         <NavLink
             to="/connect"
             className={({ isActive }) => isActive ? "link link-active" : "link"}
         >
-            Contact
+            CONTACT
         </NavLink>
 
 

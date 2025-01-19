@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import moonIcon from '../assets/dark.svg';
-import sunIcon from '../assets/light.svg';
-import TopNav from "../components/TopNav";
+
+import { motion } from "framer-motion";
 // eslint-disable-next-line react/prop-types
 function ProjectsPage({ isLightMode, setIsLightMode }) {
     const [isOverlayVisible, setOverlayVisible] = useState(false);
@@ -65,16 +64,31 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
     return (
         <>
 
-            <div className='centered-page'>
-                <div id="projects-page">
-                    <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
+            <motion.div className='centered-page'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, transition: { duration: 0.3 } }}
+            >
+                {/* <motion.div
+                    className="dot-background"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.8 }}
+                    exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                    transition={{
+                        delay: 0.5, // Applies a global delay
+                        duration: 0.8, // Applies a global duration
+                    }}
+                ></motion.div> */}
+
+                <div id="projects-page" className="page-margins">
+                    {/*   <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} /> */}
 
                     {projects.map((project, index) => (
                         <div key={index} className="project-container">
 
-                            <h1>{project.title}</h1>
-                            <div className="project-container-content">
-                                <p >{project.description}</p>
+                            <h1 className={`${index % 2 === 0 ? "header-shadow-right" : "header-shadow-left"}`} >{project.title}</h1>
+                            <div className={`project-container-content ${index % 2 === 0 ? "container-shadow-right" : "container-shadow-left"}`}>
+
                                 <div className="categories">
                                     {project.techStack.map((category, catIndex) => (
                                         <span key={catIndex} className="category-area">
@@ -82,6 +96,7 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
                                         </span>
                                     ))}
                                 </div>
+                                <p >{project.description}</p>
 
 
                                 <div className="projects-links">
@@ -97,7 +112,7 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
                                 </div>
                             </div>
 
-                            <img src={`src/assets/project-images/${project.placeholder}.png`} />
+                            <img className={`${index % 2 === 0 ? "header-shadow-right" : "header-shadow-left"}`} src={`src/assets/project-images/${project.placeholder}.png`} />
 
 
                         </div>
@@ -106,8 +121,8 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
 
                 </div>
 
-            </div>
-            <div className='dot-background'></div>
+            </motion.div>
+
 
         </>
     );

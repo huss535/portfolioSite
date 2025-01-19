@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import TopNav from "../components/TopNav";
+import { motion } from "framer-motion";
 
 const Connect = ({ isLightMode, setIsLightMode }) => {
     const [formData, setFormData] = useState({ name: "", subject: "", message: "" });
@@ -55,12 +56,31 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
     };
 
     return (
-        <div className="centered-page">
-            <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
+        <motion.div className="centered-page"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            {/* <motion.div
+                className="dot-background"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.8 }}
+                exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                transition={{
+                    delay: 0.5, // Applies a global delay
+                    duration: 0.8, // Applies a global duration
+                }}
+            ></motion.div> */}
 
-            <div id="contact-page">
-                <h1>Any questions, feedback, or just want to say hi? Let's talk!</h1>
-                <form id="contact-form" onSubmit={handleSubmit}>
+            <div id="contact-page" className="page-margins">
+                <h1 className="header-shadow-right" >
+
+                    <span>Have any questions ?</span>
+
+
+
+
+                </h1>
+                <form id="contact-form" className="container-shadow-right" onSubmit={handleSubmit}>
                     <label htmlFor="name">Name</label>
                     <textarea
                         required
@@ -102,19 +122,20 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
 
                 <div className="svg-area">
                     <a href="https://github.com/huss535" target="_blank" rel="noopener noreferrer">
-                        <div className="svg-icon github"></div>
+                        <img src="src/assets/github.svg" />
                     </a>
+
                     <a href="https://medium.com/@efar3200" target="_blank" rel="noopener noreferrer">
-                        <div className="svg-icon medium"></div>
+                        <img src="src/assets/medium.svg" />
                     </a>
                     <a href="https://www.linkedin.com/in/elhussin-y-2643301a0/" target="_blank" rel="noopener noreferrer">
-                        <div className="svg-icon linkedin"></div>
+                        <img src="src/assets/linkedin.svg" />
                     </a>
                 </div>
             </div>
 
-            <div className="dot-background"></div>
-        </div>
+
+        </motion.div>
     );
 };
 
