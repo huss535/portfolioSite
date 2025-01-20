@@ -18,7 +18,7 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
             image_url: "https://img.freepik.com/free-photo/multi-colored-creativity-close-up-human-eye-generated-by-ai_188544-15574.jpg",
             title: "The Power of Positive Thinking",
             description: "Learn how to reframe your thoughts and cultivate a more optimistic outlook on life.",
-            categories: ["Self-Improvement", "Psychology", "Raker"]
+            categories: ["Self-Improvement", "Psychology", "Raker", "Self-Improvement", "Psychology", "Raker"]
         },
         {
             image_url: "https://th.bing.com/th/id/OIG2._JJ7jEND0UMuzHjwBeTh",
@@ -83,11 +83,11 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
 
 
                 <div id="blogs-page" className="page-margins">
-                    {blogs.map((blog, index) => (
+                    {blogsArray.map((blog, index) => (
                         <div key={index} className="blog-container">
 
 
-                            <h1 className={`${index % 2 !== 0 ? "header-shadow-right" : "header-shadow-left"}`}>{blog.title.toUpperCase()}</h1>
+                            <h1 className={`${index % 2 !== 0 ? "container-shadow-right" : "container-shadow-left"}`}>{blog.title.toUpperCase()}</h1>
                             <div className={`blog-container-content ${index % 2 !== 0 ? "container-shadow-right" : "container-shadow-left"}`}
                             >
 
@@ -111,16 +111,16 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
                                 <p>{blog.description}</p>
 
                                 {/*    <div className="blog-container-body"> */}
-                                <div className="link-container">
-                                    <div style={{ width: 'fit-content' }} className="table-of-contents-grid">
-                                        <a
-                                            className="link"
-                                            onClick={() => window.open(blog.link)}
-                                        > Read More</a>
+
+                                <a
+                                    className="button-link"
+                                    href={blog.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >READ</a>
 
 
-                                    </div>
-                                </div>
+
 
 
 

@@ -8,7 +8,7 @@ const TopNav = ({ isLightMode, setIsLightMode }) => {
     }
 
     return (<nav className='nav-bar'>
-        <div className='theme-icon'>
+        <div id='theme-icon'>
             <img
                 onClick={() => { setIsLightMode((prev) => { return !prev; }) }}
                 src={!isLightMode ? moonIcon : sunIcon}
@@ -27,7 +27,7 @@ const TopNav = ({ isLightMode, setIsLightMode }) => {
             to="/"
             className={({ isActive }) => isActive ? "link link-active" : "link"}
         >
-            ABOUT ME
+            ABOUT
         </NavLink>
         <NavLink
             to="/projects"
@@ -60,11 +60,6 @@ const TopNav = ({ isLightMode, setIsLightMode }) => {
 
 
 
-
-        {/*   <div className="table-of-contents-grid" onClick={() => { setIsLightMode((prev) => { return !prev; }) }} > */}
-
-
-        {/*  </div> */}
 
 
 

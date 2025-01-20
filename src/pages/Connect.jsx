@@ -72,9 +72,9 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
             ></motion.div> */}
 
             <div id="contact-page" className="page-margins">
-                <h1 className="header-shadow-right" >
+                <h1 className="container-shadow-right" >
 
-                    <span>Have any questions ?</span>
+                    <span>ANY QUESTIONS ?</span>
 
 
 
@@ -115,8 +115,8 @@ const Connect = ({ isLightMode, setIsLightMode }) => {
                         placeholder="I want to talk to you about..."
                         aria-label="Enter your message"
                     />
-                    <button style={{ width: "fit-content" }} className="link" type="submit" disabled={isSubmitting}>
-                        {isSubmitting ? "Sending ..." : "Send"}
+                    <button className="button-link" type="submit" disabled={isSubmitting}>
+                        {isSubmitting ? "SENDING ..." : "SEND"}
                     </button>
                 </form>
 
