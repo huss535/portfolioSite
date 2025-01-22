@@ -69,16 +69,7 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, transition: { duration: 0.3 } }}
             >
-                {/* <motion.div
-                    className="dot-background"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.8 }}
-                    exit={{ opacity: 0, transition: { duration: 0.3 } }}
-                    transition={{
-                        delay: 0.5, // Applies a global delay
-                        duration: 0.8, // Applies a global duration
-                    }}
-                ></motion.div> */}
+
 
                 <div id="projects-page" className="page-margins">
                     {/*   <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} /> */}
@@ -113,7 +104,7 @@ function ProjectsPage({ isLightMode, setIsLightMode }) {
 
                             </div>
 
-                            <img className={`${index % 2 === 0 ? "header-shadow-right" : "header-shadow-left"}`} src={`src/assets/project-images/${project.placeholder}.png`} />
+                            <img className={`${index % 2 === 0 ? "container-shadow-right" : "container-shadow-left"}`} src={`src/assets/project-images/${project.placeholder}.png`} />
 
 
                         </div>

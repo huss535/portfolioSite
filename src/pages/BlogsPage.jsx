@@ -126,7 +126,7 @@ function BlogsPage({ blogsArray, isLightMode, setIsLightMode }) {
 
 
                             </div>
-                            <img className={`${index % 2 !== 0 ? "header-shadow-right" : "header-shadow-left"}`} src={blog.image_url} alt={blog.title} />
+                            <img className={`${index % 2 !== 0 ? "container-shadow-right" : "container-shadow-left"}`} src={blog.image_url} alt={blog.title} />
                         </div>
                     ))}
 

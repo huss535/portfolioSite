@@ -5,7 +5,7 @@ import BlogsPage from "../pages/BlogsPage";
 import ProjectsPage from "../pages/ProjectsPage";
 import Connect from "../pages/Connect";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react"
 
 const AnimatedRoutes = ({ blogsArray, isLightMode, setIsLightMode }) => {
     const location = useLocation();
