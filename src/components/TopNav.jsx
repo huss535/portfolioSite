@@ -1,13 +1,12 @@
-import { useNavigate, NavLink } from "react-router-dom";
+/* eslint-disable react/prop-types */
+import { NavLink } from "react-router-dom";
 import moonIcon from '../assets/dark.svg';
 import sunIcon from '../assets/light.svg';
 import { useState } from "react";
 const TopNav = ({ isLightMode, setIsLightMode }) => {
-    const navigate = useNavigate();
+
     const [spinning, setIsSpinning] = useState(false);
-    const handleNavigation = (route) => {
-        navigate(route);
-    }
+
 
     const handletoggle = () => {
 

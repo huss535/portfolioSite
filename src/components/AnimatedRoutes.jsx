@@ -7,16 +7,16 @@ import Connect from "../pages/Connect";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "motion/react"
 
-const AnimatedRoutes = ({ blogsArray, isLightMode, setIsLightMode }) => {
+const AnimatedRoutes = ({ blogsArray }) => {
     const location = useLocation();
     return (
         <AnimatePresence>
             <Routes location={location} key={location.pathname}>
 
-                <Route path="/" element={<AboutPage isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
-                <Route path="/blogs" element={<BlogsPage blogsArray={blogsArray} isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
-                <Route path="/projects" element={<ProjectsPage isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
-                <Route path="/connect" element={<Connect isLightMode={isLightMode} setIsLightMode={setIsLightMode} />} />
+                <Route path="/" element={<AboutPage />} />
+                <Route path="/blogs" element={<BlogsPage blogsArray={blogsArray} />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/connect" element={<Connect />} />
 
             </Routes>
         </AnimatePresence>);
