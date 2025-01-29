@@ -1,311 +1,162 @@
-* {
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
 
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+* {
     box-sizing: border-box;
+    touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
-
-
+    user-select: none
 }
-
 
 @font-face {
     font-family: Nax;
-    src: url("src/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
+    src: url(/fonts/SpaceGrotesk-VariableFont_wght.ttf)format("truetype")
 }
 
+a,
+button,
 h1,
 h2,
-a,
-span,
 label,
-button {
-
+span {
     font-family: "Nax";
-    /*   font-weight: 400; */
-    font-style: normal;
-
+    font-weight: 400;
+    font-style: normal
 }
 
-h1 {
-    font-size: 3rem;
+:root,
+:root.light {
+    --outer-border-size: 0rem
 }
 
 :root {
-
-
-    /* --color-background: #1E1E1E; */
     --color-background: #292929;
-    /* --color-background: #585858; */
     --color-text: #FAF8F5;
     --color-border: #FFC300;
     --color-accent: #FFC300;
     --color-accent-gradient: #D9A700;
     --color-highlight-area: rgb(10, 10, 10);
-
-    --svg-filter: invert(1);
-    --outer-border-size: 0rem;
-
-
-
-
+    --svg-filter: invert(1)
 }
 
-
-
-
 :root.light {
-    /*  --color-background: #E6E6FA; */
     --color-background: #E6E6FA;
     --color-text: #1a1a1a;
     --color-border: #db0a5b;
     --color-accent: #AF0848;
     --color-accent-gradient: #C01074;
-    /*     --color-highlight-area: #D8bfD8;
- */
     --color-highlight-area: #fefefe;
     --color-highlight-text: #808080;
-    --svg-filter: invert(0);
-    --outer-border-size: 0rem;
-
+    --svg-filter: invert(0)
 }
-
-
 
 .page-margins {
     margin-top: 10rem;
-    margin-bottom: 5rem;
+    margin-bottom: 5rem
 }
 
 .link {
-
     color: var(--color-accent);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     text-align: center;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    /*  background-color: var(--color-background); */
-    /*    border: solid var(--outer-border-size) var(--color-accent); */
-    background-color: transparent;
-    transition: color 0.4s background-color 0.4s border-color 0.1;
+    padding: .5rem 1rem;
+    background-color: transparent
 }
 
-.link:hover,
-.link-active {
-    /*   border-color: transparent; */
+.link-active,
+.link:hover {
     color: var(--color-highlight-area);
     background-color: var(--color-accent);
-    transition: 0.3s;
-}
-
-
-
-
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+    transition: .3s
 }
 
 #theme-icon img.spin {
-    animation: spin 0.5s ease-in-out;
+    animation: spin .5s ease-in-out
 }
-
-
 
 #theme-icon {
-
-
     padding-inline: 2rem;
-    cursor: pointer;
+    cursor: pointer
 }
-
-
 
 #theme-icon img {
-
     width: 3rem;
-
-
-    filter: var(--svg-filter);
-
+    filter: var(--svg-filter)
 }
 
-
-/* .table-of-contents-grid:hover {
-    border-color: transparent;
-    background-color: var(--color-accent);
-  
-} */
-
-
-
-
 html {
-    background-color: var(--color-background);
-
-
-
-
+    background-color: var(--color-background)
 }
 
 h1,
 h2,
 p {
-
-    margin: 0;
+    margin: 0
 }
-
-@font-face {
-    font-family: regular;
-    src: url('src/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf');
-}
-
 
 p {
     font-size: 1.75rem;
     line-height: 3rem;
-    font-family: "regular";
-    font-weight: 300;
-    font-optical-sizing: auto;
-
-    color: var(--color-text);
+    font-weight: 400;
+    color: var(--color-text)
 }
 
+
+p,
 textarea {
-    font-family: "regular";
-    font-optical-sizing: auto;
-
-
+    font-family: "Nax";
+    font-optical-sizing: auto
 }
 
 textarea:focus {
-    outline: none;
+    outline: 0
 }
 
 a:hover {
-    cursor: pointer;
+    cursor: pointer
 }
-
-
-
-
-
 
 .rotate-icon {
-    transition: 0.3s ease-in-out;
-    transform: rotate(360deg);
+    transition: .3s ease-in-out;
+    transform: rotate(360deg)
 }
-
-
-
-
-
-/* .section-header {
-    grid-area: header;
-
-    text-align: center;
-
-
-    margin: 0;
-
-    align-self: center;
-
-}
-
-.section-header h2 {
-
-    padding: 0;
-
-}
-
-
-
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .page-section {
-
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: flex-start;
-    gap: 2rem;
-
-    min-height: 100vh;
-
-
-    width: 100%;
-
-
-}
-
-
-
- */
-
 
 .centered-page {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
-
     min-height: 100vh;
-    width: 100%;
-
-
+    width: 100%
 }
 
-
 #aboutme-page {
-
     position: relative;
     display: grid;
-
-
     width: 90%;
-    gap: 3rem;
-    grid-template-columns: 0.5fr 2fr 2fr;
-    grid-template-rows: 2fr 1fr 1fr 1fr;
-    grid-template-areas:
-        /*  'navigation navigation navigation' */
-        'name main-content main-content'
-        'name skills favourites-1'
-        'name skills favourites-2'
-        'name skills favourites-3'
+    gap: 2rem;
+    grid-template-columns: .5fr 2fr 1.5fr;
+    grid-template-rows: auto 1fr 1fr 1fr;
+    grid-template-areas: "name main-content main-content" "name skills favourites-1" "name skills favourites-2" "name skills favourites-3";
+    height: fit-content
+}
 
-    ;
-
-
-    height: 100%;
-
-
-
+.text-highlight {
+    color: var(--color-accent);
+    font-size: 3rem
 }
 
 #favourites-1,
@@ -313,33 +164,26 @@ a:hover {
 #favourites-3 {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-
+    justify-content: space-between;
+    background-color: var(--color-highlight-area);
+    grid-area: favourites-1
 }
 
-#favourites-1 {
-
-    background-color: var(--color-highlight-area);
-    grid-area: favourites-1;
-
-}
-
-#favourites-2 {
-    background-color: var(--color-highlight-area);
-    grid-area: favourites-2;
-
-
+#favourites-2,
+#favourites-3 {
+    grid-area: favourites-2
 }
 
 #favourites-3 {
-    background-color: var(--color-highlight-area);
-    grid-area: favourites-3;
+    grid-area: favourites-3
 }
 
 #favourites-1 span:nth-child(1),
 #favourites-2 span:nth-child(1),
 #favourites-3 span:nth-child(1) {
+    font-size: 2rem;
     align-self: flex-start;
+    white-space: nowrap
 }
 
 #favourites-1 span:nth-child(2),
@@ -348,631 +192,233 @@ a:hover {
     align-self: flex-end;
     color: var(--color-accent);
     font-size: 3rem;
+    white-space: nowrap
 }
 
-
-
-
 #my-name {
-    padding: 2rem 1rem;
     display: flex;
     justify-content: center;
-    font-size: 5rem;
+    padding: 1rem;
+    font-size: 6rem;
     align-items: center;
     grid-area: name;
-    height: 100%;
+    height: auto;
     width: 100%;
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     color: var(--color-highlight-area);
     background-color: var(--color-accent);
     border: solid var(--outer-border-size) var(--color-border);
-    /*  box-shadow: -0.0625rem 0.0625rem 0 0 var(--color-highlight-area),
-        -0.075rem 0.075rem 0 0 var(--color-highlight-area),
-        -0.0875rem 0.0875rem 0 0 var(--color-highlight-area),
-        -0.1rem 0.1rem 0 0 var(--color-highlight-area),
-        -0.1125rem 0.1125rem 0 0 var(--color-highlight-area),
-        -0.125rem 0.125rem 0 0 var(--color-highlight-area),
-        -0.1375rem 0.1375rem 0 0 var(--color-highlight-area),
-        -0.15rem 0.15rem 0 0 var(--color-highlight-area),
-        -0.1625rem 0.1625rem 0 0 var(--color-highlight-area),
-        -0.175rem 0.175rem 0 0 var(--color-highlight-area),
-        -0.1875rem 0.1875rem 0 0 var(--color-highlight-area),
-        -0.2rem 0.2rem 0 0 var(--color-highlight-area),
-        -0.2125rem 0.2125rem 0 0 var(--color-highlight-area),
-        -0.225rem 0.225rem 0 0 var(--color-highlight-area),
-        -0.2375rem 0.2375rem 0 0 var(--color-highlight-area),
-        -0.25rem 0.25rem 0 0 var(--color-highlight-area),
-        -0.2625rem 0.2625rem 0 0 var(--color-highlight-area),
-        -0.275rem 0.275rem 0 0 var(--color-highlight-area),
-        -0.2875rem 0.2875rem 0 0 var(--color-highlight-area),
-        -0.3rem 0.3rem 0 0 var(--color-highlight-area),
-        -0.3125rem 0.3125rem 0 0 var(--color-highlight-area),
-        -0.325rem 0.325rem 0 0 var(--color-highlight-area),
-        -0.3375rem 0.3375rem 0 0 var(--color-highlight-area),
-        -0.35rem 0.35rem 0 0 var(--color-highlight-area),
-        -0.3625rem 0.3625rem 0 0 var(--color-highlight-area),
-        -0.375rem 0.375rem 0 0 var(--color-highlight-area),
-        -0.3875rem 0.3875rem 0 0 var(--color-highlight-area),
-        -0.4rem 0.4rem 0 0 var(--color-highlight-area),
-        -0.4125rem 0.4125rem 0 0 var(--color-highlight-area),
-        -0.425rem 0.425rem 0 0 var(--color-highlight-area),
-        -0.4375rem 0.4375rem 0 0 var(--color-highlight-area),
-        -0.45rem 0.45rem 0 0 var(--color-highlight-area),
-        -0.4625rem 0.4625rem 0 0 var(--color-highlight-area),
-        -0.475rem 0.475rem 0 0 var(--color-highlight-area),
-        -0.4875rem 0.4875rem 0 0 var(--color-highlight-area),
-        -0.5rem 0.5rem 0 0 var(--color-highlight-area),
-        -0.5125rem 0.5125rem 0 0 var(--color-highlight-area),
-        -0.525rem 0.525rem 0 0 var(--color-highlight-area),
-        -0.5375rem 0.5375rem 0 0 var(--color-highlight-area),
-        -0.55rem 0.55rem 0 0 var(--color-highlight-area),
-        -0.5625rem 0.5625rem 0 0 var(--color-highlight-area),
-        -0.575rem 0.575rem 0 0 var(--color-highlight-area),
-        -0.5875rem 0.5875rem 0 0 var(--color-highlight-area),
-        -0.6rem 0.6rem 0 0 var(--color-highlight-area),
-        -0.6125rem 0.6125rem 0 0 var(--color-highlight-area),
-        -0.625rem 0.625rem 0 0 var(--color-highlight-area),
-        -0.6375rem 0.6375rem 0 0 var(--color-highlight-area),
-        -0.65rem 0.65rem 0 0 var(--color-highlight-area),
-        -0.6625rem 0.6625rem 0 0 var(--color-highlight-area),
-        -0.675rem 0.675rem 0 0 var(--color-highlight-area),
-        -0.6875rem 0.6875rem 0 0 var(--color-highlight-area),
-        -0.7rem 0.7rem 0 0 var(--color-highlight-area),
-        -0.7125rem 0.7125rem 0 0 var(--color-highlight-area),
-        -0.725rem 0.725rem 0 0 var(--color-highlight-area),
-        -0.7375rem 0.7375rem 0 0 var(--color-highlight-area),
-        -0.75rem 0.75rem 0 0 var(--color-highlight-area); */
-
+    box-shadow: .0625rem .0625rem 0 0 var(--color-highlight-area), .075rem .075rem 0 0 var(--color-highlight-area), .0875rem .0875rem 0 0 var(--color-highlight-area), .1rem .1rem 0 0 var(--color-highlight-area), .1125rem .1125rem 0 0 var(--color-highlight-area), .125rem .125rem 0 0 var(--color-highlight-area), .1375rem .1375rem 0 0 var(--color-highlight-area), .15rem .15rem 0 0 var(--color-highlight-area), .1625rem .1625rem 0 0 var(--color-highlight-area), .175rem .175rem 0 0 var(--color-highlight-area), .1875rem .1875rem 0 0 var(--color-highlight-area), .2rem .2rem 0 0 var(--color-highlight-area), .2125rem .2125rem 0 0 var(--color-highlight-area), .225rem .225rem 0 0 var(--color-highlight-area), .2375rem .2375rem 0 0 var(--color-highlight-area), .25rem .25rem 0 0 var(--color-highlight-area), .2625rem .2625rem 0 0 var(--color-highlight-area), .275rem .275rem 0 0 var(--color-highlight-area), .2875rem .2875rem 0 0 var(--color-highlight-area), .3rem .3rem 0 0 var(--color-highlight-area), .3125rem .3125rem 0 0 var(--color-highlight-area), .325rem .325rem 0 0 var(--color-highlight-area), .3375rem .3375rem 0 0 var(--color-highlight-area), .35rem .35rem 0 0 var(--color-highlight-area), .3625rem .3625rem 0 0 var(--color-highlight-area), .375rem .375rem 0 0 var(--color-highlight-area), .3875rem .3875rem 0 0 var(--color-highlight-area), .4rem .4rem 0 0 var(--color-highlight-area), .4125rem .4125rem 0 0 var(--color-highlight-area), .425rem .425rem 0 0 var(--color-highlight-area), .4375rem .4375rem 0 0 var(--color-highlight-area), .45rem .45rem 0 0 var(--color-highlight-area), .4625rem .4625rem 0 0 var(--color-highlight-area), .475rem .475rem 0 0 var(--color-highlight-area), .4875rem .4875rem 0 0 var(--color-highlight-area), .5rem .5rem 0 0 var(--color-highlight-area), .5125rem .5125rem 0 0 var(--color-highlight-area), .525rem .525rem 0 0 var(--color-highlight-area), .5375rem .5375rem 0 0 var(--color-highlight-area), .55rem .55rem 0 0 var(--color-highlight-area), .5625rem .5625rem 0 0 var(--color-highlight-area), .575rem .575rem 0 0 var(--color-highlight-area), .5875rem .5875rem 0 0 var(--color-highlight-area), .6rem .6rem 0 0 var(--color-highlight-area), .6125rem .6125rem 0 0 var(--color-highlight-area), .625rem .625rem 0 0 var(--color-highlight-area), .6375rem .6375rem 0 0 var(--color-highlight-area), .65rem .65rem 0 0 var(--color-highlight-area), .6625rem .6625rem 0 0 var(--color-highlight-area), .675rem .675rem 0 0 var(--color-highlight-area), .6875rem .6875rem 0 0 var(--color-highlight-area), .7rem .7rem 0 0 var(--color-highlight-area), .7125rem .7125rem 0 0 var(--color-highlight-area), .725rem .725rem 0 0 var(--color-highlight-area), .7375rem .7375rem 0 0 var(--color-highlight-area), .75rem .75rem 0 0 var(--color-highlight-area)
 }
 
-
+#intro-section,
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
 
 .nav-bar {
     position: fixed;
     top: 2rem;
     right: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0rem;
+    gap: 0;
     height: auto;
-    z-index: 200;
-
-
+    z-index: 200
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .header-shadow-left {
-    box-shadow: -0.0625rem -0.0625rem 0 0 var(--color-highlight-area),
-        -0.075rem -0.075rem 0 0 var(--color-highlight-area),
-        -0.0875rem -0.0875rem 0 0 var(--color-highlight-area),
-        -0.1rem -0.1rem 0 0 var(--color-highlight-area),
-        -0.1125rem -0.1125rem 0 0 var(--color-highlight-area),
-        -0.125rem -0.125rem 0 0 var(--color-highlight-area),
-        -0.1375rem -0.1375rem 0 0 var(--color-highlight-area),
-        -0.15rem -0.15rem 0 0 var(--color-highlight-area),
-        -0.1625rem -0.1625rem 0 0 var(--color-highlight-area),
-        -0.175rem -0.175rem 0 0 var(--color-highlight-area),
-        -0.1875rem -0.1875rem 0 0 var(--color-highlight-area),
-        -0.2rem -0.2rem 0 0 var(--color-highlight-area),
-        -0.2125rem -0.2125rem 0 0 var(--color-highlight-area),
-        -0.225rem -0.225rem 0 0 var(--color-highlight-area),
-        -0.2375rem -0.2375rem 0 0 var(--color-highlight-area),
-        -0.25rem -0.25rem 0 0 var(--color-highlight-area),
-        -0.2625rem -0.2625rem 0 0 var(--color-highlight-area),
-        -0.275rem -0.275rem 0 0 var(--color-highlight-area),
-        -0.2875rem -0.2875rem 0 0 var(--color-highlight-area),
-        -0.3rem -0.3rem 0 0 var(--color-highlight-area),
-        -0.3125rem -0.3125rem 0 0 var(--color-highlight-area),
-        -0.325rem -0.325rem 0 0 var(--color-highlight-area),
-        -0.3375rem -0.3375rem 0 0 var(--color-highlight-area),
-        -0.35rem -0.35rem 0 0 var(--color-highlight-area),
-        -0.3625rem -0.3625rem 0 0 var(--color-highlight-area),
-        -0.375rem -0.375rem 0 0 var(--color-highlight-area),
-        -0.3875rem -0.3875rem 0 0 var(--color-highlight-area),
-        -0.4rem -0.4rem 0 0 var(--color-highlight-area),
-        -0.4125rem -0.4125rem 0 0 var(--color-highlight-area),
-        -0.425rem -0.425rem 0 0 var(--color-highlight-area),
-        -0.4375rem -0.4375rem 0 0 var(--color-highlight-area),
-        -0.45rem -0.45rem 0 0 var(--color-highlight-area),
-        -0.4625rem -0.4625rem 0 0 var(--color-highlight-area),
-        -0.475rem -0.475rem 0 0 var(--color-highlight-area),
-        -0.4875rem -0.4875rem 0 0 var(--color-highlight-area),
-        -0.5rem -0.5rem 0 0 var(--color-highlight-area),
-        -0.5125rem -0.5125rem 0 0 var(--color-highlight-area),
-        -0.525rem -0.525rem 0 0 var(--color-highlight-area),
-        -0.5375rem -0.5375rem 0 0 var(--color-highlight-area),
-        -0.55rem -0.55rem 0 0 var(--color-highlight-area),
-        -0.5625rem -0.5625rem 0 0 var(--color-highlight-area),
-        -0.575rem -0.575rem 0 0 var(--color-highlight-area),
-        -0.5875rem -0.5875rem 0 0 var(--color-highlight-area),
-        -0.6rem -0.6rem 0 0 var(--color-highlight-area),
-        -0.6125rem -0.6125rem 0 0 var(--color-highlight-area),
-        -0.625rem -0.625rem 0 0 var(--color-highlight-area),
-        -0.6375rem -0.6375rem 0 0 var(--color-highlight-area),
-        -0.65rem -0.65rem 0 0 var(--color-highlight-area),
-        -0.6625rem -0.6625rem 0 0 var(--color-highlight-area),
-        -0.675rem -0.675rem 0 0 var(--color-highlight-area),
-        -0.6875rem -0.6875rem 0 0 var(--color-highlight-area),
-        -0.7rem -0.7rem 0 0 var(--color-highlight-area),
-        -0.7125rem -0.7125rem 0 0 var(--color-highlight-area),
-        -0.725rem -0.725rem 0 0 var(--color-highlight-area),
-        -0.7375rem -0.7375rem 0 0 var(--color-highlight-area),
-        -0.75rem -0.75rem 0 0 var(--color-highlight-area);
+    box-shadow: -.0625rem -.0625rem 0 0 var(--color-highlight-area), -.075rem -.075rem 0 0 var(--color-highlight-area), -.0875rem -.0875rem 0 0 var(--color-highlight-area), -.1rem -.1rem 0 0 var(--color-highlight-area), -.1125rem -.1125rem 0 0 var(--color-highlight-area), -.125rem -.125rem 0 0 var(--color-highlight-area), -.1375rem -.1375rem 0 0 var(--color-highlight-area), -.15rem -.15rem 0 0 var(--color-highlight-area), -.1625rem -.1625rem 0 0 var(--color-highlight-area), -.175rem -.175rem 0 0 var(--color-highlight-area), -.1875rem -.1875rem 0 0 var(--color-highlight-area), -.2rem -.2rem 0 0 var(--color-highlight-area), -.2125rem -.2125rem 0 0 var(--color-highlight-area), -.225rem -.225rem 0 0 var(--color-highlight-area), -.2375rem -.2375rem 0 0 var(--color-highlight-area), -.25rem -.25rem 0 0 var(--color-highlight-area), -.2625rem -.2625rem 0 0 var(--color-highlight-area), -.275rem -.275rem 0 0 var(--color-highlight-area), -.2875rem -.2875rem 0 0 var(--color-highlight-area), -.3rem -.3rem 0 0 var(--color-highlight-area), -.3125rem -.3125rem 0 0 var(--color-highlight-area), -.325rem -.325rem 0 0 var(--color-highlight-area), -.3375rem -.3375rem 0 0 var(--color-highlight-area), -.35rem -.35rem 0 0 var(--color-highlight-area), -.3625rem -.3625rem 0 0 var(--color-highlight-area), -.375rem -.375rem 0 0 var(--color-highlight-area), -.3875rem -.3875rem 0 0 var(--color-highlight-area), -.4rem -.4rem 0 0 var(--color-highlight-area), -.4125rem -.4125rem 0 0 var(--color-highlight-area), -.425rem -.425rem 0 0 var(--color-highlight-area), -.4375rem -.4375rem 0 0 var(--color-highlight-area), -.45rem -.45rem 0 0 var(--color-highlight-area), -.4625rem -.4625rem 0 0 var(--color-highlight-area), -.475rem -.475rem 0 0 var(--color-highlight-area), -.4875rem -.4875rem 0 0 var(--color-highlight-area), -.5rem -.5rem 0 0 var(--color-highlight-area), -.5125rem -.5125rem 0 0 var(--color-highlight-area), -.525rem -.525rem 0 0 var(--color-highlight-area), -.5375rem -.5375rem 0 0 var(--color-highlight-area), -.55rem -.55rem 0 0 var(--color-highlight-area), -.5625rem -.5625rem 0 0 var(--color-highlight-area), -.575rem -.575rem 0 0 var(--color-highlight-area), -.5875rem -.5875rem 0 0 var(--color-highlight-area), -.6rem -.6rem 0 0 var(--color-highlight-area), -.6125rem -.6125rem 0 0 var(--color-highlight-area), -.625rem -.625rem 0 0 var(--color-highlight-area), -.6375rem -.6375rem 0 0 var(--color-highlight-area), -.65rem -.65rem 0 0 var(--color-highlight-area), -.6625rem -.6625rem 0 0 var(--color-highlight-area), -.675rem -.675rem 0 0 var(--color-highlight-area), -.6875rem -.6875rem 0 0 var(--color-highlight-area), -.7rem -.7rem 0 0 var(--color-highlight-area), -.7125rem -.7125rem 0 0 var(--color-highlight-area), -.725rem -.725rem 0 0 var(--color-highlight-area), -.7375rem -.7375rem 0 0 var(--color-highlight-area), -.75rem -.75rem 0 0 var(--color-highlight-area)
 }
-
-
-
 
 .header-shadow-right {
-    box-shadow: 0.0625rem -0.0625rem 0 0 var(--color-highlight-area),
-        0.075rem -0.075rem 0 0 var(--color-highlight-area),
-        0.0875rem -0.0875rem 0 0 var(--color-highlight-area),
-        0.1rem -0.1rem 0 0 var(--color-highlight-area),
-        0.1125rem -0.1125rem 0 0 var(--color-highlight-area),
-        0.125rem -0.125rem 0 0 var(--color-highlight-area),
-        0.1375rem -0.1375rem 0 0 var(--color-highlight-area),
-        0.15rem -0.15rem 0 0 var(--color-highlight-area),
-        0.1625rem -0.1625rem 0 0 var(--color-highlight-area),
-        0.175rem -0.175rem 0 0 var(--color-highlight-area),
-        0.1875rem -0.1875rem 0 0 var(--color-highlight-area),
-        0.2rem -0.2rem 0 0 var(--color-highlight-area),
-        0.2125rem -0.2125rem 0 0 var(--color-highlight-area),
-        0.225rem -0.225rem 0 0 var(--color-highlight-area),
-        0.2375rem -0.2375rem 0 0 var(--color-highlight-area),
-        0.25rem -0.25rem 0 0 var(--color-highlight-area),
-        0.2625rem -0.2625rem 0 0 var(--color-highlight-area),
-        0.275rem -0.275rem 0 0 var(--color-highlight-area),
-        0.2875rem -0.2875rem 0 0 var(--color-highlight-area),
-        0.3rem -0.3rem 0 0 var(--color-highlight-area),
-        0.3125rem -0.3125rem 0 0 var(--color-highlight-area),
-        0.325rem -0.325rem 0 0 var(--color-highlight-area),
-        0.3375rem -0.3375rem 0 0 var(--color-highlight-area),
-        0.35rem -0.35rem 0 0 var(--color-highlight-area),
-        0.3625rem -0.3625rem 0 0 var(--color-highlight-area),
-        0.375rem -0.375rem 0 0 var(--color-highlight-area),
-        0.3875rem -0.3875rem 0 0 var(--color-highlight-area),
-        0.4rem -0.4rem 0 0 var(--color-highlight-area),
-        0.4125rem -0.4125rem 0 0 var(--color-highlight-area),
-        0.425rem -0.425rem 0 0 var(--color-highlight-area),
-        0.4375rem -0.4375rem 0 0 var(--color-highlight-area),
-        0.45rem -0.45rem 0 0 var(--color-highlight-area),
-        0.4625rem -0.4625rem 0 0 var(--color-highlight-area),
-        0.475rem -0.475rem 0 0 var(--color-highlight-area),
-        0.4875rem -0.4875rem 0 0 var(--color-highlight-area),
-        0.5rem -0.5rem 0 0 var(--color-highlight-area),
-        0.5125rem -0.5125rem 0 0 var(--color-highlight-area),
-        0.525rem -0.525rem 0 0 var(--color-highlight-area),
-        0.5375rem -0.5375rem 0 0 var(--color-highlight-area),
-        0.55rem -0.55rem 0 0 var(--color-highlight-area),
-        0.5625rem -0.5625rem 0 0 var(--color-highlight-area),
-        0.575rem -0.575rem 0 0 var(--color-highlight-area),
-        0.5875rem -0.5875rem 0 0 var(--color-highlight-area),
-        0.6rem -0.6rem 0 0 var(--color-highlight-area),
-        0.6125rem -0.6125rem 0 0 var(--color-highlight-area),
-        0.625rem -0.625rem 0 0 var(--color-highlight-area),
-        0.6375rem -0.6375rem 0 0 var(--color-highlight-area),
-        0.65rem -0.65rem 0 0 var(--color-highlight-area),
-        0.6625rem -0.6625rem 0 0 var(--color-highlight-area),
-        0.675rem -0.675rem 0 0 var(--color-highlight-area),
-        0.6875rem -0.6875rem 0 0 var(--color-highlight-area),
-        0.7rem -0.7rem 0 0 var(--color-highlight-area),
-        0.7125rem -0.7125rem 0 0 var(--color-highlight-area),
-        0.725rem -0.725rem 0 0 var(--color-highlight-area),
-        0.7375rem -0.7375rem 0 0 var(--color-highlight-area),
-        0.75rem -0.75rem 0 0 var(--color-highlight-area);
+    box-shadow: .0625rem -.0625rem 0 0 var(--color-highlight-area), .075rem -.075rem 0 0 var(--color-highlight-area), .0875rem -.0875rem 0 0 var(--color-highlight-area), .1rem -.1rem 0 0 var(--color-highlight-area), .1125rem -.1125rem 0 0 var(--color-highlight-area), .125rem -.125rem 0 0 var(--color-highlight-area), .1375rem -.1375rem 0 0 var(--color-highlight-area), .15rem -.15rem 0 0 var(--color-highlight-area), .1625rem -.1625rem 0 0 var(--color-highlight-area), .175rem -.175rem 0 0 var(--color-highlight-area), .1875rem -.1875rem 0 0 var(--color-highlight-area), .2rem -.2rem 0 0 var(--color-highlight-area), .2125rem -.2125rem 0 0 var(--color-highlight-area), .225rem -.225rem 0 0 var(--color-highlight-area), .2375rem -.2375rem 0 0 var(--color-highlight-area), .25rem -.25rem 0 0 var(--color-highlight-area), .2625rem -.2625rem 0 0 var(--color-highlight-area), .275rem -.275rem 0 0 var(--color-highlight-area), .2875rem -.2875rem 0 0 var(--color-highlight-area), .3rem -.3rem 0 0 var(--color-highlight-area), .3125rem -.3125rem 0 0 var(--color-highlight-area), .325rem -.325rem 0 0 var(--color-highlight-area), .3375rem -.3375rem 0 0 var(--color-highlight-area), .35rem -.35rem 0 0 var(--color-highlight-area), .3625rem -.3625rem 0 0 var(--color-highlight-area), .375rem -.375rem 0 0 var(--color-highlight-area), .3875rem -.3875rem 0 0 var(--color-highlight-area), .4rem -.4rem 0 0 var(--color-highlight-area), .4125rem -.4125rem 0 0 var(--color-highlight-area), .425rem -.425rem 0 0 var(--color-highlight-area), .4375rem -.4375rem 0 0 var(--color-highlight-area), .45rem -.45rem 0 0 var(--color-highlight-area), .4625rem -.4625rem 0 0 var(--color-highlight-area), .475rem -.475rem 0 0 var(--color-highlight-area), .4875rem -.4875rem 0 0 var(--color-highlight-area), .5rem -.5rem 0 0 var(--color-highlight-area), .5125rem -.5125rem 0 0 var(--color-highlight-area), .525rem -.525rem 0 0 var(--color-highlight-area), .5375rem -.5375rem 0 0 var(--color-highlight-area), .55rem -.55rem 0 0 var(--color-highlight-area), .5625rem -.5625rem 0 0 var(--color-highlight-area), .575rem -.575rem 0 0 var(--color-highlight-area), .5875rem -.5875rem 0 0 var(--color-highlight-area), .6rem -.6rem 0 0 var(--color-highlight-area), .6125rem -.6125rem 0 0 var(--color-highlight-area), .625rem -.625rem 0 0 var(--color-highlight-area), .6375rem -.6375rem 0 0 var(--color-highlight-area), .65rem -.65rem 0 0 var(--color-highlight-area), .6625rem -.6625rem 0 0 var(--color-highlight-area), .675rem -.675rem 0 0 var(--color-highlight-area), .6875rem -.6875rem 0 0 var(--color-highlight-area), .7rem -.7rem 0 0 var(--color-highlight-area), .7125rem -.7125rem 0 0 var(--color-highlight-area), .725rem -.725rem 0 0 var(--color-highlight-area), .7375rem -.7375rem 0 0 var(--color-highlight-area), .75rem -.75rem 0 0 var(--color-highlight-area)
 }
-
 
 .container-shadow-left {
-    box-shadow: -0.0625rem -0.0625rem 0 0 var(--color-accent),
-        -0.075rem -0.075rem 0 0 var(--color-accent),
-        -0.0875rem -0.0875rem 0 0 var(--color-accent),
-        -0.1rem -0.1rem 0 0 var(--color-accent),
-        -0.1125rem -0.1125rem 0 0 var(--color-accent),
-        -0.125rem -0.125rem 0 0 var(--color-accent),
-        -0.1375rem -0.1375rem 0 0 var(--color-accent),
-        -0.15rem -0.15rem 0 0 var(--color-accent),
-        -0.1625rem -0.1625rem 0 0 var(--color-accent),
-        -0.175rem -0.175rem 0 0 var(--color-accent),
-        -0.1875rem -0.1875rem 0 0 var(--color-accent),
-        -0.2rem -0.2rem 0 0 var(--color-accent),
-        -0.2125rem -0.2125rem 0 0 var(--color-accent),
-        -0.225rem -0.225rem 0 0 var(--color-accent),
-        -0.2375rem -0.2375rem 0 0 var(--color-accent),
-        -0.25rem -0.25rem 0 0 var(--color-accent),
-        -0.2625rem -0.2625rem 0 0 var(--color-accent),
-        -0.275rem -0.275rem 0 0 var(--color-accent),
-        -0.2875rem -0.2875rem 0 0 var(--color-accent),
-        -0.3rem -0.3rem 0 0 var(--color-accent),
-        -0.3125rem -0.3125rem 0 0 var(--color-accent),
-        -0.325rem -0.325rem 0 0 var(--color-accent),
-        -0.3375rem -0.3375rem 0 0 var(--color-accent),
-        -0.35rem -0.35rem 0 0 var(--color-accent),
-        -0.3625rem -0.3625rem 0 0 var(--color-accent),
-        -0.375rem -0.375rem 0 0 var(--color-accent),
-        -0.3875rem -0.3875rem 0 0 var(--color-accent),
-        -0.4rem -0.4rem 0 0 var(--color-accent),
-        -0.4125rem -0.4125rem 0 0 var(--color-accent),
-        -0.425rem -0.425rem 0 0 var(--color-accent),
-        -0.4375rem -0.4375rem 0 0 var(--color-accent),
-        -0.45rem -0.45rem 0 0 var(--color-accent),
-        -0.4625rem -0.4625rem 0 0 var(--color-accent),
-        -0.475rem -0.475rem 0 0 var(--color-accent),
-        -0.4875rem -0.4875rem 0 0 var(--color-accent),
-        -0.5rem -0.5rem 0 0 var(--color-accent),
-        -0.5125rem -0.5125rem 0 0 var(--color-accent),
-        -0.525rem -0.525rem 0 0 var(--color-accent),
-        -0.5375rem -0.5375rem 0 0 var(--color-accent),
-        -0.55rem -0.55rem 0 0 var(--color-accent),
-        -0.5625rem -0.5625rem 0 0 var(--color-accent),
-        -0.575rem -0.575rem 0 0 var(--color-accent),
-        -0.5875rem -0.5875rem 0 0 var(--color-accent),
-        -0.6rem -0.6rem 0 0 var(--color-accent),
-        -0.6125rem -0.6125rem 0 0 var(--color-accent),
-        -0.625rem -0.625rem 0 0 var(--color-accent),
-        -0.6375rem -0.6375rem 0 0 var(--color-accent),
-        -0.65rem -0.65rem 0 0 var(--color-accent),
-        -0.6625rem -0.6625rem 0 0 var(--color-accent),
-        -0.675rem -0.675rem 0 0 var(--color-accent),
-        -0.6875rem -0.6875rem 0 0 var(--color-accent),
-        -0.7rem -0.7rem 0 0 var(--color-accent),
-        -0.7125rem -0.7125rem 0 0 var(--color-accent),
-        -0.725rem -0.725rem 0 0 var(--color-accent),
-        -0.7375rem -0.7375rem 0 0 var(--color-accent),
-        -0.75rem -0.75rem 0 0 var(--color-accent);
+    box-shadow: -.0625rem -.0625rem 0 0 var(--color-accent), -.075rem -.075rem 0 0 var(--color-accent), -.0875rem -.0875rem 0 0 var(--color-accent), -.1rem -.1rem 0 0 var(--color-accent), -.1125rem -.1125rem 0 0 var(--color-accent), -.125rem -.125rem 0 0 var(--color-accent), -.1375rem -.1375rem 0 0 var(--color-accent), -.15rem -.15rem 0 0 var(--color-accent), -.1625rem -.1625rem 0 0 var(--color-accent), -.175rem -.175rem 0 0 var(--color-accent), -.1875rem -.1875rem 0 0 var(--color-accent), -.2rem -.2rem 0 0 var(--color-accent), -.2125rem -.2125rem 0 0 var(--color-accent), -.225rem -.225rem 0 0 var(--color-accent), -.2375rem -.2375rem 0 0 var(--color-accent), -.25rem -.25rem 0 0 var(--color-accent), -.2625rem -.2625rem 0 0 var(--color-accent), -.275rem -.275rem 0 0 var(--color-accent), -.2875rem -.2875rem 0 0 var(--color-accent), -.3rem -.3rem 0 0 var(--color-accent), -.3125rem -.3125rem 0 0 var(--color-accent), -.325rem -.325rem 0 0 var(--color-accent), -.3375rem -.3375rem 0 0 var(--color-accent), -.35rem -.35rem 0 0 var(--color-accent), -.3625rem -.3625rem 0 0 var(--color-accent), -.375rem -.375rem 0 0 var(--color-accent), -.3875rem -.3875rem 0 0 var(--color-accent), -.4rem -.4rem 0 0 var(--color-accent), -.4125rem -.4125rem 0 0 var(--color-accent), -.425rem -.425rem 0 0 var(--color-accent), -.4375rem -.4375rem 0 0 var(--color-accent), -.45rem -.45rem 0 0 var(--color-accent), -.4625rem -.4625rem 0 0 var(--color-accent), -.475rem -.475rem 0 0 var(--color-accent), -.4875rem -.4875rem 0 0 var(--color-accent), -.5rem -.5rem 0 0 var(--color-accent), -.5125rem -.5125rem 0 0 var(--color-accent), -.525rem -.525rem 0 0 var(--color-accent), -.5375rem -.5375rem 0 0 var(--color-accent), -.55rem -.55rem 0 0 var(--color-accent), -.5625rem -.5625rem 0 0 var(--color-accent), -.575rem -.575rem 0 0 var(--color-accent), -.5875rem -.5875rem 0 0 var(--color-accent), -.6rem -.6rem 0 0 var(--color-accent), -.6125rem -.6125rem 0 0 var(--color-accent), -.625rem -.625rem 0 0 var(--color-accent), -.6375rem -.6375rem 0 0 var(--color-accent), -.65rem -.65rem 0 0 var(--color-accent), -.6625rem -.6625rem 0 0 var(--color-accent), -.675rem -.675rem 0 0 var(--color-accent), -.6875rem -.6875rem 0 0 var(--color-accent), -.7rem -.7rem 0 0 var(--color-accent), -.7125rem -.7125rem 0 0 var(--color-accent), -.725rem -.725rem 0 0 var(--color-accent), -.7375rem -.7375rem 0 0 var(--color-accent), -.75rem -.75rem 0 0 var(--color-accent)
 }
-
 
 .container-shadow-right {
-    transition: 0.3s;
-    box-shadow:
-        0.0625rem -0.0625rem 0 0 var(--color-accent),
-        0.075rem -0.075rem 0 0 var(--color-accent),
-        0.0875rem -0.0875rem 0 0 var(--color-accent),
-        0.1rem -0.1rem 0 0 var(--color-accent),
-        0.1125rem -0.1125rem 0 0 var(--color-accent),
-        0.125rem -0.125rem 0 0 var(--color-accent),
-        0.1375rem -0.1375rem 0 0 var(--color-accent),
-        0.15rem -0.15rem 0 0 var(--color-accent),
-        0.1625rem -0.1625rem 0 0 var(--color-accent),
-        0.175rem -0.175rem 0 0 var(--color-accent),
-        0.1875rem -0.1875rem 0 0 var(--color-accent),
-        0.2rem -0.2rem 0 0 var(--color-accent),
-        0.2125rem -0.2125rem 0 0 var(--color-accent),
-        0.225rem -0.225rem 0 0 var(--color-accent),
-        0.2375rem -0.2375rem 0 0 var(--color-accent),
-        0.25rem -0.25rem 0 0 var(--color-accent),
-        0.2625rem -0.2625rem 0 0 var(--color-accent),
-        0.275rem -0.275rem 0 0 var(--color-accent),
-        0.2875rem -0.2875rem 0 0 var(--color-accent),
-        0.3rem -0.3rem 0 0 var(--color-accent),
-        0.3125rem -0.3125rem 0 0 var(--color-accent),
-        0.325rem -0.325rem 0 0 var(--color-accent),
-        0.3375rem -0.3375rem 0 0 var(--color-accent),
-        0.35rem -0.35rem 0 0 var(--color-accent),
-        0.3625rem -0.3625rem 0 0 var(--color-accent),
-        0.375rem -0.375rem 0 0 var(--color-accent),
-        0.3875rem -0.3875rem 0 0 var(--color-accent),
-        0.4rem -0.4rem 0 0 var(--color-accent),
-        0.4125rem -0.4125rem 0 0 var(--color-accent),
-        0.425rem -0.425rem 0 0 var(--color-accent),
-        0.4375rem -0.4375rem 0 0 var(--color-accent),
-        0.45rem -0.45rem 0 0 var(--color-accent),
-        0.4625rem -0.4625rem 0 0 var(--color-accent),
-        0.475rem -0.475rem 0 0 var(--color-accent),
-        0.4875rem -0.4875rem 0 0 var(--color-accent),
-        0.5rem -0.5rem 0 0 var(--color-accent),
-        0.5125rem -0.5125rem 0 0 var(--color-accent),
-        0.525rem -0.525rem 0 0 var(--color-accent),
-        0.5375rem -0.5375rem 0 0 var(--color-accent),
-        0.55rem -0.55rem 0 0 var(--color-accent),
-        0.5625rem -0.5625rem 0 0 var(--color-accent),
-        0.575rem -0.575rem 0 0 var(--color-accent),
-        0.5875rem -0.5875rem 0 0 var(--color-accent),
-        0.6rem -0.6rem 0 0 var(--color-accent),
-        0.6125rem -0.6125rem 0 0 var(--color-accent),
-        0.625rem -0.625rem 0 0 var(--color-accent),
-        0.6375rem -0.6375rem 0 0 var(--color-accent),
-        0.65rem -0.65rem 0 0 var(--color-accent),
-        0.6625rem -0.6625rem 0 0 var(--color-accent),
-        0.675rem -0.675rem 0 0 var(--color-accent),
-        0.6875rem -0.6875rem 0 0 var(--color-accent),
-        0.7rem -0.7rem 0 0 var(--color-accent),
-        0.7125rem -0.7125rem 0 0 var(--color-accent),
-        0.725rem -0.725rem 0 0 var(--color-accent),
-        0.7375rem -0.7375rem 0 0 var(--color-accent),
-        0.75rem -0.75rem 0 0 var(--color-accent);
+    transition: box-shadow .3s;
+    box-shadow: .0625rem -.0625rem 0 0 var(--color-accent), .075rem -.075rem 0 0 var(--color-accent), .0875rem -.0875rem 0 0 var(--color-accent), .1rem -.1rem 0 0 var(--color-accent), .1125rem -.1125rem 0 0 var(--color-accent), .125rem -.125rem 0 0 var(--color-accent), .1375rem -.1375rem 0 0 var(--color-accent), .15rem -.15rem 0 0 var(--color-accent), .1625rem -.1625rem 0 0 var(--color-accent), .175rem -.175rem 0 0 var(--color-accent), .1875rem -.1875rem 0 0 var(--color-accent), .2rem -.2rem 0 0 var(--color-accent), .2125rem -.2125rem 0 0 var(--color-accent), .225rem -.225rem 0 0 var(--color-accent), .2375rem -.2375rem 0 0 var(--color-accent), .25rem -.25rem 0 0 var(--color-accent), .2625rem -.2625rem 0 0 var(--color-accent), .275rem -.275rem 0 0 var(--color-accent), .2875rem -.2875rem 0 0 var(--color-accent), .3rem -.3rem 0 0 var(--color-accent), .3125rem -.3125rem 0 0 var(--color-accent), .325rem -.325rem 0 0 var(--color-accent), .3375rem -.3375rem 0 0 var(--color-accent), .35rem -.35rem 0 0 var(--color-accent), .3625rem -.3625rem 0 0 var(--color-accent), .375rem -.375rem 0 0 var(--color-accent), .3875rem -.3875rem 0 0 var(--color-accent), .4rem -.4rem 0 0 var(--color-accent), .4125rem -.4125rem 0 0 var(--color-accent), .425rem -.425rem 0 0 var(--color-accent), .4375rem -.4375rem 0 0 var(--color-accent), .45rem -.45rem 0 0 var(--color-accent), .4625rem -.4625rem 0 0 var(--color-accent), .475rem -.475rem 0 0 var(--color-accent), .4875rem -.4875rem 0 0 var(--color-accent), .5rem -.5rem 0 0 var(--color-accent), .5125rem -.5125rem 0 0 var(--color-accent), .525rem -.525rem 0 0 var(--color-accent), .5375rem -.5375rem 0 0 var(--color-accent), .55rem -.55rem 0 0 var(--color-accent), .5625rem -.5625rem 0 0 var(--color-accent), .575rem -.575rem 0 0 var(--color-accent), .5875rem -.5875rem 0 0 var(--color-accent), .6rem -.6rem 0 0 var(--color-accent), .6125rem -.6125rem 0 0 var(--color-accent), .625rem -.625rem 0 0 var(--color-accent), .6375rem -.6375rem 0 0 var(--color-accent), .65rem -.65rem 0 0 var(--color-accent), .6625rem -.6625rem 0 0 var(--color-accent), .675rem -.675rem 0 0 var(--color-accent), .6875rem -.6875rem 0 0 var(--color-accent), .7rem -.7rem 0 0 var(--color-accent), .7125rem -.7125rem 0 0 var(--color-accent), .725rem -.725rem 0 0 var(--color-accent), .7375rem -.7375rem 0 0 var(--color-accent), .75rem -.75rem 0 0 var(--color-accent)
 }
-
-
-
 
 #intro-section {
-    border: solid var(--outer-border-size) var(--color-border);
+    flex-direction: column;
     grid-area: main-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    background-color: var(--color-highlight-area);
-    transition: 0.4s;
-
-
-    /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
-
+    gap: 2rem;
+    line-height: 3.75rem;
+    width: 100%;
+    height: 100%
 }
 
+#intro-section p {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--color-highlight-area)
+}
 
+#favourites-section,
+#skills-body {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly
+}
 
 #favourites-section {
-    display: flex;
     align-items: flex-start;
-    gap: 3rem;
-    justify-content: space-evenly;
     flex-direction: column;
-
-
     width: 100%;
-    height: 100%;
-    grid-area: favourites-section;
-
+    grid-area: favourites-section
 }
 
-/* .pattern-background {
-    background-color: #e5e5f7;
-    opacity: 1;
-    background-image: linear-gradient(#444cf7 4px, transparent 4px), linear-gradient(to right, #444cf7 4px, #e5e5f7 4px);
-    background-size: 80px 80px;
-} */
-
-.container-style {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /*   background-color: var(--color-highlight-area); */
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    background-color: #010101;
-
-
-}
-
-
-
-
-#skills-body {
-    position: relative;
-    grid-area: skills;
-    height: 100%;
-    background-color: var(--color-highlight-area);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1rem;
-    overflow: hidden;
-    z-index: 0;
-
-
-}
-
-
+.container-style,
 .skill-item {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
     align-items: center;
-    justify-content: center;
+    justify-content: center
+}
 
+.container-style {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    background-color: #010101
+}
 
+#skills-body {
+    grid-area: skills;
+    background-color: var(--color-highlight-area);
+    gap: 2rem;
+    z-index: 0
+}
+
+.skill-item {
+    flex-direction: column;
+    gap: .5rem
 }
 
 .skill-item img {
-    filter: var(--svg-filter);
-
+    filter: var(--svg-filter)
 }
 
-/* .skill-item span {
-
-    color: var(--color-text);
+.skill-item label {
+    font-size: 1.25rem;
+    font-weight: 400;
 }
- */
 
-
-
-
+#skills-body,
 .svg-area {
-
-    grid-area: socials;
     position: relative;
     overflow: hidden;
-    height: 100%;
-    display: flex;
+    flex-wrap: wrap
+}
+
+.svg-area {
+    grid-area: socials;
+    height: 70%;
+    margin: auto;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-
-
-    /*    border: solid var(--outer-border-size) var(--color-text);
-    background-color: var(--color-highlight-area); */
+    gap: 3rem;
+    width: 100%
 }
 
-
-
-
-
-
-
-
-
+#contact-page h1,
+.svg-area,
 .svg-area a {
-
     display: flex;
-
-    background-color: var(--color-accent);
-
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
-
-
+    align-items: center
 }
 
-.svg-area a:hover {
-    opacity: 0.7;
+.svg-area,
+.svg-area a {
+    justify-content: center
 }
 
-/* img {
+#contact-form textarea,
+.icon {
+    background-color: var(--color-accent)
+}
 
+.icon,
+.svg-icon {
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat
+}
 
-    filter: var(--svg-filter) invert(1) drop-shadow(1px 1px 0px var(--color-accent)) drop-shadow(1.2px 1.2px 0px var(--color-accent)) drop-shadow(1.4px 1.4px 0px var(--color-accent)) drop-shadow(1.6px 1.6px 0px var(--color-accent)) drop-shadow(1.8px 1.8px 0px var(--color-accent)) drop-shadow(2px 2px 0px var(--color-accent)) drop-shadow(2.2px 2.2px 0px var(--color-accent));
-
-} */
-
-
-
+.icon {
+    mask-size: 100%;
+    width: 6rem;
+    height: 6rem
+}
 
 .svg-area img {
-    padding: 1rem;
     filter: var(--svg-filter) invert(1);
-    transition: 0.3s;
-
-    width: 7rem;
-    height: auto;
-
-
-
-
-}
-
-/* .svg-icon.medium {
+    filter: invert(55%) sepia(90%) saturate(3.5);
+    cursor: pointer;
     width: 6rem;
-    height: 6rem;
-    background-color: var(--color-accent);
-    mask-image: url("./assets/medium.svg");
-    transition: 0.4s;
-
+    height: auto
 }
-
-.svg-icon.github {
-    width: 6rem;
-    height: 6rem;
-    background-color: var(--color-accent);
-    mask-image: url("./assets/github.svg");
-
-}
-
-.svg-icon.linkedin {
-    width: 6rem;
-    height: 6rem;
-    background-color: var(--color-accent);
-    mask-image: url("./assets/linkedin.svg");
-
-} */
-
 
 .svg-icon {
     -webkit-mask-size: contain;
     mask-size: contain;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+    -webkit-mask-position: center
 }
-
-
 
 #contact-page {
     display: grid;
-
     width: 80%;
-
-    height: fit-content;
-    gap: 3rem;
+    height: 100%;
+    gap: 2rem;
     grid-template-rows: 1fr 5fr;
     grid-template-columns: 2fr 1fr;
-    grid-template-areas: "call-for-action socials"
-        "contact-form socials"
-        "contact-form socials";
+    grid-template-areas: "call-for-action socials" "contact-form socials" "contact-form socials"
 }
 
 #contact-page h1 {
     position: relative;
-    display: flex;
-    align-items: center;
     text-align: left;
-
-    width: 100%;
-    height: 100%;
-
-
+    font-size: 4rem;
     color: var(--color-accent);
     background-color: var(--color-highlight-area);
     grid-area: call-for-action;
-
-
-
-    padding: 2rem;
-
-
-
-
+    padding-inline: 2rem
 }
 
-#contact-page h1 span {
-    display: block;
-    color: var(--color-accent);
-    z-index: 99;
-}
-
+#contact-form,
 .label-textarea-section {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: space-between;
-    width: 100%;
-    gap: 1rem;
-
+    width: 100%
 }
 
+.label-textarea-section {
+    align-items: flex-start;
+    padding-inline: 2rem;
+    gap: .5rem
+}
 
 #contact-form {
-
+    position: relative;
     grid-area: contact-form;
     padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
     height: fit-content;
-    gap: 5rem;
-    background-color: var(--color-highlight-area);
-    overflow: hidden;
+    gap: 2rem;
+    background-color: var(--color-highlight-area)
 }
 
 #contact-form label {
-    padding-inline: 2rem;
-    font-size: 3rem;
+    font-size: 1.75rem;
     color: var(--color-text);
     width: 35%;
-    text-align: left;
-
-
-
+    text-align: left
 }
 
 #contact-form textarea {
@@ -980,337 +426,148 @@ a:hover {
     resize: none;
     font-size: 1.75rem;
     width: 100%;
-    background-color: var(--color-accent);
     color: var(--color-highlight-area);
-
     border: solid calc(var(--outer-border-size)/2) var(--color-border);
     align-self: flex-end;
-    padding: 1rem;
-    box-shadow:
-        0.0625rem 0.0625rem 0 0 var(--color-accent),
-        0.075rem 0.075rem 0 0 var(--color-accent),
-        0.0875rem 0.0875rem 0 0 var(--color-accent),
-        0.1rem 0.1rem 0 0 var(--color-accent),
-        0.1125rem 0.1125rem 0 0 var(--color-accent),
-        0.125rem 0.125rem 0 0 var(--color-accent),
-        0.1375rem 0.1375rem 0 0 var(--color-accent),
-        0.15rem 0.15rem 0 0 var(--color-accent),
-        0.1625rem 0.1625rem 0 0 var(--color-accent),
-        0.175rem 0.175rem 0 0 var(--color-accent),
-        0.1875rem 0.1875rem 0 0 var(--color-accent),
-        0.2rem 0.2rem 0 0 var(--color-accent),
-        0.2125rem 0.2125rem 0 0 var(--color-accent),
-        0.225rem 0.225rem 0 0 var(--color-accent),
-        0.2375rem 0.2375rem 0 0 var(--color-accent),
-        0.25rem 0.25rem 0 0 var(--color-accent),
-        0.2625rem 0.2625rem 0 0 var(--color-accent),
-        0.275rem 0.275rem 0 0 var(--color-accent),
-        0.2875rem 0.2875rem 0 0 var(--color-accent),
-        0.3rem 0.3rem 0 0 var(--color-accent),
-        0.3125rem 0.3125rem 0 0 var(--color-accent),
-        0.325rem 0.325rem 0 0 var(--color-accent),
-        0.3375rem 0.3375rem 0 0 var(--color-accent),
-        0.35rem 0.35rem 0 0 var(--color-accent),
-        0.3625rem 0.3625rem 0 0 var(--color-accent),
-        0.375rem 0.375rem 0 0 var(--color-accent),
-        0.3875rem 0.3875rem 0 0 var(--color-accent),
-        0.4rem 0.4rem 0 0 var(--color-accent),
-        0.4125rem 0.4125rem 0 0 var(--color-accent),
-        0.425rem 0.425rem 0 0 var(--color-accent),
-        0.4375rem 0.4375rem 0 0 var(--color-accent),
-        0.45rem 0.45rem 0 0 var(--color-accent),
-        0.4625rem 0.4625rem 0 0 var(--color-accent),
-        0.475rem 0.475rem 0 0 var(--color-accent),
-        0.4875rem 0.4875rem 0 0 var(--color-accent),
-        0.5rem 0.5rem 0 0 var(--color-accent),
-        0.5125rem 0.5125rem 0 0 var(--color-accent),
-        0.525rem 0.525rem 0 0 var(--color-accent),
-        0.5375rem 0.5375rem 0 0 var(--color-accent),
-        0.55rem 0.55rem 0 0 var(--color-accent),
-        0.5625rem 0.5625rem 0 0 var(--color-accent),
-        0.575rem 0.575rem 0 0 var(--color-accent),
-        0.5875rem 0.5875rem 0 0 var(--color-accent),
-        0.6rem 0.6rem 0 0 var(--color-accent),
-        0.6125rem 0.6125rem 0 0 var(--color-accent),
-        0.625rem 0.625rem 0 0 var(--color-accent),
-        0.6375rem 0.6375rem 0 0 var(--color-accent),
-        0.65rem 0.65rem 0 0 var(--color-accent),
-        0.6625rem 0.6625rem 0 0 var(--color-accent),
-        0.675rem 0.675rem 0 0 var(--color-accent),
-        0.6875rem 0.6875rem 0 0 var(--color-accent),
-        0.7rem 0.7rem 0 0 var(--color-accent),
-        0.7125rem 0.7125rem 0 0 var(--color-accent),
-        0.725rem 0.725rem 0 0 var(--color-accent),
-        0.7375rem 0.7375rem 0 0 var(--color-accent),
-        0.75rem 0.75rem 0 0 var(--color-accent);
-
-
-
-
+    padding: 1rem
 }
 
-#error-message {
-    padding-inline: 1rem;
-    color: var(--color-accent);
-    font-size: 1.75rem;
-    align-self: flex-end;
-}
-
-#error-message.show {
-    transition: 0.3s;
-    animation: showTextSpan 0.3s ease-out;
-}
-
-button:hover {
-    transform: translate(-10px, -10px);
-}
-
-@keyframes showTextSpan {
-
-    0% {
-        opacity: 0.5;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-
-#contact-form>button {
+#contact-form button {
+    border: 0;
+    margin-top: 2rem;
     cursor: pointer;
-    align-self: flex-end;
+    align-self: flex-start
+}
+
+#contact-form button span,
+#contact-page h1 {
+    width: 100%;
+    height: 100%
 }
 
 ::placeholder {
-    font-family: "regular";
-
-    color: var(--color-background);
-
-    /* Firefox */
+    font-family: "Nax";
+    color: var(--color-background)
 }
 
 ::-ms-input-placeholder {
-    /* Edge 12 -18 */
-    font-family: "regular";
-    color: var(--color-background);
+    font-family: "Nax";
+    color: var(--color-background)
 }
 
-
-
-
-
-
-
-
-
-/* #projects-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    gap: 0;
-}
- */
 .project-container {
     display: grid;
-
-
-
-    gap: 3rem;
+    gap: 2rem;
     width: 90%;
     height: 100%;
-    justify-content: center;
-
-
+    justify-content: center
 }
 
 .project-container:nth-child(even) {
     grid-template-rows: 1fr 4fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "project-header image"
-        "project-body image";
-
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: "project-header image" "project-body image"
 }
 
 .project-container:nth-child(odd) {
     grid-template-rows: 1fr 4fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "image project-header"
-        "image project-body";
-
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-areas: "image project-header" "image project-body"
 }
-
 
 .project-container:nth-child(even) .button-link {
-    align-self: flex-start;
+    align-self: flex-start
 }
 
-.project-container:nth-child(even) .button-link:hover {
-
-    transform: translate(10px, -10px);
-}
-
-
-
+.blog-container:nth-child(even) .button-link,
 .project-container:nth-child(odd) .button-link {
-    align-self: flex-end;
+    align-self: flex-end
 }
-
-.project-container:nth-child(odd) .button-link:hover {
-
-    transform: translate(-10px, -10px);
-}
-
 
 .project-container img {
     grid-area: image;
     border: solid var(--outer-border-size) var(--color-accent);
-
     width: 100%;
-    height: auto;
+    height: 100%
 }
 
 .project-container-content {
     grid-area: project-body;
-    background-color: var(--color-highlight-area);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     height: 100%;
-    border: solid var(--outer-border-size) var(--color-border);
+    border: solid var(--outer-border-size) var(--color-border)
+}
 
+#projects-page,
+.project-container h1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start
+}
 
+.project-container h1,
+.project-container-content {
+    background-color: var(--color-highlight-area);
+    width: 100%
 }
 
 .project-container h1 {
     grid-area: project-header;
-    display: flex;
-    padding: 1rem;
+    padding: 2rem;
     font-size: 4rem;
-
     color: var(--color-accent);
-
-    background-color: var(--color-highlight-area);
-
-    justify-content: flex-start;
-
-    align-items: center;
-
-    text-align: left;
-    width: 100%;
-
-
-
-
-
-
+    text-align: left
 }
 
 .project-container-content p {
     width: 100%;
-
-
-    padding: 2rem;
+    padding-inline: 2rem
 }
 
-.projects-links {
-    width: 100%;
-
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 2rem;
-    gap: 2rem;
-}
-
-
-
-#blogs-page,
 #projects-page {
-
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 90%;
-    gap: 8rem;
-    min-height: 100vh;
+    width: 95%;
+    gap: 4rem;
+    min-height: 100vh
+}
 
+#blogs-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    justify-items: center;
+    justify-content: center;
+    width: 95%;
+    gap: 10rem 4rem;
+    min-height: 100vh
 }
 
 .blog-container {
-
     display: grid;
     width: 90%;
-
-
-    gap: 3rem;
-    /*   border: solid var(--outer-border-size) var(--color-text); */
-
+    height: 100%;
+    gap: 2rem
 }
 
-
-
-
-.blog-container:nth-child(even) {
-
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "image blog-header"
-        "image blog-body";
-}
-
-
-
-.blog-container:nth-child(even) .button-link {
-    align-self: flex-end;
-}
-
-.blog-container:nth-child(even) .button-link:hover {
-    transform: translate(-10px, -10px);
-}
-
-
-
+.blog-container:nth-child(even),
 .blog-container:nth-child(odd) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "blog-header image"
-        "blog-body image";
+    grid-template-columns: 1fr;
+    grid-template-areas: "blog-header" "blog-body"
 }
-
 
 .blog-container:nth-child(odd) .button-link {
-    align-self: flex-start;
+    align-self: flex-start
 }
-
-.blog-container:nth-child(odd) .button-link:hover {
-    transform: translate(10px, -10px);
-    align-self: flex-start;
-}
-
-
-
-
-
-
-
-
-
 
 .blog-container img {
     grid-area: image;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover
 }
-
-
 
 .blog-container-content {
     height: 100%;
@@ -1322,252 +579,162 @@ button:hover {
     gap: 3rem;
     align-items: center;
     justify-content: space-between;
-    border: solid var(--outer-border-size) var(--color-border);
-
-    /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
-
-
-
+    border: solid var(--outer-border-size) var(--color-border)
 }
 
-
-
-.blog-container
-
-/* -content */
-h1 {
-
+.blog-container h1 {
     grid-area: blog-header;
-    position: relative;
     font-size: 3rem;
-    padding: 1rem;
+    padding: 2rem;
     color: var(--color-accent);
-
-    background-color: var(--color-highlight-area);
-
-    width: 100%;
-
     text-align: left;
 }
 
 .blog-container-content p {
     padding-inline: 2rem;
-    width: 100%;
-
-    /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
+    width: 100%
 }
 
 .button-link {
-    border: none;
     align-self: flex-start;
-
-    padding: 0.5rem 2rem;
+    padding: .5rem 2rem;
     text-decoration: none;
     width: fit-content;
     background-color: var(--color-accent);
     color: var(--color-highlight-area);
     font-size: 2rem;
-    transition: 0.3s;
+    transition: .3s
 }
 
+.button-link.active-1 {
+    padding-block: .5rem;
+    padding-inline: 2.5rem
+}
 
-
-
-
-
-
+.blog-container h1,
 .categories {
-
     position: relative;
     background-color: var(--color-highlight-area);
-    /*  background: radial-gradient(circle at center, var(--color-highlight-area-gradient), var(--color-highlight-area)); */
+    width: 100%
+}
 
+.categories {
     display: flex;
-
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-
     padding-inline: 2rem;
     margin-top: 2rem;
-    width: 100%;
     gap: 2rem;
-    z-index: 1;
-
+    z-index: 1
 }
-
-
-
 
 .category-area:first-child {
-    border: none
+    border: 0
 }
 
-
 .category-area {
-
-    margin-block: 1rem;
-    display: flex;
-
     justify-content: center;
     align-items: flex-start;
     position: relative;
-
     user-select: none;
-
-
     height: fit-content;
-
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: var(--color-accent);
-
     font-weight: 700;
-    z-index: 3;
+    z-index: 3
 }
 
-
-
-
-
-
-
-@media (max-width: 2024px) {
+@media (max-width:2024px) {
     html {
-        font-size: 16px;
+        font-size: 16px
     }
-
-
-    #home .section-content .image-wrapper img {
-        height: 25rem;
-        width: 26rem;
-
-
-    }
-
-
-
-
 
     .skill-item img {
         margin-inline: 2rem;
-        width: 5rem;
-        height: auto;
+        width: 5.5rem;
+        height: auto
     }
-
-
-
-
-
 }
 
-body,
-#root {
+#root,
+body {
     margin: 0;
-    /* Reset margins */
     padding: 0;
-    /* Reset paddings */
-    min-height: 100vh;
-    /* Ensure the viewport height is fully used */
+    min-height: 100vh
 }
 
-@media (max-width: 768px) {
+@media (max-width:900px) {
     html {
-        font-size: 8px;
+        font-size: 8px
     }
 
     .page-margins {
-        margin-bottom: 5rem;
         margin-top: 5rem;
+        margin-bottom: 5rem
     }
 
     .nav-bar {
         position: sticky;
         bottom: 0;
-        /* Stick it to the bottom */
         left: 0;
         right: 0;
-
         gap: 0;
         text-align: center;
-        background-color: var(--color-background);
-
-        /* Optional: Spacing for the nav */
+        background-color: var(--color-background)
     }
 
     .link {
         width: 100%;
         height: 100%;
-        padding-block: 2rem;
+        padding-block: 1.75rem;
+        padding-inline: 1.5rem
     }
-
-    /*  #theme-icon {
-        position: absolute;
-        transform-origin: bottom;
-        top: -100%;
-        left: 50%;
-
-
-
-  } */
-
-
 
     #aboutme-page {
-        grid-template-rows: 3fr 1fr 1fr 1fr 3fr;
-        grid-template-areas:
-            /*  'navigation navigation navigation' */
-            'name main-content main-content'
-            'name favourites-1 favourites-1'
-            'name favourites-2 favourites-2'
-            'favourites-3 favourites-3 favourites-3'
-            'skills skills skills'
-
-        ;
+        grid-template-rows: 1fr auto auto auto 2fr;
+        grid-template-areas: "main-content main-content main-content" "name favourites-1 favourites-1" "name favourites-2 favourites-2" "name favourites-3 favourites-3" "skills skills skills"
     }
 
-
-
-
-
-
-
-
-    /* .skill-item img {
-
-        margin-inline: 1.5rem;
-        width: 2.5rem;
-        height: auto;
+    #blogs-page {
+        grid-template-columns: 1fr;
+        width: 80%;
+        gap: 10rem
     }
- */
 
+    #intro-section {
+        display: flex;
+        flex-direction: column
+    }
 
+    #favourites-1 span:nth-child(1),
+    #favourites-2 span:nth-child(1),
+    #favourites-3 span:nth-child(1) {
+        font-size: 2.5rem
+    }
 
-
-
+    #favourites-1 span:nth-child(2),
+    #favourites-2 span:nth-child(2),
+    #favourites-3 span:nth-child(2) {
+        font-size: 3.5rem
+    }
 
     #contact-page {
         grid-template-columns: 1fr;
-
-        grid-template-rows: 0.5fr 3fr 1fr;
-        grid-template-areas: "call-for-action"
-            "contact-form"
-            "socials";
+        grid-template-rows: .5fr 3fr 1fr;
+        grid-template-areas: "call-for-action" "contact-form" "socials"
     }
 
     .svg-area {
         flex-direction: row;
+        height: fit-content
     }
-
-
 
     .blog-container:nth-child(even),
     .blog-container:nth-child(odd) {
-
         grid-template-columns: 1fr;
-        grid-template-areas: "image"
-            "blog-header"
-            "blog-body";
+        grid-template-areas: "image" "blog-header" "blog-body"
     }
 
     .blog-container:nth-child(even) img,
@@ -1575,158 +742,66 @@ body,
         grid-area: image;
         width: 100%;
         height: auto;
-        object-fit: cover;
+        object-fit: cover
     }
-
-
-
-
-
-
-
 
     .project-container:nth-child(even),
     .project-container:nth-child(odd) {
         grid-template-columns: 1fr;
-        grid-template-areas: "project-header"
-            "project-body"
-            "image";
-
-
+        grid-template-areas: "project-header" "project-body" "image"
     }
 
-    .container-shadow-right,
-    .container-shadow-left {
-        box-shadow: -0.0625rem -0.0625rem 0 0 var(--color-accent),
-            -0.075rem -0.075rem 0 0 var(--color-accent),
-            -0.0875rem -0.0875rem 0 0 var(--color-accent),
-            -0.1rem -0.1rem 0 0 var(--color-accent),
-            -0.1125rem -0.1125rem 0 0 var(--color-accent),
-            -0.125rem -0.125rem 0 0 var(--color-accent),
-            -0.1375rem -0.1375rem 0 0 var(--color-accent),
-            -0.15rem -0.15rem 0 0 var(--color-accent),
-            -0.1625rem -0.1625rem 0 0 var(--color-accent),
-            -0.175rem -0.175rem 0 0 var(--color-accent),
-            -0.1875rem -0.1875rem 0 0 var(--color-accent),
-            -0.2rem -0.2rem 0 0 var(--color-accent),
-            -0.2125rem -0.2125rem 0 0 var(--color-accent),
-            -0.225rem -0.225rem 0 0 var(--color-accent),
-            -0.2375rem -0.2375rem 0 0 var(--color-accent),
-            -0.25rem -0.25rem 0 0 var(--color-accent),
-            -0.2625rem -0.2625rem 0 0 var(--color-accent),
-            -0.275rem -0.275rem 0 0 var(--color-accent),
-            -0.2875rem -0.2875rem 0 0 var(--color-accent),
-            -0.3rem -0.3rem 0 0 var(--color-accent),
-            -0.3125rem -0.3125rem 0 0 var(--color-accent),
-            -0.325rem -0.325rem 0 0 var(--color-accent),
-            -0.3375rem -0.3375rem 0 0 var(--color-accent),
-            -0.35rem -0.35rem 0 0 var(--color-accent),
-            -0.3625rem -0.3625rem 0 0 var(--color-accent),
-            -0.375rem -0.375rem 0 0 var(--color-accent),
-            -0.3875rem -0.3875rem 0 0 var(--color-accent),
-            -0.4rem -0.4rem 0 0 var(--color-accent),
-            -0.4125rem -0.4125rem 0 0 var(--color-accent),
-            -0.425rem -0.425rem 0 0 var(--color-accent),
-            -0.4375rem -0.4375rem 0 0 var(--color-accent),
-            -0.45rem -0.45rem 0 0 var(--color-accent),
-            -0.4625rem -0.4625rem 0 0 var(--color-accent),
-            -0.475rem -0.475rem 0 0 var(--color-accent),
-            -0.4875rem -0.4875rem 0 0 var(--color-accent),
-            -0.5rem -0.5rem 0 0 var(--color-accent),
-            -0.5125rem -0.5125rem 0 0 var(--color-accent),
-            -0.525rem -0.525rem 0 0 var(--color-accent),
-            -0.5375rem -0.5375rem 0 0 var(--color-accent),
-            -0.55rem -0.55rem 0 0 var(--color-accent),
-            -0.5625rem -0.5625rem 0 0 var(--color-accent),
-            -0.575rem -0.575rem 0 0 var(--color-accent),
-            -0.5875rem -0.5875rem 0 0 var(--color-accent),
-            -0.6rem -0.6rem 0 0 var(--color-accent),
-            -0.6125rem -0.6125rem 0 0 var(--color-accent),
-            -0.625rem -0.625rem 0 0 var(--color-accent),
-            -0.6375rem -0.6375rem 0 0 var(--color-accent),
-            -0.65rem -0.65rem 0 0 var(--color-accent),
-            -0.6625rem -0.6625rem 0 0 var(--color-accent),
-            -0.675rem -0.675rem 0 0 var(--color-accent),
-            -0.6875rem -0.6875rem 0 0 var(--color-accent),
-            -0.7rem -0.7rem 0 0 var(--color-accent),
-            -0.7125rem -0.7125rem 0 0 var(--color-accent),
-            -0.725rem -0.725rem 0 0 var(--color-accent),
-            -0.7375rem -0.7375rem 0 0 var(--color-accent),
-            -0.75rem -0.75rem 0 0 var(--color-accent);
+    .blog-container .button-link,
+    .project-container .button-link {
+        align-self: flex-start !important
+    }
 
+    .container-shadow-left,
+    .container-shadow-right {
+        box-shadow: -.0625rem -.0625rem 0 0 var(--color-accent), -.075rem -.075rem 0 0 var(--color-accent), -.0875rem -.0875rem 0 0 var(--color-accent), -.1rem -.1rem 0 0 var(--color-accent), -.1125rem -.1125rem 0 0 var(--color-accent), -.125rem -.125rem 0 0 var(--color-accent), -.1375rem -.1375rem 0 0 var(--color-accent), -.15rem -.15rem 0 0 var(--color-accent), -.1625rem -.1625rem 0 0 var(--color-accent), -.175rem -.175rem 0 0 var(--color-accent), -.1875rem -.1875rem 0 0 var(--color-accent), -.2rem -.2rem 0 0 var(--color-accent), -.2125rem -.2125rem 0 0 var(--color-accent), -.225rem -.225rem 0 0 var(--color-accent), -.2375rem -.2375rem 0 0 var(--color-accent), -.25rem -.25rem 0 0 var(--color-accent), -.2625rem -.2625rem 0 0 var(--color-accent), -.275rem -.275rem 0 0 var(--color-accent), -.2875rem -.2875rem 0 0 var(--color-accent), -.3rem -.3rem 0 0 var(--color-accent), -.3125rem -.3125rem 0 0 var(--color-accent), -.325rem -.325rem 0 0 var(--color-accent), -.3375rem -.3375rem 0 0 var(--color-accent), -.35rem -.35rem 0 0 var(--color-accent), -.3625rem -.3625rem 0 0 var(--color-accent), -.375rem -.375rem 0 0 var(--color-accent), -.3875rem -.3875rem 0 0 var(--color-accent), -.4rem -.4rem 0 0 var(--color-accent), -.4125rem -.4125rem 0 0 var(--color-accent), -.425rem -.425rem 0 0 var(--color-accent), -.4375rem -.4375rem 0 0 var(--color-accent), -.45rem -.45rem 0 0 var(--color-accent), -.4625rem -.4625rem 0 0 var(--color-accent), -.475rem -.475rem 0 0 var(--color-accent), -.4875rem -.4875rem 0 0 var(--color-accent), -.5rem -.5rem 0 0 var(--color-accent), -.5125rem -.5125rem 0 0 var(--color-accent), -.525rem -.525rem 0 0 var(--color-accent), -.5375rem -.5375rem 0 0 var(--color-accent), -.55rem -.55rem 0 0 var(--color-accent), -.5625rem -.5625rem 0 0 var(--color-accent), -.575rem -.575rem 0 0 var(--color-accent), -.5875rem -.5875rem 0 0 var(--color-accent), -.6rem -.6rem 0 0 var(--color-accent), -.6125rem -.6125rem 0 0 var(--color-accent), -.625rem -.625rem 0 0 var(--color-accent), -.6375rem -.6375rem 0 0 var(--color-accent), -.65rem -.65rem 0 0 var(--color-accent), -.6625rem -.6625rem 0 0 var(--color-accent), -.675rem -.675rem 0 0 var(--color-accent), -.6875rem -.6875rem 0 0 var(--color-accent), -.7rem -.7rem 0 0 var(--color-accent), -.7125rem -.7125rem 0 0 var(--color-accent), -.725rem -.725rem 0 0 var(--color-accent), -.7375rem -.7375rem 0 0 var(--color-accent), -.75rem -.75rem 0 0 var(--color-accent)
     }
 
     .header-shadow-left,
     .header-shadow-right {
-        box-shadow: 0.0625rem -0.0625rem 0 0 var(--color-highlight-area),
-            0.075rem -0.075rem 0 0 var(--color-highlight-area),
-            0.0875rem -0.0875rem 0 0 var(--color-highlight-area),
-            0.1rem -0.1rem 0 0 var(--color-highlight-area),
-            0.1125rem -0.1125rem 0 0 var(--color-highlight-area),
-            0.125rem -0.125rem 0 0 var(--color-highlight-area),
-            0.1375rem -0.1375rem 0 0 var(--color-highlight-area),
-            0.15rem -0.15rem 0 0 var(--color-highlight-area),
-            0.1625rem -0.1625rem 0 0 var(--color-highlight-area),
-            0.175rem -0.175rem 0 0 var(--color-highlight-area),
-            0.1875rem -0.1875rem 0 0 var(--color-highlight-area),
-            0.2rem -0.2rem 0 0 var(--color-highlight-area),
-            0.2125rem -0.2125rem 0 0 var(--color-highlight-area),
-            0.225rem -0.225rem 0 0 var(--color-highlight-area),
-            0.2375rem -0.2375rem 0 0 var(--color-highlight-area),
-            0.25rem -0.25rem 0 0 var(--color-highlight-area),
-            0.2625rem -0.2625rem 0 0 var(--color-highlight-area),
-            0.275rem -0.275rem 0 0 var(--color-highlight-area),
-            0.2875rem -0.2875rem 0 0 var(--color-highlight-area),
-            0.3rem -0.3rem 0 0 var(--color-highlight-area),
-            0.3125rem -0.3125rem 0 0 var(--color-highlight-area),
-            0.325rem -0.325rem 0 0 var(--color-highlight-area),
-            0.3375rem -0.3375rem 0 0 var(--color-highlight-area),
-            0.35rem -0.35rem 0 0 var(--color-highlight-area),
-            0.3625rem -0.3625rem 0 0 var(--color-highlight-area),
-            0.375rem -0.375rem 0 0 var(--color-highlight-area),
-            0.3875rem -0.3875rem 0 0 var(--color-highlight-area),
-            0.4rem -0.4rem 0 0 var(--color-highlight-area),
-            0.4125rem -0.4125rem 0 0 var(--color-highlight-area),
-            0.425rem -0.425rem 0 0 var(--color-highlight-area),
-            0.4375rem -0.4375rem 0 0 var(--color-highlight-area),
-            0.45rem -0.45rem 0 0 var(--color-highlight-area),
-            0.4625rem -0.4625rem 0 0 var(--color-highlight-area),
-            0.475rem -0.475rem 0 0 var(--color-highlight-area),
-            0.4875rem -0.4875rem 0 0 var(--color-highlight-area),
-            0.5rem -0.5rem 0 0 var(--color-highlight-area),
-            0.5125rem -0.5125rem 0 0 var(--color-highlight-area),
-            0.525rem -0.525rem 0 0 var(--color-highlight-area),
-            0.5375rem -0.5375rem 0 0 var(--color-highlight-area),
-            0.55rem -0.55rem 0 0 var(--color-highlight-area),
-            0.5625rem -0.5625rem 0 0 var(--color-highlight-area),
-            0.575rem -0.575rem 0 0 var(--color-highlight-area),
-            0.5875rem -0.5875rem 0 0 var(--color-highlight-area),
-            0.6rem -0.6rem 0 0 var(--color-highlight-area),
-            0.6125rem -0.6125rem 0 0 var(--color-highlight-area),
-            0.625rem -0.625rem 0 0 var(--color-highlight-area),
-            0.6375rem -0.6375rem 0 0 var(--color-highlight-area),
-            0.65rem -0.65rem 0 0 var(--color-highlight-area),
-            0.6625rem -0.6625rem 0 0 var(--color-highlight-area),
-            0.675rem -0.675rem 0 0 var(--color-highlight-area),
-            0.6875rem -0.6875rem 0 0 var(--color-highlight-area),
-            0.7rem -0.7rem 0 0 var(--color-highlight-area),
-            0.7125rem -0.7125rem 0 0 var(--color-highlight-area),
-            0.725rem -0.725rem 0 0 var(--color-highlight-area),
-            0.7375rem -0.7375rem 0 0 var(--color-highlight-area),
-            0.75rem -0.75rem 0 0 var(--color-highlight-area);
-
-
+        box-shadow: .0625rem -.0625rem 0 0 var(--color-highlight-area), .075rem -.075rem 0 0 var(--color-highlight-area), .0875rem -.0875rem 0 0 var(--color-highlight-area), .1rem -.1rem 0 0 var(--color-highlight-area), .1125rem -.1125rem 0 0 var(--color-highlight-area), .125rem -.125rem 0 0 var(--color-highlight-area), .1375rem -.1375rem 0 0 var(--color-highlight-area), .15rem -.15rem 0 0 var(--color-highlight-area), .1625rem -.1625rem 0 0 var(--color-highlight-area), .175rem -.175rem 0 0 var(--color-highlight-area), .1875rem -.1875rem 0 0 var(--color-highlight-area), .2rem -.2rem 0 0 var(--color-highlight-area), .2125rem -.2125rem 0 0 var(--color-highlight-area), .225rem -.225rem 0 0 var(--color-highlight-area), .2375rem -.2375rem 0 0 var(--color-highlight-area), .25rem -.25rem 0 0 var(--color-highlight-area), .2625rem -.2625rem 0 0 var(--color-highlight-area), .275rem -.275rem 0 0 var(--color-highlight-area), .2875rem -.2875rem 0 0 var(--color-highlight-area), .3rem -.3rem 0 0 var(--color-highlight-area), .3125rem -.3125rem 0 0 var(--color-highlight-area), .325rem -.325rem 0 0 var(--color-highlight-area), .3375rem -.3375rem 0 0 var(--color-highlight-area), .35rem -.35rem 0 0 var(--color-highlight-area), .3625rem -.3625rem 0 0 var(--color-highlight-area), .375rem -.375rem 0 0 var(--color-highlight-area), .3875rem -.3875rem 0 0 var(--color-highlight-area), .4rem -.4rem 0 0 var(--color-highlight-area), .4125rem -.4125rem 0 0 var(--color-highlight-area), .425rem -.425rem 0 0 var(--color-highlight-area), .4375rem -.4375rem 0 0 var(--color-highlight-area), .45rem -.45rem 0 0 var(--color-highlight-area), .4625rem -.4625rem 0 0 var(--color-highlight-area), .475rem -.475rem 0 0 var(--color-highlight-area), .4875rem -.4875rem 0 0 var(--color-highlight-area), .5rem -.5rem 0 0 var(--color-highlight-area), .5125rem -.5125rem 0 0 var(--color-highlight-area), .525rem -.525rem 0 0 var(--color-highlight-area), .5375rem -.5375rem 0 0 var(--color-highlight-area), .55rem -.55rem 0 0 var(--color-highlight-area), .5625rem -.5625rem 0 0 var(--color-highlight-area), .575rem -.575rem 0 0 var(--color-highlight-area), .5875rem -.5875rem 0 0 var(--color-highlight-area), .6rem -.6rem 0 0 var(--color-highlight-area), .6125rem -.6125rem 0 0 var(--color-highlight-area), .625rem -.625rem 0 0 var(--color-highlight-area), .6375rem -.6375rem 0 0 var(--color-highlight-area), .65rem -.65rem 0 0 var(--color-highlight-area), .6625rem -.6625rem 0 0 var(--color-highlight-area), .675rem -.675rem 0 0 var(--color-highlight-area), .6875rem -.6875rem 0 0 var(--color-highlight-area), .7rem -.7rem 0 0 var(--color-highlight-area), .7125rem -.7125rem 0 0 var(--color-highlight-area), .725rem -.725rem 0 0 var(--color-highlight-area), .7375rem -.7375rem 0 0 var(--color-highlight-area), .75rem -.75rem 0 0 var(--color-highlight-area)
     }
-
-
-
 }
 
-
-
-
-
-
 #projects {
-    position: relative;
+    position: relative
+}
+
+.notification {
+    text-align: center;
+    white-space: nowrap;
+    z-index: -10;
+    position: absolute;
+    top: 75%;
+    right: .5%;
+    opacity: 0;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--color-accent);
+    color: var(--color-highlight-area);
+    transform: translate(0, 0);
+    transition: 1.5s
+}
+
+.show-notification {
+    opacity: 1;
+    top: 100%
+}
+
+#error-message {
+    padding-inline: 1rem;
+    color: var(--color-accent);
+    font-size: 1.75rem;
+    align-self: flex-end
+}
+
+#error-message.show {
+    transition: .3s;
+    animation: showTextSpan .3s ease-out
 }

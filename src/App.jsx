@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import './App.css';
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -30,12 +30,12 @@ function App() {
       });
   }, []);
   return (
-    <BrowserRouter>
+    <Router>
 
 
-      <AnimatedRoutes blogsArray={blogsArray} isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
+      <AnimatedRoutes blogsArray={blogsArray} />
       <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
-    </BrowserRouter>
+    </Router>
   );
 }
 
