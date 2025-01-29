@@ -75,9 +75,9 @@ function BlogsPage({ blogsArray }) {
 
 
         <motion.div className='centered-page'
-            initial={{ opacity: 0, transition: { duration: 0.4 } }}
-            animate={{ opacity: 1, transition: { duration: 1 } }}
-            exit={{ opacity: 0, transition: { duration: 0.4 } }}
+            initial={{ opacity: 0, scale: 0.95, transition: { duration: 0.4 } }}
+            animate={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
+            exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.4 } }}
         >
 
 
@@ -125,8 +125,8 @@ function BlogsPage({ blogsArray }) {
 
 
                         </div>
-                        <img className={`${index % 2 !== 0 ? "container-shadow-right" : "container-shadow-left"}`} src={blog.image_url} alt={blog.title} />
-                    </div>
+                        {/*                         <img className={`${index % 2 !== 0 ? "container-shadow-right" : "container-shadow-left"}`} src={blog.image_url} alt={blog.title} />
+ */}                    </div>
                 ))}
 
 
