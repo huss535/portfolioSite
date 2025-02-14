@@ -1,3 +1,5 @@
+@import url(https://fonts.cdnfonts.com/css/andale-mono);
+
 @keyframes spin {
     0% {
         transform: rotate(0deg)
@@ -20,22 +22,16 @@
     user-select: none
 }
 
-@font-face {
-    font-family: Nax;
-    src: url(/fonts/SpaceGrotesk-VariableFont_wght.ttf)format("truetype")
-}
-
-a,
+/* a,
+body,
 button,
 h1,
 h2,
 label,
 span {
-    font-family: "Nax";
-    font-weight: 400;
-    font-style: normal
+    font-family: "Andalé Mono", "Andale Mono", "Lucida Console", "Courier New", monospace !important
 }
-
+ */
 :root,
 :root.light {
     --outer-border-size: 0rem
@@ -114,13 +110,11 @@ p {
     color: var(--color-text)
 }
 
-
-p,
+/* p,
 textarea {
-    font-family: "Nax";
-    font-optical-sizing: auto
+    font-family: "Andalé Mono", "Andale Mono", "Lucida Console", "Courier New", monospace !important
 }
-
+ */
 textarea:focus {
     outline: 0
 }
@@ -159,18 +153,20 @@ a:hover {
     font-size: 3rem
 }
 
+#favourites-1 {
+    grid-area: favourites-1
+}
+
 #favourites-1,
 #favourites-2,
 #favourites-3 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: var(--color-highlight-area);
-    grid-area: favourites-1
+    background-color: var(--color-highlight-area)
 }
 
-#favourites-2,
-#favourites-3 {
+#favourites-2 {
     grid-area: favourites-2
 }
 
@@ -296,7 +292,8 @@ a:hover {
     z-index: 0
 }
 
-.skill-item {
+.skill-item,
+.svg-area {
     flex-direction: column;
     gap: .5rem
 }
@@ -307,7 +304,7 @@ a:hover {
 
 .skill-item label {
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 400
 }
 
 #skills-body,
@@ -321,7 +318,6 @@ a:hover {
     grid-area: socials;
     height: 70%;
     margin: auto;
-    flex-direction: column;
     gap: 3rem;
     width: 100%
 }
@@ -381,11 +377,9 @@ a:hover {
 }
 
 #contact-page h1 {
-    position: relative;
     text-align: left;
     font-size: 4rem;
     color: var(--color-accent);
-    background-color: var(--color-highlight-area);
     grid-area: call-for-action;
     padding-inline: 2rem
 }
@@ -404,14 +398,18 @@ a:hover {
     gap: .5rem
 }
 
-#contact-form {
+#contact-form,
+#contact-page h1 {
     position: relative;
+    background-color: var(--color-highlight-area)
+}
+
+#contact-form {
     grid-area: contact-form;
     padding-top: 2rem;
     align-items: center;
     height: fit-content;
-    gap: 2rem;
-    background-color: var(--color-highlight-area)
+    gap: 2rem
 }
 
 #contact-form label {
@@ -445,15 +443,15 @@ a:hover {
     height: 100%
 }
 
-::placeholder {
-    font-family: "Nax";
+/* ::placeholder {
+    font-family: "Andalé Mono", "Andale Mono", "Lucida Console", "Courier New", monospace !important;
     color: var(--color-background)
 }
 
 ::-ms-input-placeholder {
-    font-family: "Nax";
+    font-family: "Andalé Mono", "Andale Mono", "Lucida Console", "Courier New", monospace !important;
     color: var(--color-background)
-}
+} */
 
 .project-container {
     display: grid;
@@ -554,6 +552,7 @@ a:hover {
 
 .blog-container:nth-child(even),
 .blog-container:nth-child(odd) {
+    grid-template-rows: auto 2fr;
     grid-template-columns: 1fr;
     grid-template-areas: "blog-header" "blog-body"
 }
@@ -584,10 +583,10 @@ a:hover {
 
 .blog-container h1 {
     grid-area: blog-header;
-    font-size: 3rem;
+    font-size: 2.25rem;
     padding: 2rem;
     color: var(--color-accent);
-    text-align: left;
+    text-align: left
 }
 
 .blog-container-content p {
@@ -693,7 +692,7 @@ body {
     }
 
     #aboutme-page {
-        grid-template-rows: 1fr auto auto auto 2fr;
+        grid-template-rows: auto auto auto auto auto;
         grid-template-areas: "main-content main-content main-content" "name favourites-1 favourites-1" "name favourites-2 favourites-2" "name favourites-3 favourites-3" "skills skills skills"
     }
 
@@ -706,18 +705,6 @@ body {
     #intro-section {
         display: flex;
         flex-direction: column
-    }
-
-    #favourites-1 span:nth-child(1),
-    #favourites-2 span:nth-child(1),
-    #favourites-3 span:nth-child(1) {
-        font-size: 2.5rem
-    }
-
-    #favourites-1 span:nth-child(2),
-    #favourites-2 span:nth-child(2),
-    #favourites-3 span:nth-child(2) {
-        font-size: 3.5rem
     }
 
     #contact-page {

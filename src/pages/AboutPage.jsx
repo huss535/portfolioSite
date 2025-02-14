@@ -9,8 +9,7 @@ import html from '../assets/skills/HTML.svg'
 import css from '../assets/skills/CSS.svg'
 import postgresql from '../assets/skills/Postgresql.svg'
 import typescript from '../assets/skills/Typescript.svg'
-
-
+import { useEffect } from "react"
 
 
 
@@ -23,8 +22,17 @@ function AboutPage() {
     { img: postgresql, label: "POSTGRESQL" }, { img: typescript, label: "TYPESCRIPT" }
     ]
 
+    // image pre-rendering, load images into cache
+    useEffect(() => {
+        const skillImages = [
+            aws, flutter, react, html, css, postgresql, typescript
+        ];
 
-
+        skillImages.forEach((imgSrc) => {
+            const img = new Image();
+            img.src = imgSrc;
+        });
+    }, []);
 
 
     return (
@@ -56,43 +64,25 @@ function AboutPage() {
                     </span>
 
                 </h1>
-                <div id="intro-section">
+                <div id="intro-section" className='container-shadow-left'>
                     <p
 
 
-                        /*   id="intro-section" */
-                        className='container-shadow-left'>
+                    /*   id="intro-section" */
+                    >
 
 
-                        <span
+                        {/*  <span */}
 
-                        >
+                        {/* > */}
 
 
-                            I’m a highly caffeinated nerd with a passion for music and building sh*t. From full-stack web apps to cool cloud architectures, and even hilariously unnecessary projects ... I love creating. I’m also deeply invested in UX design, writing, and exploring new ideas. My exposure to diverse fields has shaped a unique, adaptive approach to problem-solving, and that’s exactly why you’ll want me on your team.
+                        A highly caffeinated nerd passionate about music and crafting exciting digital experiences, whether through full-stack web apps, cloud architectures, or thoughtful UX design.
 
-                            {/*     <span className="text-highlight">Who am I ?</span> <br />
-                            I’m a caffeinated CS nerd with a music addiction and a consistent urge to build sh*t. Whether it’s scalable cloud creations, full-stack apps or something absurdly unnecessary. */}
 
-                        </span>
                     </p>
 
-                    {/*   <p
 
-
-                        className='container-shadow-right'>
-
-
-                        <span
-
-                        >
-                            <span className="text-highlight">What sets me apart?</span><br />
-
-                            I’m constantly chasing foreign challenges, always building fresh worldviews to bring a unique perspective to every problem I tackle. This drive has led me to explore content writing, UX storytelling, and solving real-world business challenges. I’m technical at heart but endlessly empathetic about the messy, creative, and human side of life.
-
-                        </span>
-                    </p>
- */}
 
 
                 </div>
