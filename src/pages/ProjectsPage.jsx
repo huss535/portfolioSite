@@ -1,8 +1,9 @@
 
 import { motion } from "motion/react"
-import weather from '../assets/projectImg/weatherWizard.png';
-import trivia from '../assets/projectImg/gameOfTrivia.png';
+import weather from '../assets/projectImg/weatherWizard.webp';
+import trivia from '../assets/projectImg/gameOfTrivia.webp';
 import MinButton from "../components/MinButton";
+import { useEffect } from "react";
 
 // eslint-disable-next-line react/prop-types
 function ProjectsPage() {
@@ -27,6 +28,22 @@ function ProjectsPage() {
             liveSite: ""
         }
     ];
+
+    // image pre-rendering component
+    const preloadImages = (imageUrls) => {
+        imageUrls.forEach((url) => {
+            const img = new Image();
+            img.src = url;
+        });
+    };
+
+    useEffect(() => {
+        preloadImages([
+            projects[0].img,
+            projects[1].img
+        ]);
+    }, [projects]);
+
 
     return (
 

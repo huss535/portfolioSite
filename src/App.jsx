@@ -6,8 +6,10 @@ import AnimatedRoutes from "./components/AnimatedRoutes";
 import TopNav from "./components/TopNav";
 
 function App() {
-  const [isLightMode, setIsLightMode] = useState(false);
-  const [blogsArray, setBlogsArray] = useState([]);
+  const [isLightMode, setIsLightMode] = useState(false); // dark mode / light mode switch
+  const [blogsArray, setBlogsArray] = useState([]); // medium articles array
+
+
   useEffect(() => {
     const root = document.documentElement;
     if (isLightMode) {
