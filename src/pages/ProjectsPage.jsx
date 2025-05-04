@@ -1,7 +1,6 @@
 
 import { motion } from "motion/react"
-import weather from '../assets/projectImg/weatherWizard.webp';
-import trivia from '../assets/projectImg/gameOfTrivia.webp';
+
 import MinButton from "../components/MinButton";
 import { useEffect } from "react";
 
@@ -12,16 +11,23 @@ function ProjectsPage() {
 
     const projects = [
         {
-            title: "WEATHER WIZARD",
-            img: weather,
+            title: "Weather Wizard",
+
             description: "A real-time weather app that offers live updates, detailed forecasts, interactive maps, and location searches. It also features a customizable assistant modeled after your favorite movie character to deliver weather updates with personality and flair.",
             techStack: ["Flutter", "Dart", "GeminiAPI"],
             githubRepo: "https://github.com/huss535/weatherApp",
             liveSite: ""
         },
         {
-            title: "GAME OF TRIVIA",
-            img: trivia,
+            title: "Scan2Eat",
+
+            description: "A web app that allows you to scan ingredients and get recipes based on what you have",
+            techStack: ["React", "Firebase", "Typescript"],
+            githubRepo: "https://github.com/huss535/scan2Eat",
+            liveSite: ""
+        }, {
+            title: "Game of Trivia",
+
             description: "An AI-powered trivia quiz game that allows users to access questions on any topic of their choice.",
             techStack: ["React", "Express", "Typescript", "PostgreSQL"],
             githubRepo: "https://github.com/huss535/gameOfTrivia",
@@ -48,11 +54,15 @@ function ProjectsPage() {
     return (
 
 
-        <motion.div className='centered-page'
-            initial={{ opacity: 0, scale: 0.95, transition: { duration: 0.4 } }}
-            animate={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
-            exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.4 } }}
+        <motion.div
+            className='centered-page'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.25 } }}
+            exit={{ opacity: 0, transition: { duration: 0.25 } }}
+
         >
+
+            <div id="project-svg"></div>
 
 
             <div id="projects-page" className="page-margins">
@@ -61,9 +71,9 @@ function ProjectsPage() {
                 {projects.map((project, index) => (
                     <div key={index} className="project-container">
 
-                        <h1 className={`${index % 2 === 0 ? "container-shadow-right" : "container-shadow-left"}`} >{project.title}</h1>
-                        <div className={`project-container-content ${index % 2 === 0 ? "container-shadow-right" : "container-shadow-left"}`}>
-
+                        {/*                         <h1 className={`${index % 2 === 0 ? "container-shadow-right" : "container-shadow-left"}`} >{project.title}</h1>
+ */}                        <div className={`container-style project-container-content ${index % 2 === 0 ? "container-shadow-right" : "container-shadow-right"}`}>
+                            <h1 >{project.title}</h1>
                             <div className="categories">
                                 {project.techStack.map((category, catIndex) => (
                                     <span key={catIndex} className="category-area">
@@ -71,6 +81,7 @@ function ProjectsPage() {
                                     </span>
                                 ))}
                             </div>
+
                             <p >{project.description}</p>
 
 
@@ -82,14 +93,14 @@ function ProjectsPage() {
                                     rel="noopener noreferrer"
 
                                 >REPO</a> */}
-                            <MinButton text="REPO" link={project.githubRepo} />
+                            <MinButton text="Source Code" link={project.githubRepo} />
 
 
 
 
                         </div>
 
-                        <img className={`${index % 2 === 0 ? "container-shadow-right" : "container-shadow-left"}`} src={project.img} />
+                        {/*   <img className={`${index % 2 === 0 ? "container-shadow-right" : "container-shadow-left"}`} src={project.img} /> */}
 
 
                     </div>

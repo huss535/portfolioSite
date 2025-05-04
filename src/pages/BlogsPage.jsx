@@ -74,10 +74,12 @@ function BlogsPage({ blogsArray }) {
     return (
 
 
-        <motion.div className='centered-page'
-            initial={{ opacity: 0, scale: 0.95, transition: { duration: 0.4 } }}
-            animate={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
-            exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.4 } }}
+        <motion.div
+            className='centered-page'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.25 } }}
+            exit={{ opacity: 0, transition: { duration: 0.25 } }}
+
         >
 
 
@@ -87,9 +89,11 @@ function BlogsPage({ blogsArray }) {
                     <div key={index} className="blog-container">
 
 
-                        <h1 className={`${index % 2 !== 0 ? "container-shadow-right" : "container-shadow-left"}`}>{blog.title.toUpperCase()}</h1>
-                        <div className={`blog-container-content ${index % 2 !== 0 ? "container-shadow-right" : "container-shadow-left"}`}
+                        {/*   <h1 className={`${index % 2 !== 0 ? "container-shadow-right" : "container-shadow-left"}`}>{blog.title.toUpperCase()}</h1> */}
+                        <div className={`container-style blog-container-content ${index % 2 !== 0 ? "container-shadow-right" : "container-shadow-left"}`}
                         >
+
+                            <h1>{blog.title.toUpperCase()}</h1>
 
                             <div className="categories">
                                 {blog.categories.map((category, catIndex) => (
