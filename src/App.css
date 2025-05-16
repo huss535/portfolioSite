@@ -952,3 +952,37 @@ body {
     transition: .3s;
     animation: showTextSpan .3s ease-out
 }
+
+
+
+
+
+#designs-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 95%;
+    gap: 2rem;
+    min-height: 100vh
+}
+
+#designs-page>div {
+    border: solid 10px var(--color-accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+#designs-page>div:hover {
+    cursor: pointer;
+
+}
+
+#designs-page>div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

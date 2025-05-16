@@ -49,6 +49,13 @@ const TopNav = ({ isLightMode, setIsLightMode }) => {
         >
             PROJECTS
         </NavLink>
+
+        <NavLink
+            to="/designs"
+            className={({ isActive }) => isActive ? "link link-active" : "link"}
+        >
+            DESIGNS
+        </NavLink>
         <NavLink
             to="/blogs"
             className={({ isActive }) => isActive ? "link link-active" : "link"}

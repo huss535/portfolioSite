@@ -1,0 +1,45 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import jbrekkie from '/Users/elhussin/trialScroller/src/assets/designs/jbrekkie.jpg';
+import indify from '/Users/elhussin/trialScroller/src/assets/designs/indify.jpg';
+import scan2eat from '/Users/elhussin/trialScroller/src/assets/designs/scan2eat.jpg';
+import { useNavigate } from 'react-router-dom';
+const DesignsPage = () => {
+    const navigate = useNavigate();
+
+    const handleClick = (designName) => {
+        navigate(`/design/${designName}`);
+    };
+    return (
+        <motion.div
+            className="centered-page"
+
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.25 } }}
+            exit={{ opacity: 0, transition: { duration: 0.25 } }}
+
+        >
+
+            <div id='designs-page' className="page-margins">
+
+                <div onClick={() => handleClick("jbrekkie")}>
+
+                    <img src={jbrekkie} alt="jbrekkie" />
+                </div>
+
+                <div onClick={() => handleClick("indify")} >
+
+                    <img src={indify} alt="indify" />
+                </div>
+
+                <div onClick={() => handleClick("scan2eat")} >
+
+                    <img src={scan2eat} alt="scan2eat" />
+                </div>
+
+            </div>
+
+        </motion.div>
+    );
+}
+export default DesignsPage;
