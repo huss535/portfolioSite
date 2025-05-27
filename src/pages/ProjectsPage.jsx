@@ -55,14 +55,28 @@ function ProjectsPage() {
 
 
         <motion.div
-            className='centered-page'
+            className="centered-page"
+
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.25 } }}
             exit={{ opacity: 0, transition: { duration: 0.25 } }}
 
         >
 
-            <div id="project-svg"></div>
+            <div id="projects-shape-1">
+
+
+
+            </div>
+            <div id="projects-shape-1-1">
+
+            </div>
+            <div id="projects-shape-2">
+
+
+            </div>
+
+
 
 
             <div id="projects-page" className="page-margins">

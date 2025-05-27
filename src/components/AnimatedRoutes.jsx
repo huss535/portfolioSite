@@ -18,7 +18,7 @@ const AnimatedRoutes = ({ blogsArray }) => {
                 <Route path="/" element={<AboutPage />} />
                 <Route path="/blogs" element={<BlogsPage blogsArray={blogsArray} />} />
                 <Route path="/designs" element={<DesignsPage />} />
-                <Route path="/design/:projectName" element={<DesignDisplay />} />
+                <Route path="/design/:designName" element={<DesignDisplay />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/connect" element={<Connect />} />
 

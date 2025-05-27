@@ -99,7 +99,10 @@ const Connect = () => {
 
 
 
+
             <div id="contact-page" className="page-margins">
+                <div id="connect-shape-1"></div>
+                <div id="connect-shape-2"></div>
                 {/* <h1
 
                     className='container-shadow-left'
