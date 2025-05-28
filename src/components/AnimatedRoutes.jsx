@@ -9,7 +9,7 @@ import { AnimatePresence } from "motion/react"
 import DesignsPage from "../pages/DesignsPage";
 import DesignDisplay from "../pages/DesignDisplay";
 
-const AnimatedRoutes = ({ blogsArray }) => {
+const AnimatedRoutes = ({ blogsArray, openMenu }) => {
     const location = useLocation();
     return (
         <AnimatePresence>
@@ -19,7 +19,7 @@ const AnimatedRoutes = ({ blogsArray }) => {
                 <Route path="/blogs" element={<BlogsPage blogsArray={blogsArray} />} />
                 <Route path="/designs" element={<DesignsPage />} />
                 <Route path="/design/:designName" element={<DesignDisplay />} />
-                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/projects" element={<ProjectsPage openMenu={openMenu} />} />
                 <Route path="/connect" element={<Connect />} />
 
             </Routes>

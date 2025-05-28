@@ -3,9 +3,10 @@ import { motion } from "motion/react"
 
 import MinButton from "../components/MinButton";
 import { useEffect } from "react";
+import HamMenu from "../components/HamMenu";
 
 // eslint-disable-next-line react/prop-types
-function ProjectsPage() {
+function ProjectsPage({ openMenu }) {
 
 
 
@@ -63,19 +64,15 @@ function ProjectsPage() {
 
         >
 
+
             <div id="projects-shape-1">
 
 
 
             </div>
-            <div id="projects-shape-1-1">
 
-            </div>
-            <div id="projects-shape-2">
-
-
-            </div>
-
+            <div className={openMenu ? `mobile-nav-shape-opened` : ("")}></div>
+            <div id="mobile-nav-shape"> </div>
 
 
 
@@ -83,41 +80,40 @@ function ProjectsPage() {
                 {/*   <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} /> */}
 
                 {projects.map((project, index) => (
-                    <div key={index} className="project-container">
+                    /*  <div key={index} className="project-container"> */
 
-                        {/*                         <h1 className={`${index % 2 === 0 ? "container-shadow-right" : "container-shadow-left"}`} >{project.title}</h1>
- */}                        <div className={`container-style project-container-content ${index % 2 === 0 ? "container-shadow-right" : "container-shadow-right"}`}>
-                            <h1 >{project.title}</h1>
-                            <div className="categories">
-                                {project.techStack.map((category, catIndex) => (
-                                    <span key={catIndex} className="category-area">
-                                        {category}
-                                    </span>
-                                ))}
-                            </div>
+                    <div key={index} className={`container-style project-container-content`}>
+                        <h1 >
+                            {project.title}
 
-                            <p >{project.description}</p>
+                        </h1>
+                        <div className="categories">
 
-
-
-                            {/*  <a
-                                    className="button-link"
-                                    href={project.githubRepo}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-
-                                >REPO</a> */}
-                            <MinButton text="Source Code" link={project.githubRepo} />
-
-
-
+                            {project.techStack.map((category, catIndex) => (
+                                <span key={catIndex} className="category-area">
+                                    {category}
+                                </span>
+                            ))}
 
                         </div>
 
-                        {/*   <img className={`${index % 2 === 0 ? "container-shadow-right" : "container-shadow-left"}`} src={project.img} /> */}
+                        <p >
+                            {project.description}
+                        </p>
+
+
+
+
+                        <MinButton text="Source Code" link={project.githubRepo} />
+
+
 
 
                     </div>
+
+
+
+                    /* </div> */
                 ))}
 
 

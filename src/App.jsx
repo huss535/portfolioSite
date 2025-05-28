@@ -4,10 +4,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 import TopNav from "./components/TopNav";
+import HamMenu from "./components/HamMenu";
 
 function App() {
   const [isLightMode, setIsLightMode] = useState(false); // dark mode / light mode switch
   const [blogsArray, setBlogsArray] = useState([]); // medium articles array
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const handleMenuToggle = () => {
+    setOpenMenu(!openMenu);
+  }
 
 
   useEffect(() => {
@@ -35,10 +41,21 @@ function App() {
     <Router>
 
 
-      <AnimatedRoutes blogsArray={blogsArray} />
+
+
+
+      <AnimatedRoutes openMenu={openMenu} blogsArray={blogsArray} />
       <TopNav isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
+      <HamMenu
+        isOpen={openMenu}
+        onToggle={handleMenuToggle}
+      />
+
+
+
     </Router>
   );
 }
 
 export default App;
+

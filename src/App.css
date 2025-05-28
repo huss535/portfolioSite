@@ -10,6 +10,8 @@
     }
 }
 
+
+
 * {
 
     box-sizing: border-box;
@@ -25,6 +27,7 @@
     /* Firefox */
     -ms-overflow-style: none;
     /* Internet Explorer 10+ */
+
 }
 
 /* a,
@@ -39,10 +42,12 @@ span {
  */
 :root,
 :root.light {
-    --outer-border-size: 0rem
+    --outer-border-size: 0rem;
+
 }
 
 :root {
+
     --color-background: #292929;
     --color-text: #FAF8F5;
     --color-border: #FFC300;
@@ -61,6 +66,7 @@ span {
     /* background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
     background-blend-mode: multiply; */
     --container-background: rgba(0, 0, 0, 0.65);
+
 
 
 }
@@ -88,7 +94,8 @@ span {
 
 
     margin-top: 10rem;
-    margin-bottom: 5rem
+    margin-left: 7rem;
+    margin-bottom: 5rem;
 }
 
 
@@ -172,6 +179,7 @@ a:hover {
     align-items: center;
     min-height: 100vh;
     width: 100%;
+    overflow: hidden;
 
 
 }
@@ -191,9 +199,26 @@ a:hover {
     z-index: -400;
 }
 
+/* :root::before {
+    content: "";
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -400;
+} */
+
+
 #about-shape-1,
 #about-shape-2,
 #projects-shape-1,
+#mobile-nav-shape,
 #blogs-shape,
 #designs-shape,
 #connect-shape-1,
@@ -236,10 +261,12 @@ a:hover {
 /* HTML: <div class="arc"></div> */
 #about-shape-2 {
     bottom: 0;
-    right: 0;
-    width: calc(100vw - 65rem);
-    background-color: var(--shape-color-secondary);
+    right: -20%;
 
+    /* width: calc(100vw - 65rem); */
+    width: 60%;
+    background-color: var(--shape-color-secondary);
+    transform: translate(0, 40%);
     aspect-ratio: 1;
     clip-path: polygon(100% 50%, 79.84% 53.14%, 98.91% 60.4%, 78.53% 59.27%, 95.68% 70.34%, 75.98% 65%, 90.45% 79.39%, 72.29% 70.07%, 83.46% 87.16%, 67.63% 74.27%, 75% 93.3%, 62.2% 77.41%, 65.45% 97.55%, 56.24% 79.34%, 55.23% 99.73%, 50% 80%, 44.77% 99.73%, 43.76% 79.34%, 34.55% 97.55%, 37.8% 77.41%, 25% 93.3%, 32.37% 74.27%, 16.54% 87.16%, 27.71% 70.07%, 9.55% 79.39%, 24.02% 65%, 4.32% 70.34%, 21.47% 59.27%, 1.09% 60.4%, 20.16% 53.14%, 0% 50%, 20.16% 46.86%, 1.09% 39.6%, 21.47% 40.73%, 4.32% 29.66%, 24.02% 35%, 9.55% 20.61%, 27.71% 29.93%, 16.54% 12.84%, 32.37% 25.73%, 25% 6.7%, 37.8% 22.59%, 34.55% 2.45%, 43.76% 20.66%, 44.77% 0.27%, 50% 20%, 55.23% 0.27%, 56.24% 20.66%, 65.45% 2.45%, 62.2% 22.59%, 75% 6.7%, 67.63% 25.73%, 83.46% 12.84%, 72.29% 29.93%, 90.45% 20.61%, 75.98% 35%, 95.68% 29.66%, 78.53% 40.73%, 98.91% 39.6%, 79.84% 46.86%);
 
@@ -262,6 +289,45 @@ a:hover {
     aspect-ratio: 1;
     clip-path: polygon(0 0, calc(100% - var(--p)) 0, 100% 100%, 0 100%);
 }
+
+
+#mobile-nav-shape {
+    bottom: 0;
+    right: -20%;
+
+    /* width: calc(100vw - 65rem); */
+    width: 35rem;
+    /* background-color: var(--shape-color-secondary); */
+    transform: translate(0, 40%) scale(1);
+    aspect-ratio: 1;
+    background-color: var(--color-accent);
+    opacity: 1;
+    clip-path: polygon(100% 50%, 79.84% 53.14%, 98.91% 60.4%, 78.53% 59.27%, 95.68% 70.34%, 75.98% 65%, 90.45% 79.39%, 72.29% 70.07%, 83.46% 87.16%, 67.63% 74.27%, 75% 93.3%, 62.2% 77.41%, 65.45% 97.55%, 56.24% 79.34%, 55.23% 99.73%, 50% 80%, 44.77% 99.73%, 43.76% 79.34%, 34.55% 97.55%, 37.8% 77.41%, 25% 93.3%, 32.37% 74.27%, 16.54% 87.16%, 27.71% 70.07%, 9.55% 79.39%, 24.02% 65%, 4.32% 70.34%, 21.47% 59.27%, 1.09% 60.4%, 20.16% 53.14%, 0% 50%, 20.16% 46.86%, 1.09% 39.6%, 21.47% 40.73%, 4.32% 29.66%, 24.02% 35%, 9.55% 20.61%, 27.71% 29.93%, 16.54% 12.84%, 32.37% 25.73%, 25% 6.7%, 37.8% 22.59%, 34.55% 2.45%, 43.76% 20.66%, 44.77% 0.27%, 50% 20%, 55.23% 0.27%, 56.24% 20.66%, 65.45% 2.45%, 62.2% 22.59%, 75% 6.7%, 67.63% 25.73%, 83.46% 12.84%, 72.29% 29.93%, 90.45% 20.61%, 75.98% 35%, 95.68% 29.66%, 78.53% 40.73%, 98.91% 39.6%, 79.84% 46.86%);
+    /*   transform: scale(20); */
+    z-index: 500;
+
+    transition: 1.5s;
+}
+
+/* #projects-shape-2::before {
+    content: "";
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 100px;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -400;
+
+    transition: 1s;
+
+}
+
+ */
 
 #designs-shape {
 
@@ -659,7 +725,7 @@ a:hover {
     border: 0;
     margin-top: 2rem;
     cursor: pointer;
-    align-self: flex-end;
+    align-self: flex-start;
 }
 
 #contact-form button span,
@@ -690,22 +756,16 @@ a:hover {
     grid-template-areas: "project-header" "project-body"
 }
 
-.project-container:nth-child(even) .button-link {
-    align-self: flex-end;
+.project-container-content:nth-child(even) .button-link {
+    align-self: flex-start;
 }
 
 .blog-container:nth-child(even) .button-link,
-.project-container:nth-child(odd) .button-link {
-    align-self: flex-end
+.project-container-content:nth-child(odd) .button-link {
+    align-self: flex-start
 }
 
-.project-container img {
-    grid-area: image;
-    object-fit: cover;
-    border: solid var(--outer-border-size) var(--color-accent);
-    width: 100%;
-    height: 100%
-}
+
 
 .project-container-content {
     grid-area: project-body;
@@ -714,24 +774,15 @@ a:hover {
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
-    height: 100%;
+    width: 70%;
     border: solid var(--outer-border-size) var(--color-border)
 }
 
-#projects-page,
-.project-container h1 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
 
-.project-container h1,
-.project-container-content {
 
-    width: 100%
-}
 
-.project-container h1 {
+.project-container-content h1 {
+    width: 100%;
     grid-area: project-header;
     padding: 2rem;
     padding-bottom: 0rem;
@@ -747,11 +798,14 @@ a:hover {
 }
 
 #projects-page {
+    display: flex;
     flex-direction: column;
+
+    gap: 10rem;
     width: 100%;
-    gap: 0rem;
+
     min-height: 100vh;
-    margin-left: 10rem;
+
 }
 
 #blogs-page {
@@ -780,7 +834,7 @@ a:hover {
 }
 
 .blog-container:nth-child(odd) .button-link {
-    align-self: flex-end;
+    align-self: flex-start;
 }
 
 .blog-container img {
@@ -898,17 +952,22 @@ body {
 
     .page-margins {
         margin-top: 5rem;
-        margin-bottom: 5rem
+        margin-left: 0rem;
+        margin-bottom: 15rem
     }
 
     .nav-bar {
-        position: sticky;
+        /* position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
         gap: 0;
         text-align: center;
-        background-color: var(--color-highlight-area);
+
+        background-color: transparent; */
+        /*         clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%);
+ */
+        display: none;
     }
 
     .link {
@@ -920,7 +979,11 @@ body {
 
     #aboutme-page {
         grid-template-rows: auto auto auto auto auto;
-        grid-template-areas: "main-content main-content main-content" "name favourites-1 favourites-1" "name favourites-2 favourites-2" "name favourites-3 favourites-3" "skills skills skills"
+        grid-template-areas: "main-content main-content main-content"
+            "name favourites-section favourites-section"
+            "name favourites-section favourites-section"
+            "name favourites-section favourites-section"
+            "skills skills skills"
     }
 
     #blogs-page {
@@ -968,10 +1031,18 @@ body {
 
     .blog-container .button-link,
     .project-container .button-link {
-        align-self: flex-end !important
+        align-self: flex-start !important
     }
 
+    .project-container-content {
+        width: 90%;
 
+    }
+
+    #projects-page {
+        justify-content: center;
+        align-items: center;
+    }
 
 
 
@@ -1027,7 +1098,6 @@ body {
     align-items: center;
     width: 95%;
     gap: 4rem;
-    padding-left: 5rem;
     min-height: 100vh
 }
 
@@ -1099,5 +1169,51 @@ body {
 #design-display-page img {
     height: auto;
     width: 80%;
+
+}
+
+
+.ham-menu {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    width: 8rem;
+    height: 8rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.bar {
+
+    width: 100%;
+    height: 10%;
+    background-color: var(--color-background);
+
+    transition: transform 0.75s ease-in-out;
+}
+
+.open .bar:nth-child(1) {
+    transform-origin: center;
+    transform:
+        translateY(2.5rem) rotate(-45deg);
+    ;
+}
+
+.open .bar:nth-child(2) {
+    transform-origin: center;
+    transform: scale(0);
+}
+
+.open .bar:nth-child(3) {
+    transform-origin: center;
+    transform: translateY(-2.5rem) rotate(45deg);
+}
+
+.mobile-nav-shape-opened~#mobile-nav-shape {
+    transform: translate(0, 40%) scale(22);
 
 }
