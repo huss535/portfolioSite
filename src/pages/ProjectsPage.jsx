@@ -69,9 +69,14 @@ function ProjectsPage({ openMenu }) {
 
 
 
+
             </div>
 
-            <div className={openMenu ? `mobile-nav-shape-opened` : ("")}></div>
+            <div className={openMenu ? `mobile-nav-shape-opened` : ("")}>
+
+
+
+            </div>
             <div id="mobile-nav-shape"> </div>
 
 

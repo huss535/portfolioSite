@@ -51,6 +51,8 @@ function AboutPage() {
             <div id="about-shape-1"></div>
             <div id="about-shape-2"></div>
 
+
+
             <div id="aboutme-page" className='page-margins'>
                 <h1
                     /*    initial={{ boxShadow: "0px 0px 0px var(--color-background)" }}
@@ -167,7 +169,7 @@ function AboutPage() {
                     id="skills-body"
                     className='container-style container-shadow-left'
 
-                    initial={{ boxShadow: "none" }}
+
 
 
                 >
