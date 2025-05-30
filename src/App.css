@@ -94,8 +94,8 @@ span {
 
 
     margin-top: 10rem;
-    margin-left: 5rem;
-    margin-right: 2.5rem;
+    /*  margin-left: 15rem;
+    margin-right: 2.5rem; */
     margin-bottom: 5rem;
 }
 
@@ -239,16 +239,16 @@ a:hover {
 }
 
 #about-shape-1 {
-    top: 0;
-    left: 0;
-    width: 80%;
+    top: -35%;
+    left: -25%;
+    width: 85%;
 
 
     aspect-ratio: 1;
     clip-path: polygon(100% 50%, 79.84% 53.14%, 98.91% 60.4%, 78.53% 59.27%, 95.68% 70.34%, 75.98% 65%, 90.45% 79.39%, 72.29% 70.07%, 83.46% 87.16%, 67.63% 74.27%, 75% 93.3%, 62.2% 77.41%, 65.45% 97.55%, 56.24% 79.34%, 55.23% 99.73%, 50% 80%, 44.77% 99.73%, 43.76% 79.34%, 34.55% 97.55%, 37.8% 77.41%, 25% 93.3%, 32.37% 74.27%, 16.54% 87.16%, 27.71% 70.07%, 9.55% 79.39%, 24.02% 65%, 4.32% 70.34%, 21.47% 59.27%, 1.09% 60.4%, 20.16% 53.14%, 0% 50%, 20.16% 46.86%, 1.09% 39.6%, 21.47% 40.73%, 4.32% 29.66%, 24.02% 35%, 9.55% 20.61%, 27.71% 29.93%, 16.54% 12.84%, 32.37% 25.73%, 25% 6.7%, 37.8% 22.59%, 34.55% 2.45%, 43.76% 20.66%, 44.77% 0.27%, 50% 20%, 55.23% 0.27%, 56.24% 20.66%, 65.45% 2.45%, 62.2% 22.59%, 75% 6.7%, 67.63% 25.73%, 83.46% 12.84%, 72.29% 29.93%, 90.45% 20.61%, 75.98% 35%, 95.68% 29.66%, 78.53% 40.73%, 98.91% 39.6%, 79.84% 46.86%);
 
 
-    transform: translate(-30%, -30%);
+
 
 }
 
@@ -270,17 +270,16 @@ a:hover {
 
 
 
-#projects-shape-1 {
+#projects-shape-1,
+#blogs-shape {
 
     top: 0;
     left: 0;
-    width: 50%;
+    width: 45%;
     height: 100%;
-
-    --p: 1rem;
-    /* control the shape (can be percentage) */
-    aspect-ratio: 1;
-    clip-path: polygon(0 0, calc(100% - var(--p)) 0, 100% 100%, 0 100%);
+    mask: conic-gradient(from -140deg at right, #0000, #000 1deg 99deg, #0000 100deg) 50%/100% 11.92rem
+        /*  aspect-ratio: 1;
+    clip-path: polygon(100% 50%, 81.17% 89.09%, 38.87% 98.75%, 4.95% 71.69%, 4.95% 28.31%, 38.87% 1.25%, 81.17% 10.91%, 100% 50%, calc(81.17% - 12.47px) calc(10.91% - -15.64px), calc(38.87% - -4.45px) calc(1.25% - -19.5px), calc(4.95% - -18.02px) calc(28.31% - -8.68px), calc(4.95% - -18.02px) calc(71.69% - 8.68px), calc(38.87% - -4.45px) calc(98.75% - 19.5px), calc(81.17% - 12.47px) calc(89.09% - 15.64px), calc(100% - 20px) calc(50% - 0px), calc(81.17% - 12.47px) calc(10.91% - -15.64px)); */
 }
 
 
@@ -306,7 +305,7 @@ a:hover {
 
  */
 
-#designs-shape {
+/* #designs-shape {
 
     top: 0;
     left: -50%;
@@ -314,21 +313,24 @@ a:hover {
     height: 100%;
 
     transition: 1s;
-    /*     mask: radial-gradient(90px at 90px 50%, #0000 calc(100% - 1px), #000) -90px/100% 166.5px
- */
-}
+    aspect-ratio: 1;
+    clip-path: polygon(100% 50%, 81.17% 89.09%, 38.87% 98.75%, 4.95% 71.69%, 4.95% 28.31%, 38.87% 1.25%, 81.17% 10.91%, 100% 50%, calc(81.17% - 12.47px) calc(10.91% - -15.64px), calc(38.87% - -4.45px) calc(1.25% - -19.5px), calc(4.95% - -18.02px) calc(28.31% - -8.68px), calc(4.95% - -18.02px) calc(71.69% - 8.68px), calc(38.87% - -4.45px) calc(98.75% - 19.5px), calc(81.17% - 12.47px) calc(89.09% - 15.64px), calc(100% - 20px) calc(50% - 0px), calc(81.17% - 12.47px) calc(10.91% - -15.64px));
 
+
+
+} */
+/* 
 #blogs-shape {
     top: 0;
-    left: 0;
-    width: 50%;
+    right: 0;
+    width: 40%;
     height: 100%;
 
     --p: 1rem;
-    /* control the shape (can be percentage) */
+    background-color: var(--color-highlight-area);
     aspect-ratio: 1;
     clip-path: polygon(0 0, 100% 0, calc(100% - var(--p)) 100%, 0 100%);
-}
+} */
 
 
 
@@ -445,7 +447,7 @@ a:hover {
     display: flex;
     justify-content: center;
     padding: 2rem;
-    font-size: 6rem;
+    font-size: 6.5rem;
     align-items: center;
     grid-area: name;
     height: auto;
@@ -714,14 +716,14 @@ a:hover {
 
 
 
-.project-container {
+/* .project-container {
     display: grid;
     gap: 2rem;
-    width: 65%;
+    width: 105%;
     height: 100%;
     justify-content: center
 }
-
+ */
 .project-container:nth-child(even) {
     grid-template-rows: 1fr 4fr;
     grid-template-columns: 1fr;
@@ -778,10 +780,11 @@ a:hover {
 #projects-page {
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
+    align-items: flex-start;
     gap: 10rem;
     width: 100%;
-
+    margin-left: 12.5rem;
     min-height: 100vh;
 
 }
@@ -1032,7 +1035,7 @@ body {
     }
 
     #connect-shape-2 {
-        top: -20%;
+        top: -15%;
         left: -30%;
         width: 100%;
 
@@ -1105,6 +1108,7 @@ body {
     }
 
     #projects-page {
+        margin-left: 0;
         justify-content: center;
         align-items: center;
     }

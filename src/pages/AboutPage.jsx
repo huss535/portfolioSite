@@ -43,13 +43,31 @@ function AboutPage() {
         <motion.div
             className="centered-page"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.25 } }}
-            exit={{ opacity: 0, transition: { duration: 0.25 } }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35 }}
 
         >
 
-            <div id="about-shape-1"></div>
-            <div id="about-shape-2"></div>
+            <motion.div
+
+                id="about-shape-1"
+                initial={{ scale: 0.5, rotate: 80 }}
+                animate={{ scale: 1, rotate: 0, }}
+                transition={{ duration: 1.25 }}
+            >
+
+            </motion.div>
+            <motion.div
+
+                id="about-shape-2"
+                initial={{ scale: 0.5, rotate: 80 }}
+                animate={{ scale: 1, rotate: 0, }}
+                transition={{ duration: 1.25 }}
+            >
+
+
+            </motion.div>
 
 
 
@@ -140,7 +158,7 @@ function AboutPage() {
                         >Favourite Band</span>
                         <span
 
-                        >The Breeders
+                        >Pixies
                         </span>
 
                     </motion.p>
@@ -160,7 +178,7 @@ function AboutPage() {
                         </span>
                         <span
 
-                        >Frankenstein</span>
+                        >Perfume</span>
                     </motion.p>
                 </div>
 
