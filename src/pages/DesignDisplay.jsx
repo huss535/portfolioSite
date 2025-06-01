@@ -41,7 +41,11 @@ const DesignDisplay = () => {
                 className="page-margins"
 
             >
-                <h1>{designName.toUpperCase()}</h1>
+                <h1>
+                    {designName.toUpperCase()}
+                </h1>
+
+
                 {designName == "indify" ? (<p>
                     I decided to create this after tuning into a Twitch stream of a local musician. Their music was beautiful and captivating, and I kept thinking to myself, "More people should be listening to this."
                     <br /><br />
@@ -58,6 +62,7 @@ const DesignDisplay = () => {
                                 <br /><br />
                                 The original experience felt bloated, with redundancies such as both the navbar's "Home" link and the band logo redirecting to the same page. Additionally, there was a lack of visual consistency, with variations in button styles across different sections.
                             </p>
+
                             <img src={jbrekkieOriginal} alt="Design" />
                             <p>
                                 I also aimed to enhance the design to better reflect the aesthetic of the band's latest album, which draws heavy inspiration from Sally Potter's <em>Orlando</em> along with the emotional depth and vulnerability of the Romanticism movement.

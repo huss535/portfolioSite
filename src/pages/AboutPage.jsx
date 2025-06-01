@@ -45,25 +45,27 @@ function AboutPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35 }}
+            transition={{ duration: 0.75 }}
 
         >
 
             <motion.div
 
                 id="about-shape-1"
-                initial={{ scale: 0.5, rotate: 80 }}
-                animate={{ scale: 1, rotate: 0, }}
-                transition={{ duration: 1.25 }}
+                initial={{ scale: 0.25, opacity: 0, rotate: 80 }}
+                animate={{ scale: 1, opacity: 1, rotate: 0, }}
+                exit={{ scale: 0.25, opacity: 0, rotate: -80, }}
+                transition={{ duration: 0.75 }}
             >
 
             </motion.div>
             <motion.div
 
                 id="about-shape-2"
-                initial={{ scale: 0.5, rotate: 80 }}
+                initial={{ scale: 0.25, rotate: 80 }}
                 animate={{ scale: 1, rotate: 0, }}
-                transition={{ duration: 1.25 }}
+                exit={{ scale: 0.25, opacity: 0, rotate: -80, }}
+                transition={{ duration: 0.75 }}
             >
 
 
@@ -109,7 +111,11 @@ function AboutPage() {
 
                         {/* > */}
 
-                        I’m a caffeine-fueled full-stack dev and UX designer who loves all things cloud tech, enjoys building cool stuff, and writes for fun.
+
+                        A caffeine-fueled full-stack developer and UX enthusiast with a background in education, business analysis, and Turkish pie-making. I’m passionate about every step of the software creation process, from designing seamless user experiences to building scalable backends.
+
+
+
 
 
                     </p>
@@ -135,12 +141,12 @@ function AboutPage() {
                         <span
 
                         >
-                            Movement of Choice
+                            Currently Learning
                         </span>
                         <span
 
                         >
-                            Surrealism
+                            High Valyrian
                         </span>
 
                     </motion.p>
@@ -168,17 +174,20 @@ function AboutPage() {
                         className='container-style container-shadow-left pattern-background'
 
 
-                        initial={{ boxShadow: "none" }}
+
 
                     >
                         <span
 
                         >
-                            Desert Island Book
+                            Pastime Activity
                         </span>
                         <span
 
-                        >Perfume</span>
+                        >
+
+                            Writing
+                        </span>
                     </motion.p>
                 </div>
 

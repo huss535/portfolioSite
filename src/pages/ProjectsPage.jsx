@@ -66,8 +66,7 @@ function ProjectsPage({ openMenu }) {
 
         >
 
-
-            <div id="projects-shape-1">
+            <div className="zigzag-pattern">
 
 
 
@@ -91,7 +90,7 @@ function ProjectsPage({ openMenu }) {
 
                     <div key={index} className={`container-style project-container-content`}>
                         <h1 >
-                            {project.title}
+                            {project.title.toUpperCase()}
 
                         </h1>
                         <div className="categories">

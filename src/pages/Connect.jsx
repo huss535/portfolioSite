@@ -94,7 +94,7 @@ const Connect = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35 }}
+            transition={{ duration: 0.75 }}
 
         >
 
@@ -102,8 +102,26 @@ const Connect = () => {
 
 
             <div id="contact-page" className="page-margins">
-                <div id="connect-shape-1"></div>
-                <div id="connect-shape-2"></div>
+                <motion.div
+                    id="connect-shape-1"
+                    initial={{ scale: 0.25, rotate: 80 }}
+                    animate={{ scale: 1, rotate: 0, }}
+                    exit={{ scale: 0.25, opacity: 0, rotate: -80, }}
+                    transition={{ duration: 0.75 }}
+                >
+
+
+                </motion.div>
+                <motion.div
+                    id="connect-shape-2"
+                    initial={{ scale: 0.25, rotate: 80 }}
+                    animate={{ scale: 1, rotate: 0, }}
+                    exit={{ scale: 0.25, opacity: 0, rotate: -80, }}
+                    transition={{ duration: 0.75 }}
+                >
+
+
+                </motion.div>
                 {/* <h1
 
                     className='container-shadow-left'

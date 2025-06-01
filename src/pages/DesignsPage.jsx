@@ -21,9 +21,15 @@ const DesignsPage = () => {
             transition={{ duration: 0.35 }}
 
         >
-            <div id="designs-shape" className={isHovered ? "designs-shape-change" : ""}></div>
-
+            {/*             <div id="designs-shape" className={isHovered ? "designs-shape-change" : ""}></div>
+ */}
             <div id='designs-page' className="page-margins">
+                <div className="zigzag-pattern">
+
+
+
+
+                </div>
 
                 <div
                     onClick={() => handleClick("jbrekkie")}

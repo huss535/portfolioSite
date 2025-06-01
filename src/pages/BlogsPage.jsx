@@ -83,7 +83,12 @@ function BlogsPage({ blogsArray }) {
 
         >
 
-            <div id="blogs-shape"></div>
+            <div className="zigzag-pattern">
+
+
+
+
+            </div>
 
             <div id="blogs-page" className="page-margins">
                 {blogsArray.map((blog, index) => (
